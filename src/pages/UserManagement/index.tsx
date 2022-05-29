@@ -1,5 +1,4 @@
-import styles from './userManagement.module.scss'
-
+import styles from './userManagement.module.scss';
 
 function UserManagement() {
   return <div />;
