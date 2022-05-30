@@ -1,0 +1,113 @@
+@use 'styles/constants/colors.scss';
+
+.managementWrapper {
+  box-sizing: border-box;
+  width: 100%;
+  height: 80vh;
+  padding: 20px 20%;
+  background: colors.$theme-gray;
+
+  .managementTitle {
+    padding: 20px 0;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .searchSection {
+    padding: 10px 0;
+
+    .searchSectionForm {
+      width: 100%;
+      margin: 20px 0;
+
+      .inputBox {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        .inputList {
+          display: flex;
+          padding: 0 10px;
+          font-size: 12px;
+          background: colors.$white;
+          border-radius: 16px;
+          box-shadow: 1px 1px 5px rgb(0 0 0 / 10%);
+
+          & + .inputList {
+            margin-left: 4%;
+          }
+
+          dt {
+            width: 60px;
+            height: 32px;
+            padding: 0 4px;
+            line-height: 32px;
+            text-align: center;
+          }
+
+          dd {
+            width: 100px;
+            height: 32px;
+            line-height: 30px;
+
+            input {
+              width: 100%;
+              height: 32px;
+              padding: 0 8px;
+              font-size: 12px;
+              line-height: 32px;
+              text-align: center;
+              text-overflow: ellipsis;
+            }
+
+            &.searchDateDesc {
+              width: 200px;
+
+              input {
+                width: 45%;
+              }
+            }
+
+            &.datePicker {
+              width: 120px;
+
+              button {
+                width: calc(100% / 3);
+                height: 32px;
+                font-size: 12px;
+                line-height: 32px;
+
+                &:hover {
+                  transform: scale(0.95);
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .buttonBox {
+        margin-top: 32px;
+        text-align: center;
+
+        .searchButton,
+        .resetFilterButton {
+          padding: 6px 16px;
+          background: colors.$white;
+          border-radius: 16px;
+          box-shadow: 1px 1px 5px rgb(0 0 0 / 10%);
+          transition: all 0.2s ease;
+
+          &:last-of-type {
+            margin-left: 16px;
+          }
+
+          &:hover {
+            background: colors.$theme-gray;
+            transform: scale(0.95);
+          }
+        }
+      }
+    }
+  }
+}
