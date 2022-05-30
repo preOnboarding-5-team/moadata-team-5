@@ -1,0 +1,10 @@
+.breadcrumb {
+  display: flex;
+  gap: 16px;
+  padding: 0 0 16px;
+
+  .crumbs:not(:last-child)::after {
+    margin-left: 16px;
+    content: '>';
+  }
+}

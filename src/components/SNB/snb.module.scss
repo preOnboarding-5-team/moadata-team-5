@@ -1,9 +1,44 @@
 @use 'src/styles/constants/colors';
+@use 'src/styles/mixins/responsive';
 
 .snb {
-  flex-shrink: 0;
+  position: absolute;
+  left: -284px;
+  z-index: 1;
+  width: 284px;
+  height: 100%;
   padding: 24px;
   background-color: colors.$white;
+  transition-duration: 0.2s;
+  transition-property: left;
+
+  @include responsive.after('lg') {
+    position: static;
+    flex-shrink: 0;
+    height: unset;
+  }
+
+  &.visible {
+    left: 0;
+  }
+
+  .menuIcon {
+    position: absolute;
+    top: 26px;
+    right: -60px;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+
+    @include responsive.after('lg') {
+      display: none;
+    }
+
+    &.visible {
+      top: 0;
+      right: 0;
+    }
+  }
 
   .logo {
     width: 200px;
@@ -19,6 +54,11 @@
       align-items: center;
       padding: 10px;
       border-radius: 8px;
+
+      &:hover {
+        color: colors.$gray-50;
+        background: colors.$primary-hover;
+      }
 
       .icon {
         margin-right: 8px;

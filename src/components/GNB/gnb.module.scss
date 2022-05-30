@@ -1,14 +1,18 @@
 @use 'src/styles/constants/colors';
+@use 'src/styles/mixins/responsive';
 
 .gnb {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   margin-bottom: 24px;
 
   .title {
-    display: flex;
-    align-items: center;
+    margin-left: 48px;
     font-size: 24px;
+    @include responsive.after('lg') {
+      margin: 0;
+    }
   }
 
   .adminInfo {
@@ -27,6 +31,10 @@
       color: colors.$gray-50;
       background: colors.$primary;
       border-radius: 8px;
+
+      &:hover {
+        background: colors.$primary-hover;
+      }
     }
   }
 }

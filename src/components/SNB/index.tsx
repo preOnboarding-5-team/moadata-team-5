@@ -1,16 +1,41 @@
-import { LogoImage } from 'assets/images';
-import { HomeIcon, UserManagementIcon } from 'assets/svgs';
-import classNames from 'classnames';
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import classNames from 'classnames';
+
+import { LogoImage } from 'assets/images';
+import { CloseIcon, HomeIcon, MenuIcon, UserManagementIcon } from 'assets/svgs';
+
 import styles from './snb.module.scss';
 
 function SNB() {
+  const [showSidebar, setShowSidebar] = useState<boolean>(false);
+  const toggleSidebar = () => {
+    setShowSidebar((prev) => !prev);
+  };
+
+  const menuIcon = showSidebar ? (
+    <CloseIcon
+      className={classNames(styles.menuIcon, {
+        [styles.visible]: showSidebar,
+      })}
+      onClick={toggleSidebar}
+    />
+  ) : (
+    <MenuIcon
+      className={classNames(styles.menuIcon, {
+        [styles.visible]: showSidebar,
+      })}
+      onClick={toggleSidebar}
+    />
+  );
+
   return (
-    <div className={styles.snb}>
+    <div className={classNames(styles.snb, { [styles.visible]: showSidebar })}>
+      {menuIcon}
       <img src={LogoImage} alt="logo" className={styles.logo} />
       <nav className={styles.navigation}>
         <NavLink
-          to="dashboard"
+          to="/"
           className={({ isActive }) =>
             classNames(styles.navItem, { [styles.active]: isActive })
           }
