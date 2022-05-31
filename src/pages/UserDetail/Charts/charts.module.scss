@@ -1,0 +1,60 @@
+@use 'styles/constants/colors';
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 40px;
+
+  .chartWrapper {
+    width: 50%;
+    padding: 20px;
+    color: colors.$gray-900;
+    background-color: colors.$white;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px colors.$shadow;
+
+    + .chartWrapper {
+      margin-left: 40px;
+    }
+
+    .chartHeader {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 60px;
+      padding-left: 20px;
+
+      .chartTitle {
+        font-size: 20px;
+        font-weight: 900;
+        line-height: 20px;
+      }
+    }
+
+    .chart {
+      width: 100%;
+      height: 300px;
+    }
+
+    .label {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      padding: 20px 20px 0;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+    }
+
+    .datePickerWrapper {
+      padding: 20px 0 0 20px;
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    .buttonWrapper {
+      padding: 20px 0 0 20px;
+    }
+  }
+}

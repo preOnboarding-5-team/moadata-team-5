@@ -1,0 +1,30 @@
+@use '/src/styles/constants/colors';
+
+.button {
+  height: 40px;
+  font-size: 14px;
+  color: colors.$gray-900;
+  border: 1px solid colors.$button;
+  border-radius: 12px;
+  transition: 200ms;
+
+  + .button {
+    margin-left: 16px;
+  }
+
+  &:hover {
+    color: colors.$white;
+    background-color: colors.$button;
+    border-color: transparent;
+  }
+
+  &.short {
+    min-width: 60px;
+    padding: 0 10px;
+  }
+
+  &.long {
+    min-width: 80px;
+    padding: 0 20px;
+  }
+}
