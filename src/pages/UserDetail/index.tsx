@@ -1,28 +1,18 @@
-import { useEffect, useState } from 'react';
-
-import DatePicker from 'components/common/DatePicker';
-
+import Charts from './Charts';
+import UserData from './UserData';
 import styles from './userDetail.module.scss';
 
 function UserDetail() {
-  const [startDate, setStartDate] = useState<Date>(new Date(2022, 1, 26));
-  const [endDate, setEndDate] = useState<Date>(new Date(2022, 3, 20));
-
-  useEffect(() => {
-    console.log(startDate, endDate);
-  }, [endDate, startDate]);
-
   return (
-    <div>
-      <DatePicker
-        startDate={startDate}
-        setStartDate={setStartDate}
-        endDate={endDate}
-        setEndDate={setEndDate}
-        minDate={new Date(2022, 1, 26)}
-        maxDate={new Date(2022, 3, 20)}
-      />
-    </div>
+    <section className={styles.userDetailWrapper}>
+      <header className={styles.pageHeader}>
+        <h1 className={styles.pageTitle}>회원 상세 정보</h1>
+      </header>
+      <div className={styles.userDetail}>
+        <UserData />
+        <Charts />
+      </div>
+    </section>
   );
 }
 

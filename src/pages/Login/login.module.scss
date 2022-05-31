@@ -6,7 +6,7 @@
   width: 22.5rem;
   height: 45rem;
   padding: 3.125rem 1.25rem;
-  background-color: colors.$gray-100;
+  background-color: colors.$main-bg;
   border-radius: 50px;
   box-shadow: 0 -5px 20px 0 colors.$gray-200;
 
@@ -15,7 +15,7 @@
     margin: 0 1.25rem;
 
     g {
-      fill: colors.$point-color;
+      fill: colors.$primary;
     }
   }
 
@@ -35,7 +35,7 @@
     padding: 0 5px;
     margin-top: 30px;
     line-height: 30px;
-    color: colors.$point-color;
+    color: colors.$primary;
     visibility: hidden;
     border-radius: 10px;
   }
@@ -80,7 +80,7 @@
     span {
       font-size: small;
       font-weight: 500;
-      color: colors.$point-color;
+      color: colors.$primary;
     }
 
     .icon {
@@ -98,7 +98,7 @@
       font-weight: bold;
       color: colors.$gray-50;
       letter-spacing: 2px;
-      background-color: colors.$point-color;
+      background-color: colors.$primary;
       border-radius: 10px;
     }
   }
