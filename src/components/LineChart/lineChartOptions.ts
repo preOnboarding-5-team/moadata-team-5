@@ -1,7 +1,7 @@
 export const options = {
   domainPadding: 30,
   animate: { duration: 2000, onLoad: { duration: 1000 } },
-  height: 350,
+  height: 400,
   width: 600,
 };
 

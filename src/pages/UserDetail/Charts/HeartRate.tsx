@@ -16,12 +16,18 @@ function HeartRate() {
         <h2 className={styles.chartTitle}>심박수</h2>
       </header>
       <div className={styles.chart}>
-        <LineChart />
+        <LineChart startDate={startDate} endDate={endDate} />
       </div>
       <div className={styles.label}>
-        <time dateTime="2022-04-20">
-          {dayjs('2022-04-20').format('YY-MM-DD')}
-        </time>
+        <div className={styles.timewrapper}>
+          <time dateTime={`${startDate}`}>
+            {dayjs(startDate).format('YY-MM-DD')}
+          </time>
+          <span>~</span>
+          <time dateTime={`${endDate}`}>
+            {dayjs(endDate).format('YY-MM-DD')}
+          </time>
+        </div>
         <span>평균 82 bpm</span>
       </div>
       <div className={styles.datePickerWrapper}>
