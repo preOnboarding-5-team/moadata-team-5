@@ -1,4 +1,4 @@
-import { VictoryAxis, VictoryBar, VictoryChart, VictoryLabel } from 'victory';
+import { VictoryAxis, VictoryBar, VictoryChart, VictoryTooltip } from 'victory';
 import ConvertData from './convertData';
 
 function StepChart() {
@@ -39,9 +39,14 @@ function StepChart() {
             tickLabels: { fill: 'gray', fontSize: 8 },
             grid: { stroke: '#EDEFF1' },
           }}
-          tickLabelComponent={<VictoryLabel />}
         />
-        <VictoryBar data={stepData} x="crt_ymdt" y="steps" />
+        <VictoryBar
+          data={stepData}
+          x="crt_ymdt"
+          y="steps"
+          labels={({ datum }) => `${datum.crt_ymdt} : ${datum.steps}보`}
+          labelComponent={<VictoryTooltip />}
+        />
       </VictoryChart>
     </div>
   );
