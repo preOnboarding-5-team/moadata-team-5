@@ -1,0 +1,7 @@
+@use 'styles/constants/colors';
+
+.tmpWrapper {
+  width: 100vw;
+  height: 100vh;
+  background-color: colors.$gray-100;
+}
