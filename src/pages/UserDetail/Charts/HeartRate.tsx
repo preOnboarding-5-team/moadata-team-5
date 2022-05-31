@@ -9,6 +9,7 @@ import styles from './charts.module.scss';
 function HeartRate() {
   const [startDate, setStartDate] = useState<Date>(new Date(2022, 1, 26));
   const [endDate, setEndDate] = useState<Date>(new Date(2022, 3, 20));
+  const [avgBeat, setAvgBeat] = useState(0);
 
   return (
     <li className={styles.chartWrapper}>
@@ -16,7 +17,11 @@ function HeartRate() {
         <h2 className={styles.chartTitle}>심박수</h2>
       </header>
       <div className={styles.chart}>
-        <LineChart startDate={startDate} endDate={endDate} />
+        <LineChart
+          startDate={startDate}
+          endDate={endDate}
+          setAvgBeat={setAvgBeat}
+        />
       </div>
       <div className={styles.label}>
         <div className={styles.timewrapper}>
@@ -28,7 +33,7 @@ function HeartRate() {
             {dayjs(endDate).format('YY-MM-DD')}
           </time>
         </div>
-        <span>평균 82 bpm</span>
+        <span>{`평균 ${avgBeat} bpm`}</span>
       </div>
       <div className={styles.datePickerWrapper}>
         <DatePicker

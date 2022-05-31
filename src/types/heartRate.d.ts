@@ -6,6 +6,6 @@ interface HeartRate {
 }
 
 type Data = {
-  avg_beat: number | BigNumber;
+  avg_beat: number;
   crt_ymdt: string;
 };

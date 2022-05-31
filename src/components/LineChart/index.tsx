@@ -7,8 +7,12 @@ import {
   VictoryTooltip,
   VictoryVoronoiContainer,
 } from 'victory';
-import { useEffect, useState } from 'react';
-import { avgHeartData, convertHeartData } from 'utils/convertHeartData';
+import { Dispatch, SetStateAction, useEffect, useState } from 'react';
+import {
+  avgHeartData,
+  convertHeartData,
+  getAvgBeat,
+} from 'utils/convertHeartData';
 import { data136 } from 'data/heartrate_data';
 import dayjs from 'dayjs';
 import { axisStyle, dependentAxisStyle, options } from './lineChartOptions';
@@ -17,12 +21,14 @@ import styles from './LineChart.module.scss';
 interface Props {
   startDate: Date;
   endDate: Date;
+  setAvgBeat: Dispatch<SetStateAction<number>>;
 }
 
-function LineChart({ startDate, endDate }: Props) {
+function LineChart({ startDate, endDate, setAvgBeat }: Props) {
   const start = dayjs(startDate).format('YYYY-MM-DD');
   const end = dayjs(endDate).format('YYYY-MM-DD');
   const [dataList, setDataList] = useState<Array<Data>>([]);
+
   useEffect(() => {
     if (start === end) {
       setDataList(convertHeartData(start, data136));
@@ -30,6 +36,12 @@ function LineChart({ startDate, endDate }: Props) {
       setDataList(avgHeartData(data136, start, end));
     }
   }, [end, start]);
+
+  useEffect(() => {
+    if (start !== end) {
+      setAvgBeat(getAvgBeat(dataList));
+    }
+  }, [dataList, end, setAvgBeat, start]);
 
   return (
     <div className={styles.container}>

@@ -70,3 +70,9 @@ export const convertHeartData = (
   });
   return arr;
 };
+
+export const getAvgBeat = (data: Data[]) => {
+  const totalBeat = data.reduce((prv, cur) => prv + cur.avg_beat, 0);
+  const avgBeat = Math.round(totalBeat / data.length);
+  return avgBeat;
+};
