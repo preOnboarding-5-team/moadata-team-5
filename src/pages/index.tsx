@@ -1,11 +1,25 @@
+import { Route, Routes } from 'react-router-dom';
+
+import AdminLayout from 'layouts/AdminLayout';
+import Dashboard from './Dashboard';
+import Login from './Login';
+import UserDetail from './UserDetail';
+
 import styles from './app.module.scss';
 import UserManagement from './UserManagement';
 
 function App() {
   return (
     <div className={styles.app}>
-      Usually Router
-      <UserManagement />
+      <Routes>
+        <Route path="login" element={<Login />} />
+        <Route element={<AdminLayout />}>
+          <Route index element={<Dashboard />} />
+          <Route path="usermanagement" element={<UserManagement />} />
+          <Route path="usermanagement/:userId" element={<UserDetail />} />
+        </Route>
+        <Route path="*" element={<div>Not Found</div>} />
+      </Routes>
     </div>
   );
 }

@@ -1,12 +1,7 @@
 import styles from './userManagement.module.scss';
-import StepChart from './StepChart';
 
 function UserManagement() {
-  return (
-    <div>
-      <StepChart />
-    </div>
-  );
+  return <div>management</div>;
 }
 
 export default UserManagement;
