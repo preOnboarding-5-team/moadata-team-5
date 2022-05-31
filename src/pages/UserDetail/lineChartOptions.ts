@@ -1,7 +1,8 @@
 export const options = {
-  width: 960,
-  height: 400,
-  parent: { height: '120%' },
+  domainPadding: 30,
+  animate: { duration: 2000, onLoad: { duration: 1000 } },
+  height: 350,
+  width: 600,
 };
 
 export const axisStyle = {

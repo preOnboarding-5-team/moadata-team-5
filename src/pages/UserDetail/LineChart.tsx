@@ -9,11 +9,12 @@ import { useEffect, useState } from 'react';
 import { avgHeartData, convertHeartData } from 'utils/convertHeartData';
 import { data136 } from 'data/heartrate_data';
 import { axisStyle, dependentAxisStyle, options } from './lineChartOptions';
+import styles from './LineChart.module.scss';
 
 function LineChart() {
   const [dataList, setDataList] = useState<Array<Data>>([]);
   // const [dateOpt, setDatOpt] = useState(0);
-  const [date, setDate] = useState({ start: '2022-02-26', end: '2022-02-27' });
+  const [date] = useState({ start: '2022-02-26', end: '2022-02-26' });
 
   useEffect(() => {
     if (date.start === date.end) {
@@ -24,30 +25,36 @@ function LineChart() {
   }, [date.end, date.start]);
 
   return (
-    // eslint-disable-next-line react/jsx-props-no-spreading
-    <VictoryChart theme={VictoryTheme.material} {...options}>
-      <VictoryAxis
-        style={axisStyle}
-        tickValues={dataList}
-        tickFormat={(datum) => datum.crt_ymdt}
-        offsetY={50}
-      />
-      <VictoryAxis
-        dependentAxis
-        tickLabelComponent={<VictoryLabel dx={-30} dy={-10} />}
-        orientation="left"
-        style={dependentAxisStyle}
-      />
-      <VictoryLine
-        style={{
-          data: { stroke: '#c43a31' },
-          parent: { border: '1px solid #ccc' },
-        }}
-        data={dataList}
-        x={(datum) => datum.crt_ymdt}
-        y={(datum) => datum.avg_beat}
-      />
-    </VictoryChart>
+    <div className={styles.container}>
+      {/*  eslint-disable-next-line react/jsx-props-no-spreading */}
+      <VictoryChart theme={VictoryTheme.material} {...options}>
+        <VictoryAxis
+          style={axisStyle}
+          tickValues={dataList}
+          tickFormat={(datum, index) => {
+            if (dataList.length < 21) return datum;
+            if (index % 5 !== (dataList.length - 1) % 5) return '';
+            return datum;
+          }}
+          offsetY={50}
+        />
+        <VictoryAxis
+          dependentAxis
+          tickLabelComponent={<VictoryLabel dx={-30} dy={-10} />}
+          orientation="left"
+          style={dependentAxisStyle}
+        />
+        <VictoryLine
+          style={{
+            data: { stroke: '#c43a31' },
+            parent: { border: '1px solid #ccc' },
+          }}
+          data={dataList}
+          x={(datum) => datum.crt_ymdt}
+          y={(datum) => `${datum.avg_beat}bpm`}
+        />
+      </VictoryChart>
+    </div>
   );
 }
 

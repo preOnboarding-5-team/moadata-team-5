@@ -1,7 +1,8 @@
+import BigNumber from 'bignumber.js';
 import dayjs from 'dayjs';
 
 interface IChartData {
-  avg_beat: number;
+  avg_beat: number | BigNumber;
   crt_ymdt: string;
 }
 
@@ -43,7 +44,7 @@ export const avgHeartData = (
     const result = totalArr.reduce(function add(sum, currValue) {
       return sum + currValue;
     }, 0);
-    const average = Math.floor(result / totalArr.length);
+    const average = Math.round(result / totalArr.length);
     const averagedData = { crt_ymdt: date, avg_beat: average };
     arr.push(averagedData);
   });
@@ -56,15 +57,15 @@ export const convertHeartData = (
   data: HeartRate[]
 ): IChartData[] => {
   const arr: IChartData[] = [];
-  data.forEach((item) => {
-    data
-      .filter((fItem) => fItem.crt_ymdt.split(' ')[0] === start)
-      .sort((a, b) => a.seq - b.seq);
-
+  const filteredData = data
+    .filter((fItem) => fItem.crt_ymdt.split(' ')[0] === start)
+    .sort((a, b) => a.seq - b.seq);
+  filteredData.forEach((filteredItem) => {
     arr.push({
-      avg_beat: item.avg_beat,
-      crt_ymdt: item.crt_ymdt.split(' ')[1],
+      avg_beat: filteredItem.avg_beat,
+      crt_ymdt: filteredItem.crt_ymdt.split(' ')[1],
     });
   });
+  console.log(filteredData);
   return arr;
 };
