@@ -1,24 +1,23 @@
 import dayjs from 'dayjs';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import { Button } from 'components/common/Button';
 import DatePicker from 'components/common/DatePicker';
+import LineChart from 'components/LineChart';
 import styles from './charts.module.scss';
 
 function HeartRate() {
   const [startDate, setStartDate] = useState<Date>(new Date(2022, 1, 26));
   const [endDate, setEndDate] = useState<Date>(new Date(2022, 3, 20));
 
-  useEffect(() => {
-    console.log(startDate, endDate);
-  }, [endDate, startDate]);
-
   return (
     <li className={styles.chartWrapper}>
       <header className={styles.chartHeader}>
         <h2 className={styles.chartTitle}>심박수</h2>
       </header>
-      <div className={styles.chart} />
+      <div className={styles.chart}>
+        <LineChart />
+      </div>
       <div className={styles.label}>
         <time dateTime="2022-04-20">
           {dayjs('2022-04-20').format('YY-MM-DD')}

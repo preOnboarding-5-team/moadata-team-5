@@ -7,6 +7,7 @@ import UserDetail from './UserDetail';
 import UserManagement from './UserManagement';
 
 import styles from './app.module.scss';
+import Charts from './UserDetail/Charts';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route index element={<Dashboard />} />
           <Route path="usermanagement" element={<UserManagement />} />
           <Route path="usermanagement/:userId" element={<UserDetail />} />
+          <Route path="chartTest" element={<Charts />} />
         </Route>
         <Route path="*" element={<div>Not Found</div>} />
       </Routes>
