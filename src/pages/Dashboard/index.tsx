@@ -1,4 +1,4 @@
-import styles from './dashboard.module.scss'
+import styles from './dashboard.module.scss';
 
 function Dashboard() {
   return <div />;
