@@ -45,51 +45,53 @@ function Login() {
   }, [setFocus]);
 
   return (
-    <div className={styles.loginWrap}>
-      <LogoIcon className={styles.logo} />
-      <p className={cx(styles.alert, { [styles.active]: isAlertVisible })}>
-        {alert}
-      </p>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <label htmlFor="id">
-          ID
-          <input
-            id="id"
-            placeholder="ID"
-            {...register('id', {
-              required: true,
-            })}
-          />
-        </label>
-        {errors.id?.type === 'required' && <span>필수 입력 항목입니다.</span>}
-
-        <label htmlFor="pw">
-          PW
-          <div className="inputWrap">
+    <div className={styles.wrap}>
+      <div className={styles.loginWrap}>
+        <LogoIcon className={styles.logo} />
+        <p className={cx(styles.alert, { [styles.active]: isAlertVisible })}>
+          {alert}
+        </p>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <label htmlFor="id">
+            ID
             <input
-              id="pw"
-              type={isVisible ? 'text' : 'password'}
-              placeholder="PASSWORD"
-              {...register('pw', {
+              id="id"
+              placeholder="ID"
+              {...register('id', {
                 required: true,
-                minLength: { value: 5, message: '최소 5글자 입력해주세요' },
               })}
             />
-            <div className={styles.icon}>
-              {isVisible ? (
-                <OpenEyeIcon onClick={handleVisible} />
-              ) : (
-                <CloseEyeIcon onClick={handleVisible} />
-              )}
+          </label>
+          {errors.id?.type === 'required' && <span>필수 입력 항목입니다.</span>}
+
+          <label htmlFor="pw">
+            PW
+            <div className="inputWrap">
+              <input
+                id="pw"
+                type={isVisible ? 'text' : 'password'}
+                placeholder="PASSWORD"
+                {...register('pw', {
+                  required: true,
+                  minLength: { value: 5, message: '최소 5글자 입력해주세요' },
+                })}
+              />
+              <div className={styles.icon}>
+                {isVisible ? (
+                  <OpenEyeIcon onClick={handleVisible} />
+                ) : (
+                  <CloseEyeIcon onClick={handleVisible} />
+                )}
+              </div>
             </div>
-          </div>
-        </label>
-        {errors.pw?.type === 'required' && <span>필수 입력 항목입니다.</span>}
-        {errors.pw?.message && <span>{errors.pw?.message}</span>}
-        <button type="submit" className={styles.loginButton}>
-          Login
-        </button>
-      </form>
+          </label>
+          {errors.pw?.type === 'required' && <span>필수 입력 항목입니다.</span>}
+          {errors.pw?.message && <span>{errors.pw?.message}</span>}
+          <button type="submit" className={styles.loginButton}>
+            Login
+          </button>
+        </form>
+      </div>
     </div>
   );
 }
