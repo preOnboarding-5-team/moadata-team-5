@@ -36,15 +36,9 @@ function HeartRate() {
         />
       </div>
       <div className={styles.buttonWrapper}>
-        <Button size="short" ariaLabel="date-today-button">
-          오늘
-        </Button>
-        <Button size="short" ariaLabel="date-week-button">
-          1주일
-        </Button>
-        <Button size="short" ariaLabel="date-all-day-button">
-          전체
-        </Button>
+        <Button size="short">오늘</Button>
+        <Button size="short">1주일</Button>
+        <Button size="short">전체</Button>
       </div>
     </li>
   );

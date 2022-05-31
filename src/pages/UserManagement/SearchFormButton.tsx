@@ -32,15 +32,10 @@ function SearchFormButton({
 
   return (
     <div className={styles.buttonBox}>
-      <Button type="submit" size="short" ariaLabel="search-button">
+      <Button type="submit" size="short">
         검색
       </Button>
-      <Button
-        type="submit"
-        size="short"
-        onClick={onClickResetButton}
-        ariaLabel="filter-reset-button"
-      >
+      <Button type="submit" size="short" onClick={onClickResetButton}>
         필터 초기화
       </Button>
     </div>

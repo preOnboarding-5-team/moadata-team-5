@@ -81,25 +81,13 @@ function SearchFormInput({
           />
         </dd>
         <dd className={styles.datePicker}>
-          <Button
-            className={styles.today}
-            size="short"
-            ariaLabel="date-today-button"
-          >
+          <Button className={styles.today} size="short">
             오늘
           </Button>
-          <Button
-            className={styles.week}
-            size="short"
-            ariaLabel="date-week-button"
-          >
+          <Button className={styles.week} size="short">
             1주일
           </Button>
-          <Button
-            className={styles.allday}
-            size="short"
-            ariaLabel="date-all-day-button"
-          >
+          <Button className={styles.allday} size="short">
             전체
           </Button>
         </dd>

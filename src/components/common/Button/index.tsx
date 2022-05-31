@@ -8,24 +8,15 @@ interface Props {
   size: 'long' | 'short';
   type?: string;
   className?: string;
-  ariaLabel?: string;
   onClick?: () => void;
 }
 
-export function Button({
-  children,
-  size,
-  type,
-  ariaLabel,
-  onClick,
-  className,
-}: Props) {
+export function Button({ children, size, type, onClick, className }: Props) {
   return (
     <button
       type={type === 'submit' ? 'submit' : 'button'}
       className={cx(styles.button, styles[size], className)}
       onClick={onClick}
-      aria-label={ariaLabel}
     >
       {children}
     </button>
