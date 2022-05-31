@@ -1,0 +1,19 @@
+@use 'src/styles/constants/colors';
+
+.adminLayout {
+  display: flex;
+  flex: 1;
+  height: 100%;
+  background: colors.$main-bg;
+
+  .wrapper {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 24px;
+
+    .content {
+      flex-grow: 1;
+    }
+  }
+}
