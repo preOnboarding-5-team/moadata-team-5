@@ -1,8 +1,7 @@
-import BigNumber from 'bignumber.js';
 import dayjs from 'dayjs';
 
 interface IChartData {
-  avg_beat: number | BigNumber;
+  avg_beat: number;
   crt_ymdt: string;
 }
 
@@ -16,13 +15,12 @@ export const getDatesStartToLast = (start: string, end: string) => {
   return result;
 };
 
-// average heartData
+// average heartData 일별
 export const avgHeartData = (
   data: HeartRate[],
   start: string,
   end: string
 ): IChartData[] => {
-  const totalArr: number[] = [];
   const dates: string[] = [];
   const diff = dayjs(end).diff(dayjs(start), 'd');
   const arr: IChartData[] = [];
@@ -32,26 +30,31 @@ export const avgHeartData = (
   }
   dates.forEach((date) => {
     const crr: HeartRate[] = [];
-
     data.forEach((datum) => {
       if (datum.crt_ymdt.split(' ')[0] === date) {
         crr.push(datum);
       }
     });
+
+    let totalNum = 0;
+
     crr.forEach((item) => {
-      totalArr.push(item.avg_beat);
+      totalNum += item.avg_beat;
     });
-    const result = totalArr.reduce(function add(sum, currValue) {
-      return sum + currValue;
-    }, 0);
-    const average = Math.round(result / totalArr.length);
-    const averagedData = { crt_ymdt: date, avg_beat: average };
-    arr.push(averagedData);
+    let averagedData;
+    if (crr.length === 0) {
+      arr.push({ crt_ymdt: date, avg_beat: 0 });
+    } else {
+      const average = Math.round(totalNum / crr.length);
+      averagedData = { crt_ymdt: date, avg_beat: average };
+      arr.push(averagedData);
+    }
   });
+  console.log(arr);
   return arr;
 };
 
-// convertHeartData
+// convertHeartData 시간
 export const convertHeartData = (
   start: string,
   data: HeartRate[]
@@ -66,6 +69,5 @@ export const convertHeartData = (
       crt_ymdt: filteredItem.crt_ymdt.split(' ')[1],
     });
   });
-  console.log(filteredData);
   return arr;
 };

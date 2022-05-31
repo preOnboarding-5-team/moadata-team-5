@@ -4,6 +4,8 @@ import {
   VictoryLabel,
   VictoryLine,
   VictoryTheme,
+  VictoryTooltip,
+  VictoryVoronoiContainer,
 } from 'victory';
 import { useEffect, useState } from 'react';
 import { avgHeartData, convertHeartData } from 'utils/convertHeartData';
@@ -14,7 +16,7 @@ import styles from './LineChart.module.scss';
 function LineChart() {
   const [dataList, setDataList] = useState<Array<Data>>([]);
   // const [dateOpt, setDatOpt] = useState(0);
-  const [date] = useState({ start: '2022-02-26', end: '2022-02-26' });
+  const [date] = useState({ start: '2022-02-26', end: '2022-03-09' });
 
   useEffect(() => {
     if (date.start === date.end) {
@@ -23,16 +25,25 @@ function LineChart() {
       setDataList(avgHeartData(data136, date.start, date.end));
     }
   }, [date.end, date.start]);
+  console.log(dataList);
 
   return (
     <div className={styles.container}>
-      {/*  eslint-disable-next-line react/jsx-props-no-spreading */}
-      <VictoryChart theme={VictoryTheme.material} {...options}>
+      <VictoryChart
+        theme={VictoryTheme.material}
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        {...options}
+        containerComponent={
+          <VictoryVoronoiContainer
+            labels={({ datum }) => `${datum.crt_ymdt}: ${datum.avg_beat}`}
+          />
+        }
+      >
         <VictoryAxis
           style={axisStyle}
           tickValues={dataList}
           tickFormat={(datum, index) => {
-            if (dataList.length < 21) return datum;
+            if (dataList.length < 10) return datum;
             if (index % 5 !== (dataList.length - 1) % 5) return '';
             return datum;
           }}
@@ -51,7 +62,8 @@ function LineChart() {
           }}
           data={dataList}
           x={(datum) => datum.crt_ymdt}
-          y={(datum) => `${datum.avg_beat}bpm`}
+          y={(datum) => datum.avg_beat}
+          labelComponent={<VictoryTooltip />}
         />
       </VictoryChart>
     </div>
