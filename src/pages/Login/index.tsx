@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import cx from 'classnames';
 import store from 'store';
 import { useNavigate } from 'react-router-dom';
+import dayjs from 'dayjs';
 import styles from './login.module.scss';
 import { loginData } from './loginData.js';
 
@@ -34,7 +35,10 @@ function Login() {
     else if (loginData.pw !== pw) setAlert('일치하지 않는 패스워드입니다.');
     else {
       setAlert('로그인에 성공하였습니다.');
-      store.set('isLogin', true);
+
+      const obj = { isLogin: true, expire: Date.now() + 3000 * 60 * 60 };
+
+      store.set('loginData', obj);
       navigate('/', { replace: true });
     }
 
@@ -51,7 +55,9 @@ function Login() {
   }, [setFocus]);
 
   useEffect(() => {
-    store.set('isLogin', false);
+    const obj = { isLogin: false };
+
+    store.set('loginData', obj);
   }, []);
 
   return (
