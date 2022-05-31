@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { LogoIcon, OpenEyeIcon, CloseEyeIcon } from 'assets/svgs/index';
 import { useEffect, useState } from 'react';
 import cx from 'classnames';
+import store from 'store';
 import { useNavigate } from 'react-router-dom';
 import styles from './login.module.scss';
 import { loginData } from './loginData.js';
@@ -34,6 +35,7 @@ function Login() {
     else {
       setAlert('로그인에 성공하였습니다.');
       store.set('isLogin', true);
+      navigate('/', { replace: true });
     }
 
     setIsAlertVisible(true);
@@ -47,6 +49,10 @@ function Login() {
   useEffect(() => {
     setFocus('id');
   }, [setFocus]);
+
+  useEffect(() => {
+    store.set('isLogin', false);
+  }, []);
 
   return (
     <div className={styles.wrap}>
