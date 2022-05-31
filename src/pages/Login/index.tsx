@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { LogoIcon, OpenEyeIcon, CloseEyeIcon } from 'assets/svgs/index';
 import { useEffect, useState } from 'react';
 import cx from 'classnames';
+import { useNavigate } from 'react-router-dom';
 import styles from './login.module.scss';
 import { loginData } from './loginData.js';
 
@@ -12,6 +13,8 @@ interface FormInput {
 }
 
 function Login() {
+  const navigate = useNavigate();
+
   const [isVisible, setIsVisible] = useState(false);
   const [alert, setAlert] = useState('');
   const [isAlertVisible, setIsAlertVisible] = useState(false);
@@ -30,6 +33,7 @@ function Login() {
     else if (loginData.pw !== pw) setAlert('일치하지 않는 패스워드입니다.');
     else {
       setAlert('로그인에 성공하였습니다.');
+      store.set('isLogin', true);
     }
 
     setIsAlertVisible(true);
