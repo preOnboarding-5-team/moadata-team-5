@@ -69,10 +69,9 @@ function SearchForm({
       setFilterData(filteredUserData);
     } else if (searchDataState.userId || searchDataState.userNumber) {
       const filteredUserData = userData.filter((data) => {
-        return (
-          data.loginId.includes(searchDataState.userId) &&
-          String(data.id).includes(searchDataState.userNumber)
-        );
+        return searchDataState.userId
+          ? data.loginId.includes(searchDataState.userId)
+          : String(data.id).includes(searchDataState.userNumber);
       });
       setFilterData(filteredUserData);
     }
