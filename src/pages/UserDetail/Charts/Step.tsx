@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { Button } from 'components/common/Button';
 import DatePicker from 'components/common/DatePicker';
 import styles from './charts.module.scss';
+import StepChart from './StepChart';
 
 function Step() {
   const [startDate, setStartDate] = useState<Date>(new Date(2022, 1, 26));
@@ -17,7 +18,9 @@ function Step() {
       <header className={styles.chartHeader}>
         <h2 className={styles.chartTitle}>걸음수</h2>
       </header>
-      <div className={styles.chart} />
+      <div className={styles.chart}>
+        <StepChart startDate={startDate} endDate={endDate} />
+      </div>
       <div className={styles.label}>
         <time dateTime="2022-04-20">
           {dayjs('2022-04-20').format('YY-MM-DD')}

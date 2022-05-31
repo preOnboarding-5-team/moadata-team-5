@@ -1,16 +1,24 @@
+import dayjs from 'dayjs';
 import { VictoryAxis, VictoryBar, VictoryChart, VictoryTooltip } from 'victory';
 import ConvertData from './convertData';
 
-function StepChart() {
-  const stepData = ConvertData('2022-03-08', '2022-03-08');
+interface Props {
+  startDate: Date;
+  endDate: Date;
+}
+
+function StepChart({ startDate, endDate }: Props) {
+  const start = dayjs(startDate).format('YYYY-MM-DD');
+  const end = dayjs(endDate).format('YYYY-MM-DD');
+  const stepData = ConvertData(start, end);
   const style = {
     ticks: {
-      stroke: 'red',
-      size: 5,
+      stroke: 'grey',
+      size: 3,
     },
     tickLabels: {
       fill: 'black',
-      fontSize: 5,
+      fontSize: 8,
     },
   };
   return (
@@ -21,7 +29,7 @@ function StepChart() {
           duration: 2000,
           onLoad: { duration: 1000 },
         }}
-        height={350}
+        height={400}
         width={600}
       >
         <VictoryAxis
@@ -44,8 +52,14 @@ function StepChart() {
           data={stepData}
           x="crt_ymdt"
           y="steps"
-          labels={({ datum }) => `${datum.crt_ymdt} : ${datum.steps}보`}
-          labelComponent={<VictoryTooltip />}
+          labels={({ datum }) => `${datum.crt_ymdt} \n ${datum.steps}보`}
+          labelComponent={
+            <VictoryTooltip
+              flyoutStyle={{ fill: 'white' }}
+              flyoutWidth={100}
+              cornerRadius={10}
+            />
+          }
         />
       </VictoryChart>
     </div>
