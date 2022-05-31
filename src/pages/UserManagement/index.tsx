@@ -1,6 +1,6 @@
 import { useRecoilValue } from 'recoil';
 import { useEffect, useState } from 'react';
-import { userDataList } from './states/atom';
+import { userDataList } from 'states/Atoms';
 
 import SearchForm from './SearchForm';
 import styles from './styles.module.scss';
@@ -14,6 +14,7 @@ function UserManagement() {
     prevDate: '',
     nextDate: '',
   });
+
   const [isNothing, setIsNothing] = useState(false);
 
   const userList = filterData.map((user) => {
