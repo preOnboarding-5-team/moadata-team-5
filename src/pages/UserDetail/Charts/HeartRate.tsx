@@ -1,9 +1,18 @@
 import dayjs from 'dayjs';
+import { useEffect, useState } from 'react';
 
 import { Button } from 'components/common/Button';
+import DatePicker from 'components/common/DatePicker';
 import styles from './charts.module.scss';
 
 function HeartRate() {
+  const [startDate, setStartDate] = useState<Date>(new Date(2022, 1, 26));
+  const [endDate, setEndDate] = useState<Date>(new Date(2022, 3, 20));
+
+  useEffect(() => {
+    console.log(startDate, endDate);
+  }, [endDate, startDate]);
+
   return (
     <li className={styles.chartWrapper}>
       <header className={styles.chartHeader}>
@@ -16,7 +25,16 @@ function HeartRate() {
         </time>
         <span>평균 82 bpm</span>
       </div>
-      <form className={styles.datePickerWrapper}>조회 기간</form>
+      <div className={styles.datePickerWrapper}>
+        <DatePicker
+          startDate={startDate}
+          setStartDate={setStartDate}
+          endDate={endDate}
+          setEndDate={setEndDate}
+          minDate={new Date(2022, 1, 26)}
+          maxDate={new Date(2022, 3, 20)}
+        />
+      </div>
       <div className={styles.buttonWrapper}>
         <Button size="short">오늘</Button>
         <Button size="short">1주일</Button>
