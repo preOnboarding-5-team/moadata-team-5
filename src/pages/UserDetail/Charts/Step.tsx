@@ -1,17 +1,18 @@
 import dayjs from 'dayjs';
 import { useEffect, useState } from 'react';
 
-import { Button } from 'components/common/Button';
+import Button from 'components/common/Button';
 import DatePicker from 'components/common/DatePicker';
 import styles from './charts.module.scss';
 
 function Step() {
-  const [startDate, setStartDate] = useState<Date>(new Date(2022, 1, 26));
-  const [endDate, setEndDate] = useState<Date>(new Date(2022, 3, 20));
+  const [startDate, setStartDate] = useState<string>('2022-02-26');
+  const [endDate, setEndDate] = useState<string>('2022-04-20');
 
   useEffect(() => {
     console.log(startDate, endDate);
   }, [endDate, startDate]);
+
   return (
     <li className={styles.chartWrapper}>
       <header className={styles.chartHeader}>

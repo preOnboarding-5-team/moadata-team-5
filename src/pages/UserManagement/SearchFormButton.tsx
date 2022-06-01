@@ -1,4 +1,4 @@
-import { Button } from 'components/common/Button';
+import Button from 'components/common/Button';
 import { Dispatch, SetStateAction } from 'react';
 import { useRecoilValue } from 'recoil';
 import { userDataList } from 'states/Atoms';
