@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, ComponentProps } from 'react';
 import cx from 'classnames';
 
 import styles from './button.module.scss';
@@ -11,12 +11,12 @@ interface Props {
   onClick?: () => void;
 }
 
-export function Button({ children, size, type, onClick, className }: Props) {
+export function Button({ children, size, type, className, onClick }: Props) {
   return (
     <button
       type={type === 'submit' ? 'submit' : 'button'}
-      className={cx(styles.button, styles[size], className)}
       onClick={onClick}
+      className={cx(styles.button, styles[size], className)}
     >
       {children}
     </button>
