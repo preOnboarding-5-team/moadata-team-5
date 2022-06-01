@@ -1,7 +1,6 @@
 @use 'src/styles/constants/colors';
 
 .button {
-  line-height: 40px;
   color: colors.$gray-50;
   background-color: colors.$primary;
   border-radius: 8px;
@@ -18,11 +17,12 @@
 
   &.short {
     min-width: 60px;
-    padding: 0 10px;
-    font-size: 14px;
+    padding: 8px;
+    font-size: 16px;
   }
 
   &.long {
+    min-width: 72px;
     padding: 8px;
     font-size: 16px;
   }

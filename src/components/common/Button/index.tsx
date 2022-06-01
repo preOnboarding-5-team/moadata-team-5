@@ -21,8 +21,8 @@ export default function Button({
   return (
     <button
       type={type === 'submit' ? 'submit' : 'button'}
-      className={cx(styles.button, styles[size], className)}
       onClick={onClick}
+      className={cx(styles.button, styles[size], className)}
     >
       {children}
     </button>
