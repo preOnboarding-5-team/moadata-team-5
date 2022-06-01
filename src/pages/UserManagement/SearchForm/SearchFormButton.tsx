@@ -3,7 +3,7 @@ import { Dispatch, SetStateAction } from 'react';
 import { useRecoilValue } from 'recoil';
 import { userDataList } from 'states/Atoms';
 
-import styles from './userManagement.module.scss';
+import styles from './searchForm.module.scss';
 
 interface Props {
   setFocusState: Dispatch<SetStateAction<boolean>>;

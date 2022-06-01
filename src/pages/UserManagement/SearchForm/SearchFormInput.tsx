@@ -1,4 +1,3 @@
-import { Button } from 'components/common/Button';
 import {
   ChangeEvent,
   Dispatch,
@@ -7,7 +6,8 @@ import {
   useRef,
 } from 'react';
 
-import styles from './userManagement.module.scss';
+import { Button } from 'components/common/Button';
+import styles from './searchForm.module.scss';
 
 interface Props {
   focusState: boolean;

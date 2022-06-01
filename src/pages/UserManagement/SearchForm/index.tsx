@@ -4,7 +4,7 @@ import { userDataList } from 'states/Atoms';
 
 import SearchFormButton from './SearchFormButton';
 import SearchFormInput from './SearchFormInput';
-import styles from './userManagement.module.scss';
+import styles from './searchForm.module.scss';
 
 interface Props {
   setFilterData: Dispatch<SetStateAction<UserInfo[]>>;
@@ -48,18 +48,26 @@ function SearchForm({
   };
 
   return (
-    <form className={styles.searchSectionForm} onSubmit={onSubmitSearchButton}>
-      <SearchFormInput
-        focusState={focusState}
-        searchDataState={searchDataState}
-        setSearchDataState={setSearchDataState}
-      />
-      <SearchFormButton
-        setFocusState={setFocusState}
-        setFilterData={setFilterData}
-        setSearchDataState={setSearchDataState}
-      />
-    </form>
+    <section className={styles.searchSection}>
+      <header className={styles.title}>
+        <h3 className={styles.titleText}>회원 검색</h3>
+      </header>
+      <form
+        className={styles.searchSectionForm}
+        onSubmit={onSubmitSearchButton}
+      >
+        <SearchFormInput
+          focusState={focusState}
+          searchDataState={searchDataState}
+          setSearchDataState={setSearchDataState}
+        />
+        <SearchFormButton
+          setFocusState={setFocusState}
+          setFilterData={setFilterData}
+          setSearchDataState={setSearchDataState}
+        />
+      </form>
+    </section>
   );
 }
 

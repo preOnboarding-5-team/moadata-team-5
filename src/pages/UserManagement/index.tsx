@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 import { userDataList } from 'states/Atoms';
 
 import SearchForm from './SearchForm';
-import styles from './userManagement.module.scss';
 import SearchResult from './SearchResult';
+import styles from './userManagement.module.scss';
 
 function UserManagement() {
   const userData = useRecoilValue(userDataList);
@@ -35,16 +35,11 @@ function UserManagement() {
       <header className={styles.managementTitle}>
         <h2 className={styles.managementText}>회원 관리</h2>
       </header>
-      <section className={styles.searchSection}>
-        <header className={styles.title}>
-          <h3 className={styles.titleText}>회원 검색</h3>
-        </header>
-        <SearchForm
-          setFilterData={setFilterData}
-          searchDataState={searchDataState}
-          setSearchDataState={setSearchDataState}
-        />
-      </section>
+      <SearchForm
+        setFilterData={setFilterData}
+        searchDataState={searchDataState}
+        setSearchDataState={setSearchDataState}
+      />
       <SearchResult />
     </div>
   );
