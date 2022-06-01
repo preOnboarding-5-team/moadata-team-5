@@ -1,124 +1,26 @@
-@use 'styles/constants/colors.scss';
+@use 'styles/constants/colors';
+@use 'styles/constants/dimensions';
+@use 'styles/mixins/responsive';
 
 .managementWrapper {
   box-sizing: border-box;
-  width: 100%;
-  padding: 20px 2%;
+  max-width: dimensions.$max-width;
+  padding: 1.25rem 2%;
   background: colors.$main-bg;
 
+  // @include responsive.after('xlg') {
+  //   padding-right: 19%;
+  // }
+
   .managementTitle {
-    padding: 20px 0;
-    font-size: 24px;
+    padding: 1.25rem 0;
+    font-size: 1.5rem;
     font-weight: bold;
   }
 
   .nothing {
-    margin-top: 150px;
+    margin-top: 9.375rem;
     color: colors.$gray-500;
     text-align: center;
   }
-
-  // .searchSection {
-  //   padding: 10px 0;
-
-  //   .searchSectionForm {
-  //     display: flex;
-  //     width: 100%;
-  //     margin: 20px 0;
-
-  //     .inputBox {
-  //       display: flex;
-  //       align-items: center;
-
-  //       .inputList {
-  //         display: flex;
-  //         padding: 0 10px;
-  //         margin-right: 24px;
-  //         font-size: 12px;
-  //         background: colors.$white;
-  //         border-radius: 16px;
-  //         box-shadow: 1px 1px 5px colors.$shadow;
-
-  //         dt {
-  //           width: 60px;
-  //           height: 32px;
-  //           padding: 0 4px;
-  //           line-height: 32px;
-  //           text-align: center;
-  //         }
-
-  //         dd {
-  //           width: 100px;
-  //           height: 32px;
-  //           line-height: 30px;
-
-  //           input {
-  //             width: 100%;
-  //             height: 32px;
-  //             padding: 0 8px;
-  //             font-size: 12px;
-  //             line-height: 32px;
-  //             text-align: center;
-  //             text-overflow: ellipsis;
-  //           }
-
-  //           &.searchDateDesc {
-  //             width: 220px;
-
-  //             input {
-  //               width: 45%;
-  //             }
-  //           }
-
-  //           &.datePicker {
-  //             display: flex;
-  //             align-items: center;
-  //             justify-content: space-between;
-  //             width: 140px;
-
-  //             .today,
-  //             .week,
-  //             .allday {
-  //               min-width: 40px;
-  //               height: 24px;
-  //               margin-left: 0;
-  //               font-size: 10px;
-  //               line-height: 24px;
-
-  //               // &:first-of-type {
-  //               // }
-
-  //               &:hover {
-  //                 border-bottom: 1px solid colors.$primary-hover;
-  //                 transform: scale(0.95);
-  //               }
-  //             }
-  //           }
-  //         }
-  //       }
-  //     }
-
-  //     .buttonBox {
-  //       .searchButton,
-  //       .resetFilterButton {
-  //         padding: 6px 16px;
-  //         color: colors.$white;
-  //         background: colors.$primary;
-  //         border-radius: 16px;
-  //         box-shadow: 1px 1px 5px colors.$shadow;
-  //         transition: all 0.2s ease;
-
-  //         &:last-of-type {
-  //           margin-left: 16px;
-  //         }
-
-  //         &:hover {
-  //           color: colors.$white;
-  //           background: colors.$primary-hover;
-  //           transform: scale(0.95);
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
 }

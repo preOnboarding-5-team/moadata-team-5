@@ -6,22 +6,22 @@
   align-items: center;
 
   .tilde {
-    margin: 0 8px;
+    margin: 0 .5rem;
   }
 
   .react-datepicker-wrapper {
     width: inherit;
-    padding: 8px;
+    padding: .5rem;
     cursor: pointer;
     background: colors.$white;
-    border-radius: 8px;
-    box-shadow: 0 0 3px colors.$primary;
+    border-radius: .5rem;
+    box-shadow: 0 0 .1875rem colors.$primary;
 
     .react-datepicker__input-container {
       width: inherit;
 
       input {
-        width: 83px;
+        width: 5.1875rem;
         color: colors.$gray-900;
         text-align: center;
         cursor: pointer;
@@ -40,8 +40,8 @@
   .react-datepicker {
     color: colors.$gray-900;
     border: 0;
-    border-radius: 8px;
-    box-shadow: 0 0 3px colors.$primary;
+    border-radius: .5rem;
+    box-shadow: 0 0 .1875rem colors.$primary;
 
     &__header {
       background: colors.$primary;
@@ -57,18 +57,18 @@
     }
 
     &__month {
-      padding: 0.4rem;
+      padding: 6.4px;
       margin: 0;
 
       // background: colors.$gray-100;
-      border: 1px solid colors.$primary;
+      border: .0625rem solid colors.$primary;
       border-top: 0;
-      border-radius: 0 0 8px 8px;
+      border-radius: 0 0 .5rem .5rem;
     }
   }
 }
 
 .submitButton {
-  margin-left: 16px;
-  box-shadow: 0 0 3px colors.$primary;
+  margin-left: 1rem;
+  box-shadow: 0 0 .1875rem colors.$primary;
 }

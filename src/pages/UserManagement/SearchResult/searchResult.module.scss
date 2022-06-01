@@ -1,11 +1,11 @@
 @use "styles/constants/colors";
 
-$item-height: 50px;
+$item-height: 3.125rem;
 
 .wrapper {
   width: 100%;
-  margin: 50px auto;
-  font-size: 14px; // TODO
+  margin: 3.125rem auto;
+  font-size: .875rem; // TODO
   
   .numResultNotf {
     position: relative;
@@ -19,8 +19,8 @@ $item-height: 50px;
 
   .listWrapper {
     width: 100%;
-    margin: 30px auto 0;
-    border-radius: 10px;
+    margin: 1.875rem auto 0;
+    border-radius: .625rem;
     animation: show 500ms;
 
     .id {
@@ -40,9 +40,9 @@ $item-height: 50px;
       flex-direction: row;
       align-items: flex-end;
       justify-content: space-between;
-      height: 30px;
-      padding: 0 15px;
-      line-height: 30px;
+      height: 1.875rem;
+      padding: 0 .9375rem;
+      line-height: 1.875rem;
       
       .header {
         position: relative;
@@ -66,7 +66,7 @@ $item-height: 50px;
       
       
       .dummyHeader {
-        width: 40px;
+        width: 2.5rem;
       }
     }
 
@@ -79,12 +79,12 @@ $item-height: 50px;
         align-items: center;
         justify-content: space-between;
         height: $item-height;
-        padding: 0 15px;
-        margin: 8px 0;
+        padding: 0 .9375rem;
+        margin: .5rem 0;
         line-height: $item-height;
         background-color: colors.$gray-50;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgb(0 0 0 / 4%);
+        border-radius: .625rem;
+        box-shadow: 0 .25rem .5rem rgb(0 0 0 / 4%);
         animation: show 300ms;
 
         .itemCell {
@@ -95,11 +95,12 @@ $item-height: 50px;
   }
 
   .detailButton {
-    width: 40px;
-    padding: 7px;
+    width: 2.5rem;
+    padding: .4375rem;
+    font-size: .8125rem;
     color: colors.$gray-50;
     background-color: colors.$primary;
-    border-radius: 10px;
+    border-radius: .625rem;
     transition: 200ms;
 
     &:hover {
@@ -110,7 +111,7 @@ $item-height: 50px;
 
 @keyframes show {
   from {
-    top: -10px;
+    top: -0.625rem;
     opacity: 0;
   }
 

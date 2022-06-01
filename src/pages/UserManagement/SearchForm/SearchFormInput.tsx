@@ -1,32 +1,16 @@
-import {
-  ChangeEvent,
-  KeyboardEvent,
-  Dispatch,
-  SetStateAction,
-  useEffect,
-  useRef,
-} from 'react';
-
-import { Button } from 'components/common/Button';
+import { ChangeEvent, KeyboardEvent, useEffect, useRef } from 'react';
 import { useRecoilValue, useRecoilState, useSetRecoilState } from 'recoil';
 import { userFilterOptions } from 'states/userFilterOptions';
 import { userDataList } from 'states/userDataList';
 import { userSearchResult } from 'states/userSearchResult';
+import { Button } from 'components/common/Button';
 import styles from './searchForm.module.scss';
 
 interface Props {
-  setFocusState: Dispatch<SetStateAction<boolean>>;
   focusState: boolean;
-  // searchDataState: UserFilterOptions;
-  // setSearchDataState: Dispatch<SetStateAction<UserFilterOptions>>;
 }
 
-function SearchFormInput({
-  // searchDataState,
-  // setSearchDataState,
-  setFocusState,
-  focusState,
-}: Props) {
+function SearchFormInput({ focusState }: Props) {
   const userData = useRecoilValue(userDataList);
   const setSearchResult = useSetRecoilState(userSearchResult);
   const [filterOptions, setFilterOptions] = useRecoilState(userFilterOptions);
@@ -35,17 +19,6 @@ function SearchFormInput({
   useEffect(() => {
     inputRef.current?.focus();
   }, [focusState]);
-
-  // useEffect(() => {
-  //   const onFocusInput = () => {
-  //     setFocusState(true);
-  //   }
-  //   const onBlurInput = () => {
-  //     setFocusState(true);
-  //   }
-  //   inputRef.current?.addEventListener('focus', onFocusInput);
-  //   inputRef.current?.addEventListener('blur', onBlurInput);
-  // })
 
   const onSubmitByEnter = (e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key !== 'Enter') return;
@@ -75,35 +48,37 @@ function SearchFormInput({
 
   return (
     <dl className={styles.inputBox}>
-      <div className={styles.inputList}>
-        <dt className={styles.loginIdLabel}>로그인ID :</dt>
-        <dd className={styles.loginIdDesc}>
-          <input
-            name="loginId"
-            type="text"
-            placeholder="전체"
-            onChange={onChangeInput}
-            value={filterOptions.loginId}
-            ref={inputRef}
-            onKeyDown={onSubmitByEnter}
-          />
-        </dd>
+      <div className={styles.idInputs}>
+        <div className={styles.inputList}>
+          <dt className={styles.loginIdLabel}>로그인ID</dt>
+          <dd className={styles.loginIdDesc}>
+            <input
+              name="loginId"
+              type="text"
+              placeholder="전체"
+              onChange={onChangeInput}
+              value={filterOptions.loginId}
+              ref={inputRef}
+              onKeyDown={onSubmitByEnter}
+            />
+          </dd>
+        </div>
+        <div className={styles.inputList}>
+          <dt className={styles.loginNumberLabel}>회원번호</dt>
+          <dd className={styles.loginNumberDesc}>
+            <input
+              name="id"
+              type="number"
+              placeholder="전체"
+              onChange={onChangeInput}
+              value={filterOptions.id}
+              onKeyDown={onSubmitByEnter}
+            />
+          </dd>
+        </div>
       </div>
       <div className={styles.inputList}>
-        <dt className={styles.loginNumberLabel}>회원번호 :</dt>
-        <dd className={styles.loginNumberDesc}>
-          <input
-            name="id"
-            type="number"
-            placeholder="전체"
-            onChange={onChangeInput}
-            value={filterOptions.id}
-            onKeyDown={onSubmitByEnter}
-          />
-        </dd>
-      </div>
-      <div className={styles.inputList}>
-        <dt className={styles.searchDateLabel}>조회기간 :</dt>
+        <dt className={styles.searchDateLabel}>조회기간</dt>
         <dd className={styles.searchDateDesc}>
           <input
             name="prevDate"

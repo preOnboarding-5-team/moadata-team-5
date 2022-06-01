@@ -1,89 +1,134 @@
 @use 'styles/constants/colors';
+@use 'styles/mixins/responsive';
 
-  .searchSection {
+.searchSection {
+  width: 100%;
+  margin-top: .625rem;
+
+  .searchSectionForm {
+    display: block;
+    
+    @include responsive.after('lg') {
+    display: flex;
     width: 100%;
-    margin-top: 10px;
-
-    .searchSectionForm {
-      display: flex;
+    margin: 1.25rem 0;
+    }
+    @include responsive.after('xlg') {
       justify-content: space-between;
-      width: 100%;
-      margin: 20px 0;
 
-      .inputBox {
+    }
+
+    .inputBox {
+      @include responsive.after('xlg') {
         display: flex;
         align-items: center;
+      }
 
-        .inputList {
-          display: flex;
-          padding: 0 10px;
-          margin-right: 12px;
-          font-size: 12px;
-          background: colors.$white;
-          border-radius: 16px;
-          box-shadow: 1px 1px 5px colors.$shadow;
+      .idInputs {
+        display: flex;
+      }
 
-          dt {
-            width: 60px;
-            height: 32px;
-            padding: 0 4px;
-            line-height: 32px;
+      .inputList {
+        display: flex;
+        padding: 0 .625rem;
+        margin-right: 1rem;
+        margin-bottom: 10px;
+        font-size: .75rem;
+        background: colors.$white;
+        border-radius: 1rem;
+        box-shadow: .0625rem .0625rem .3125rem colors.$shadow;
+
+        @include responsive.after('lg') {
+          margin-bottom: 10px;
+        }
+        @include responsive.after('xlg') {
+          margin-bottom: 0;
+        }
+
+        dt {
+          min-width: 3.75rem;
+          height: 2rem;
+          padding: 0 .25rem;
+          line-height: 2rem;
+          text-align: center;
+        }
+
+        dd {
+          width: 100%;
+          height: 2rem;
+          line-height: 1.875rem;
+
+          input {
+            width: 100%;
+            height: 2rem;
+            padding: 0 .5rem;
+            font-size: .75rem;
+            line-height: 2rem;
             text-align: center;
+            text-overflow: ellipsis;
           }
 
-          dd {
-            width: 100px;
-            height: 32px;
-            line-height: 30px;
+          &.searchDateDesc {
+            width: 13.75rem;
 
             input {
-              width: 100%;
-              height: 32px;
-              padding: 0 8px;
-              font-size: 12px;
-              line-height: 32px;
-              text-align: center;
-              text-overflow: ellipsis;
+              width: 45%;
             }
+          }
 
-            &.searchDateDesc {
-              width: 220px;
+          &.datePicker {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 8.75rem;
 
-              input {
-                width: 45%;
-              }
-            }
+            .today,
+            .week,
+            .allday {
+              min-width: 2.5rem;
+              height: 1.5rem;
+              padding: 0;
+              margin-left: 0;
+              font-size: .625rem;
+              line-height: 1.5rem;
 
-            &.datePicker {
-              display: flex;
-              align-items: center;
-              justify-content: space-between;
-              width: 140px;
-
-              .today,
-              .week,
-              .allday {
-                min-width: 40px;
-                height: 24px;
-                padding: 0;
-                margin-left: 0;
-                font-size: 10px;
-                line-height: 24px;
-
-                &:hover {
-                  border-bottom: 1px solid colors.$primary-hover;
-                  transform: scale(0.95);
-                }
+              &:hover {
+                border-bottom: .0625rem solid colors.$primary-hover;
+                transform: scale(0.95);
               }
             }
           }
         }
+
+        &:last-child {
+          margin-right: 1.25rem;
+        }
+      }
+    }
+
+    .buttonBox {
+
+      @include responsive.after('xsm') {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-left: 8%;
       }
 
-      .buttonBox {
-        .searchButton, .resetFilterButton {
-          font-size: 14px;
+      @include responsive.after('xlg') {
+        min-width: 8rem;
+        padding-left: 0;
+      }
+
+
+
+      .searchButton, .resetFilterButton {
+        font-size: .875rem;
+        
+        &.searchButton {
+          margin: .25rem;
         }
       }
     }
   }
+}

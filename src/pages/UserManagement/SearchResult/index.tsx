@@ -51,7 +51,7 @@ export default function SearchResult() {
           <div className={styles.dummyHeader} />
         </div>
         <ul className={styles.items}>
-          {serachResult.map(({ id, loginId, registerDate }, idx) => {
+          {serachResult.map(({ id, loginId, registerDate }) => {
             const key = `list-row-${id}`;
             return (
               <li key={key} className={styles.item}>

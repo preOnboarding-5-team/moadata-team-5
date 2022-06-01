@@ -9,16 +9,9 @@ import styles from './searchForm.module.scss';
 
 interface Props {
   setFocusState: Dispatch<SetStateAction<boolean>>;
-  // setFilterData: Dispatch<SetStateAction<UserInfo[]>>;
-  // setSearchDataState: Dispatch<SetStateAction<UserFilterOptions>>;
 }
 
-function SearchFormButton({
-  setFocusState,
-}: // setFilterData,
-// setSearchDataState,
-Props) {
-  // const userData = useRecoilValue(userDataList);
+function SearchFormButton({ setFocusState }: Props) {
   const userData = useRecoilValue(userDataList);
   const filterOptions = useRecoilValue(userFilterOptions);
   const setSearchResult = useSetRecoilState(userSearchResult);
@@ -45,15 +38,6 @@ Props) {
     setFocusState((prev) => !prev);
     resetSearchResult();
     resetFilterOptions();
-
-    // setFilterData(userData);
-    // setSearchDataState((prev) => ({
-    //   ...prev,
-    //   userId: '',
-    //   userNumber: '',
-    //   prevDate: '',
-    //   nextDate: '',
-    // }));
   };
 
   return (
@@ -70,7 +54,7 @@ Props) {
         onClick={onClickResetButton}
         className={styles.resetFilterButton}
       >
-        필터 초기화
+        초기화
       </Button>
     </div>
   );
