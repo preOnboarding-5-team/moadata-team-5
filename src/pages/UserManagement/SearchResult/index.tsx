@@ -1,8 +1,8 @@
 import type { MouseEvent } from 'react';
 import { useRecoilValue } from 'recoil';
 import cx from 'classnames';
-import { useTableHeader } from 'pages/Dashboard/_hooks/useTableHeader';
-import { searchResultAtom } from '../../_states/searchResult';
+import { useTableHeader } from '../_hooks/useTableHeader';
+import { searchResultAtom } from '../_states/searchResult';
 import styles from './searchResult.module.scss';
 import Header from './Header';
 
@@ -57,7 +57,7 @@ export default function SearchResult() {
             onClick={onClickHeader}
           />
           <Header
-            dataKey="loginID"
+            dataKey="loginId"
             title="로그인ID"
             sortKey={sortKey}
             sortDir={sortDir}
@@ -66,7 +66,7 @@ export default function SearchResult() {
           <div className={styles.dummyHeader} />
         </div>
         <ul className={styles.items}>
-          {searchResult.map(({ id, loginID, registerDate }, idx) => {
+          {searchResult.map(({ id, loginId, registerDate }, idx) => {
             const key = `list-row-${id}`;
             return (
               <li
@@ -79,7 +79,7 @@ export default function SearchResult() {
                   {registerDate}
                 </div>
                 <div className={cx(styles.itemCell, styles.loginID)}>
-                  {loginID}
+                  {loginId}
                 </div>
                 <div className={cx(styles.itemCell, styles.detail)}>
                   <button className={styles.detailButton} type="button">

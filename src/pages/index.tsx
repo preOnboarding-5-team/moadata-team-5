@@ -1,13 +1,26 @@
-import { RecoilRoot } from 'recoil';
-import styles from './app.module.scss';
+import { Route, Routes } from 'react-router-dom';
+
+import AdminLayout from 'layouts/AdminLayout';
+import Login from './Login';
+import UserDetail from './UserDetail';
+import UserManagement from './UserManagement';
+
 import Dashboard from './Dashboard';
+import styles from './app.module.scss';
 
 function App() {
   return (
-    <RecoilRoot>
-      <div className={styles.app}>Usually Router</div>
-      <Dashboard />
-    </RecoilRoot>
+    <div className={styles.app}>
+      <Routes>
+        <Route path="login" element={<Login />} />
+        <Route element={<AdminLayout />}>
+          <Route index element={<Dashboard />} />
+          <Route path="usermanagement" element={<UserManagement />} />
+          <Route path="usermanagement/:userId" element={<UserDetail />} />
+        </Route>
+        <Route path="*" element={<div>Not Found</div>} />
+      </Routes>
+    </div>
   );
 }
 

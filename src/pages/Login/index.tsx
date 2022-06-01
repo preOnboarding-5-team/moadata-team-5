@@ -1,8 +1,7 @@
 import styles from './login.module.scss';
 
 function Login() {
-  return <div />;
+  return <div>Login</div>;
 }
 
 export default Login;
-export {};

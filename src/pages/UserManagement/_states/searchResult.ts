@@ -4,20 +4,17 @@ const DUMMY: UserInfo[] = [
   {
     id: 1,
     registerDate: '2022-02-01',
-    loginID: 'abcdefghijkl',
-    password: '',
+    loginId: 'abcdefghijkl',
   },
   {
     id: 2,
     registerDate: '2022-03-01',
-    loginID: 'yourid',
-    password: '',
+    loginId: 'yourid',
   },
   {
     id: 3,
     registerDate: '2022-04-01',
-    loginID: 'myid',
-    password: '',
+    loginId: 'myid',
   },
 ];
 
