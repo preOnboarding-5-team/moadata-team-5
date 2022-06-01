@@ -1,4 +1,4 @@
-import { ReactNode, ComponentProps } from 'react';
+import type { ReactNode, MouseEventHandler } from 'react';
 import cx from 'classnames';
 
 import styles from './button.module.scss';
@@ -6,7 +6,7 @@ import styles from './button.module.scss';
 interface Props {
   children: ReactNode;
   size: 'long' | 'short';
-  onClick?: ComponentProps<'button'>['onClick'];
+  onClick?: MouseEventHandler<HTMLButtonElement>;
   className?: string;
   submit?: boolean;
 }
