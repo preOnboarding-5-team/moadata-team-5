@@ -2,6 +2,7 @@ import { ko } from 'date-fns/locale';
 import { KeyboardEvent, useState } from 'react';
 import ReactDatePicker from 'react-datepicker';
 
+import { Button } from '../Button';
 import 'react-datepicker/src/stylesheets/datepicker.scss';
 import './datePicker.scss';
 
@@ -76,9 +77,9 @@ function DatePicker({
         maxDate={maxDate}
         locale={ko}
       />
-      <button type="button" onClick={onSetDateClick} className="submitButton">
+      <Button size="long" onClick={onSetDateClick} className="submitButton">
         조회하기
-      </button>
+      </Button>
     </div>
   );
 }
