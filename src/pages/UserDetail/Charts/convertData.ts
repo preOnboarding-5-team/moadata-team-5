@@ -1,4 +1,5 @@
-import { StepData0226, StepData0308, StepData0419 } from 'data';
+import { allStepData } from 'data';
+import { useParams } from 'react-router-dom';
 
 function getDatesStartToLast(start: string, end: string) {
   const result = [];
@@ -11,8 +12,19 @@ function getDatesStartToLast(start: string, end: string) {
 }
 
 function ConvertData(startDate: string, endDate: string) {
-  const totalData = [...StepData0226, ...StepData0308, ...StepData0419];
+  const userSeq = Number(useParams().userId);
+  const totalData = allStepData.filter((data) => data.member_seq === userSeq);
   if (startDate === endDate) {
+    if (
+      totalData.filter((item) => item.crt_ymdt.split(' ')[0] === startDate)
+        .length === 0
+    )
+      return [
+        {
+          steps: 0,
+          crt_ymdt: startDate,
+        },
+      ];
     return totalData
       .filter((item) => item.crt_ymdt.split(' ')[0] === startDate)
       .sort((a, b) => a.seq - b.seq)
