@@ -1,14 +1,14 @@
 import { Button } from 'components/common/Button';
 import { Dispatch, SetStateAction } from 'react';
 import { useRecoilValue } from 'recoil';
-import { userDataList } from 'states/Atoms';
+import { userDataList } from 'states/userDataList';
 
 import styles from './searchForm.module.scss';
 
 interface Props {
   setFocusState: Dispatch<SetStateAction<boolean>>;
   setFilterData: Dispatch<SetStateAction<UserInfo[]>>;
-  setSearchDataState: Dispatch<SetStateAction<UserDataType>>;
+  setSearchDataState: Dispatch<SetStateAction<UserSearchForm>>;
 }
 
 function SearchFormButton({
@@ -32,10 +32,14 @@ function SearchFormButton({
 
   return (
     <div className={styles.buttonBox}>
-      <Button submit size="short">
+      <Button size="short" className={styles.searchButton}>
         검색
       </Button>
-      <Button submit size="short" onClick={onClickResetButton}>
+      <Button
+        size="short"
+        onClick={onClickResetButton}
+        className={styles.resetFilterButton}
+      >
         필터 초기화
       </Button>
     </div>

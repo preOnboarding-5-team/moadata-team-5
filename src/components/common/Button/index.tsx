@@ -8,13 +8,12 @@ interface Props {
   size: 'long' | 'short';
   onClick?: MouseEventHandler<HTMLButtonElement>;
   className?: string;
-  submit?: boolean;
 }
 
-export function Button({ children, size, onClick, className, submit }: Props) {
+export function Button({ children, size, onClick, className }: Props) {
   return (
     <button
-      type={submit ? 'submit' : 'button'}
+      type="button"
       onClick={onClick}
       className={cx(styles.button, styles[size], className)}
     >

@@ -11,8 +11,8 @@ import styles from './searchForm.module.scss';
 
 interface Props {
   focusState: boolean;
-  searchDataState: UserDataType;
-  setSearchDataState: Dispatch<SetStateAction<UserDataType>>;
+  searchDataState: UserSearchForm;
+  setSearchDataState: Dispatch<SetStateAction<UserSearchForm>>;
 }
 
 function SearchFormInput({
