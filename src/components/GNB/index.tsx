@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 
+import { Button } from 'components/common/Button';
 import styles from './gnb.module.scss';
 
 function GNB() {
@@ -15,9 +16,9 @@ function GNB() {
       <p className={styles.title}>백오피스</p>
       <div className={styles.adminInfo}>
         <p>moaadmin1</p>
-        <button type="button" onClick={onClick}>
+        <Button size="long" onClick={onClick}>
           로그아웃
-        </button>
+        </Button>
       </div>
     </div>
   );
