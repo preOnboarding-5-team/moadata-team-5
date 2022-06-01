@@ -6,14 +6,15 @@ import styles from './button.module.scss';
 interface Props {
   children: ReactNode;
   size: 'long' | 'short';
-  onClick?: ComponentProps<'button'>['onClick'];
+  type?: string;
   className?: string;
+  onClick?: () => void;
 }
 
-export function Button({ children, size, onClick, className }: Props) {
+export function Button({ children, size, type, className, onClick }: Props) {
   return (
     <button
-      type="button"
+      type={type === 'submit' ? 'submit' : 'button'}
       onClick={onClick}
       className={cx(styles.button, styles[size], className)}
     >
