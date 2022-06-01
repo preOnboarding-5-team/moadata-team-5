@@ -5,7 +5,6 @@ import { useEffect, useState } from 'react';
 import cx from 'classnames';
 import store from 'store';
 import { useNavigate } from 'react-router-dom';
-import dayjs from 'dayjs';
 import styles from './login.module.scss';
 import { loginData } from './loginData.js';
 
@@ -34,8 +33,6 @@ function Login() {
     if (loginData.id !== id) setAlert('존재하지 않는 아이디입니다.');
     else if (loginData.pw !== pw) setAlert('일치하지 않는 패스워드입니다.');
     else {
-      setAlert('로그인에 성공하였습니다.');
-
       const obj = { isLogin: true, expire: Date.now() + 3000 * 60 * 60 };
 
       store.set('loginData', obj);
@@ -53,12 +50,6 @@ function Login() {
   useEffect(() => {
     setFocus('id');
   }, [setFocus]);
-
-  useEffect(() => {
-    const obj = { isLogin: false };
-
-    store.set('loginData', obj);
-  }, []);
 
   return (
     <div className={styles.wrap}>
