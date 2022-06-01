@@ -1,9 +1,9 @@
 import { KeyboardEvent, useEffect, useState } from 'react';
 import ReactDatePicker from 'react-datepicker';
-import dayjs from 'dayjs';
 import { ko } from 'date-fns/locale';
 import cx from 'classnames';
 
+import { formatDate } from 'utils/formatDate';
 import Button from 'components/common/Button';
 
 import 'react-datepicker/src/stylesheets/datepicker.scss';
@@ -19,8 +19,6 @@ type DatePickerProps = {
 };
 
 function DatePicker({
-  // 조회하기 버튼에 indicator
-  // YYYY-MM-DD 형태로 반환
   startDate,
   setStartDate,
   endDate,
@@ -48,12 +46,6 @@ function DatePicker({
       setStart(date);
     }
     setEnd(date);
-  };
-
-  const formatDate = (date: Date, format: string) => {
-    const formatted = dayjs(date).format(format);
-
-    return formatted;
   };
 
   const onSetDateClick = () => {

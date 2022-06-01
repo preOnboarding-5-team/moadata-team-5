@@ -12,6 +12,7 @@ function Step() {
   useEffect(() => {
     console.log(startDate, endDate);
   }, [endDate, startDate]);
+
   return (
     <li className={styles.chartWrapper}>
       <header className={styles.chartHeader}>
