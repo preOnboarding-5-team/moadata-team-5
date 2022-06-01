@@ -3,13 +3,19 @@
 .managementWrapper {
   box-sizing: border-box;
   width: 100%;
-  padding: 20px 5%;
+  padding: 20px 2%;
   background: colors.$main-bg;
 
   .managementTitle {
     padding: 20px 0;
     font-size: 24px;
     font-weight: bold;
+  }
+
+  .nothing {
+    margin-top: 150px;
+    color: colors.$gray-500;
+    text-align: center;
   }
 
   // .searchSection {

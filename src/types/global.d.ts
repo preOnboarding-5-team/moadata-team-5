@@ -1,12 +1,12 @@
 interface UserInfo {
   id: number;
-  registerDate: string;
   loginId: string;
+  registerDate: string;
 }
 
-interface UserDataType {
-  userId: string;
-  userNumber: string;
+interface UserFilterOptions {
+  id: string;
+  loginId: string;
   prevDate?: string;
   nextDate?: string;
 }

@@ -1,29 +1,14 @@
 import type { MouseEvent } from 'react';
-import { useRecoilValue } from 'recoil';
+import { Link } from 'react-router-dom';
 import cx from 'classnames';
-import { useTableHeader } from '../_hooks/useTableHeader';
-import { searchResultAtom } from '../_states/searchResult';
-import styles from './searchResult.module.scss';
-import Header from './Header';
 
-// const DATA_HEADER_LIST = [
-//   {
-//     dataKey: 'id',
-//     title: '회원번호',
-//   },
-//   {
-//     dataKey: 'registerDate',
-//     title: '가입일',
-//   },
-//   {
-//     dataKey: 'loginID',
-//     title: '로그인ID',
-//   },
-// ];
+import { useTableHeader } from '../_hooks/useTableHeader';
+import Header from './Header';
+import styles from './searchResult.module.scss';
 
 export default function SearchResult() {
-  const searchResult = useRecoilValue(searchResultAtom);
-  const { sortKey, sortDir, setSortKey, setSortDir } = useTableHeader();
+  const { sortKey, sortDir, setSortKey, setSortDir, serachResult } =
+    useTableHeader();
 
   const onClickHeader = (e: MouseEvent<HTMLElement>) => {
     const { key } = e.currentTarget.dataset;
@@ -36,9 +21,9 @@ export default function SearchResult() {
   };
 
   return (
-    <article className={styles.wrapper}>
+    <section className={styles.wrapper}>
       <p className={styles.numResultNotf}>
-        총 <mark>{searchResult.length}</mark> 명의 회원이 검색되었습니다.
+        총 <mark>{serachResult.length}</mark> 명의 회원이 검색되었습니다.
       </p>
       <div className={styles.listWrapper}>
         <div className={styles.headers}>
@@ -66,24 +51,20 @@ export default function SearchResult() {
           <div className={styles.dummyHeader} />
         </div>
         <ul className={styles.items}>
-          {searchResult.map(({ id, loginId, registerDate }, idx) => {
+          {serachResult.map(({ id, loginId, registerDate }, idx) => {
             const key = `list-row-${id}`;
             return (
-              <li
-                key={key}
-                className={styles.item}
-                style={{ animationDelay: `${100 * idx}ms` }}
-              >
+              <li key={key} className={styles.item}>
                 <div className={cx(styles.itemCell, styles.id)}>{id}</div>
                 <div className={cx(styles.itemCell, styles.registerDate)}>
                   {registerDate}
                 </div>
-                <div className={cx(styles.itemCell, styles.loginID)}>
+                <div className={cx(styles.itemCell, styles.loginId)}>
                   {loginId}
                 </div>
                 <div className={cx(styles.itemCell, styles.detail)}>
                   <button className={styles.detailButton} type="button">
-                    관리
+                    <Link to={`usermanagement:${id}`}>관리</Link>
                   </button>
                 </div>
               </li>
@@ -91,6 +72,6 @@ export default function SearchResult() {
           })}
         </ul>
       </div>
-    </article>
+    </section>
   );
 }

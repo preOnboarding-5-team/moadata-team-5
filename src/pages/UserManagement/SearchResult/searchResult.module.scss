@@ -4,13 +4,11 @@ $item-height: 50px;
 
 .wrapper {
   width: 100%;
-  padding: 30px;
-  margin: 0 auto;
+  margin: 50px auto;
   font-size: 14px; // TODO
   
   .numResultNotf {
     position: relative;
-    margin: 15px 30px;
     
     mark {
       all: unset;
@@ -20,21 +18,21 @@ $item-height: 50px;
   }
 
   .listWrapper {
-    width: 95%;
+    width: 100%;
     margin: 30px auto 0;
     border-radius: 10px;
     animation: show 500ms;
 
     .id {
-      min-width: 10%;
+      width: 10%;
     }
 
     .registerDate {
-      min-width: 30%;
+      width: 30%;
     }
 
-    .loginID {
-      min-width: 30%;
+    .loginId {
+      width: 30%;
     }
 
     .headers {
@@ -45,24 +43,36 @@ $item-height: 50px;
       height: 30px;
       padding: 0 15px;
       line-height: 30px;
-
+      
       .header {
+        position: relative;
         color: colors.$gray-500;
         text-align: center;
         cursor: pointer;
-      }
 
+        .sortDirIcon {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          margin: auto 0;
+        }
+      }
+      
       .sortKey {
         font-weight: 700;
         color: colors.$gray-900;
       }
 
+      
+      
       .dummyHeader {
         width: 40px;
       }
     }
 
     .items {
+      width: 100%;
+
       .item {
         position: relative;
         display: flex;
@@ -90,6 +100,11 @@ $item-height: 50px;
     color: colors.$gray-50;
     background-color: colors.$primary;
     border-radius: 10px;
+    transition: 200ms;
+
+    &:hover {
+      background-color: colors.$primary-hover;
+    }
   }
 }
 
@@ -104,4 +119,3 @@ $item-height: 50px;
     opacity: 1;
   }
 }
-

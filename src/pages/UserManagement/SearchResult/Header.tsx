@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import type { MouseEventHandler } from 'react';
 import cx from 'classnames';
-// import { ExpandMoreIcon, ExpandLessIcon } from 'assets/svgs';
+import { ArrowDropDownIcon, ArrowDropUpIcon } from 'assets/svgs';
 import styles from './searchResult.module.scss';
 
 interface HeaderProps {
@@ -19,11 +19,12 @@ export default function Header({
   sortDir,
   onClick,
 }: HeaderProps) {
-  // const sortDirIcon = useMemo(() => {
-  //   if (sortKey !== dataKey) return null;
-  //   if (sortDir === 1) return <ExpandMoreIcon className={styles.expandIcon} />;
-  //   return <ExpandLessIcon className={styles.expandIcon} />;
-  // }, [sortKey, sortDir, dataKey]);
+  const sortDirIcon = useMemo(() => {
+    if (sortKey !== dataKey) return null;
+    if (sortDir === 1)
+      return <ArrowDropDownIcon className={styles.sortDirIcon} />;
+    return <ArrowDropUpIcon className={styles.sortDirIcon} />;
+  }, [sortKey, sortDir, dataKey]);
 
   return (
     <div
@@ -35,7 +36,7 @@ export default function Header({
       onClick={onClick}
       data-key={dataKey}
     >
-      {title}
+      {title} {sortDirIcon}
     </div>
   );
 }
