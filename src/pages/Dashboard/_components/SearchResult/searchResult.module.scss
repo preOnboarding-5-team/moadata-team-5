@@ -1,0 +1,107 @@
+@use "styles/constants/colors";
+
+$item-height: 50px;
+
+.wrapper {
+  width: 80%;
+  padding: 30px;
+  margin: 0 auto;
+  font-size: 14px; // TODO
+  
+  .numResultNotf {
+    position: relative;
+    margin: 15px 30px;
+    
+    mark {
+      all: unset;
+      font-weight: 700;
+      color: colors.$primary;
+    }
+  }
+
+  .listWrapper {
+    width: 95%;
+    margin: 30px auto 0;
+    border-radius: 10px;
+    animation: show 500ms;
+
+    .id {
+      min-width: 10%;
+    }
+
+    .registerDate {
+      min-width: 30%;
+    }
+
+    .loginID {
+      min-width: 30%;
+    }
+
+    .headers {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: space-between;
+      height: 30px;
+      padding: 0 15px;
+      line-height: 30px;
+
+      .header {
+        color: colors.$gray-500;
+        text-align: center;
+        cursor: pointer;
+      }
+
+      .sortKey {
+        font-weight: 700;
+        color: colors.$gray-900;
+      }
+
+      .dummyHeader {
+        width: 40px;
+      }
+    }
+
+    .items {
+      .item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: $item-height;
+        padding: 0 15px;
+        margin: 8px 0;
+        line-height: $item-height;
+        background-color: colors.$gray-50;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgb(0 0 0 / 4%);
+        animation: show 300ms;
+
+        .itemCell {
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  .detailButton {
+    width: 40px;
+    padding: 7px;
+    color: colors.$gray-50;
+    background-color: colors.$primary;
+    border-radius: 10px;
+  }
+}
+
+@keyframes show {
+  from {
+    top: -10px;
+    opacity: 0;
+  }
+
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+

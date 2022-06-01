@@ -6,8 +6,6 @@ import { searchResultAtom } from '../../_states/searchResult';
 import styles from './searchResult.module.scss';
 import TableHeader from './TableHeader';
 
-const HEADER_TITLES = ['회원번호', '가입일', '로그인ID', '상세'];
-
 export default function SearchResult() {
   const searchResult = useRecoilValue(searchResultAtom);
   const { sortKey, sortDir, setSortKey, setSortDir } = useTableHeader();
@@ -41,8 +39,7 @@ export default function SearchResult() {
   return (
     <div className={styles.wrapper}>
       <p className={styles.numResult}>
-        전체 중 <strong>{searchResult.length}명</strong>의 회원이
-        검색되었습니다.
+        총 <strong>{searchResult.length}</strong> 명의 회원이 검색되었습니다.
       </p>
       <div className={styles.tableWrapper}>
         <table className={styles.table}>
@@ -69,7 +66,7 @@ export default function SearchResult() {
                 sortDir={sortDir}
                 onClick={onClickHeader}
               />
-              <th className={styles.detail}>상세</th>
+              <th className={styles.detail}> </th>
             </tr>
           </thead>
           <tbody>{rows}</tbody>
