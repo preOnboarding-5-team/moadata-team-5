@@ -11,7 +11,13 @@ interface Props {
   onClick?: () => void;
 }
 
-export function Button({ children, size, type, onClick, className }: Props) {
+export default function Button({
+  children,
+  size,
+  type,
+  onClick,
+  className,
+}: Props) {
   return (
     <button
       type={type === 'submit' ? 'submit' : 'button'}

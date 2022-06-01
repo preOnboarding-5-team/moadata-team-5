@@ -1,4 +1,4 @@
-@use '/src/styles/constants/colors';
+@use 'src/styles/constants/colors';
 
 .wrap {
   display: flex;
@@ -98,14 +98,8 @@
       }
 
       .loginButton {
-        padding: 15px;
         margin-top: 30px;
-        font-size: medium;
-        font-weight: bold;
-        color: colors.$gray-50;
         letter-spacing: 2px;
-        background-color: colors.$primary;
-        border-radius: 10px;
       }
     }
   }
