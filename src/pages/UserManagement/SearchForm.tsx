@@ -1,6 +1,6 @@
 import { Dispatch, FormEvent, SetStateAction, useState } from 'react';
 import { useRecoilValue } from 'recoil';
-import { userDataList } from 'states/Atoms';
+import { userDataList } from 'states';
 
 import SearchFormButton from './SearchFormButton';
 import SearchFormInput from './SearchFormInput';

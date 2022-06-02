@@ -1,6 +1,6 @@
 import { useRecoilValue } from 'recoil';
 import { useEffect, useState } from 'react';
-import { userDataList } from 'states/Atoms';
+import { userDataList } from 'states';
 
 import SearchForm from './SearchForm';
 import styles from './styles.module.scss';

@@ -1,7 +1,7 @@
 import Button from 'components/common/Button';
 import { Dispatch, SetStateAction } from 'react';
 import { useRecoilValue } from 'recoil';
-import { userDataList } from 'states/Atoms';
+import { userDataList } from 'states';
 
 import styles from './styles.module.scss';
 

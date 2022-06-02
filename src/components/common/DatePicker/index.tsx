@@ -99,6 +99,7 @@ function DatePicker({
         type="button"
         onClick={onSetDateClick}
         className={cx('submitButton', { indicate: indicator })}
+        disabled={!indicator}
       >
         조회하기
       </Button>
