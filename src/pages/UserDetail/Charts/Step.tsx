@@ -5,16 +5,19 @@ import Button from 'components/common/Button';
 import DatePicker from 'components/common/DatePicker';
 import { useParams } from 'react-router-dom';
 import { setAll, setToday, setWeek } from 'utils/setDates';
+import './datepicker.scss';
 import styles from './charts.module.scss';
 import StepChart from './StepChart';
 import ConvertData from './StepChart/convertData';
 
 function Step() {
-  const [startDate, setStartDate] = useState<string>('2022-02-26');
-  const [endDate, setEndDate] = useState<string>('2022-04-20');
-  const [totalSteps, setTotalSteps] = useState('0');
-
   const user = Number(useParams().userId);
+  const minDate = setAll(user, 'heart').start.crt_ymdt;
+  const maxDate = setAll(user, 'heart').end.crt_ymdt;
+
+  const [startDate, setStartDate] = useState<string>(minDate);
+  const [endDate, setEndDate] = useState<string>(maxDate);
+  const [totalSteps, setTotalSteps] = useState('0');
 
   const stepData = ConvertData(startDate, endDate, user);
 
@@ -39,7 +42,7 @@ function Step() {
     if (startDate === endDate) {
       setTotalSteps(
         stepData
-          .map((item) => item.steps)
+          .map((item) => item.y)
           .reduce((prev, curr) => (prev > curr ? prev : curr))
           .toString()
           .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',')
@@ -47,7 +50,7 @@ function Step() {
     } else {
       setTotalSteps(
         stepData
-          .map((item) => item.steps)
+          .map((item) => item.y)
           .reduce((prev, curr) => prev + curr, 0)
           .toString()
           .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',')
@@ -78,7 +81,7 @@ function Step() {
             </>
           )}
         </div>
-        <span>총 {totalSteps} 걸음</span>
+        <p>총 {totalSteps} 걸음</p>
       </div>
       <div className={styles.datePickerWrapper}>
         <DatePicker
@@ -86,8 +89,8 @@ function Step() {
           setStartDate={setStartDate}
           endDate={endDate}
           setEndDate={setEndDate}
-          minDate={new Date(2022, 1, 26)}
-          maxDate={new Date(2022, 3, 20)}
+          minDate={new Date(minDate)}
+          maxDate={new Date(maxDate)}
         />
       </div>
       <div className={styles.buttonWrapper}>

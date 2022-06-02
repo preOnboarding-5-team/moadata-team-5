@@ -60,15 +60,16 @@ function DatePicker({
       startDate !== formatDate(start, 'YYYY-MM-DD') ||
       endDate !== formatDate(end, 'YYYY-MM-DD')
     ) {
-      const tmpStart = new Date(startDate);
-      const tmpEnd = new Date(endDate);
-      setStart(tmpStart);
-      setEnd(tmpEnd);
       setIndicator(true);
     } else {
       setIndicator(false);
     }
-  }, [end, endDate, start, startDate]);
+  }, [startDate, endDate, start, end]);
+
+  useEffect(() => {
+    setStart(new Date(startDate));
+    setEnd(new Date(endDate));
+  }, [startDate, endDate]);
 
   return (
     <div className="datePicker">

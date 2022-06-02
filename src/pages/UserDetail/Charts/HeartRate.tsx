@@ -6,13 +6,18 @@ import DatePicker from 'components/common/DatePicker';
 import LineChart from 'pages/UserDetail/Charts/LineChart';
 import { setAll, setToday, setWeek } from 'utils/setDates';
 import { useParams } from 'react-router-dom';
+
+import './datepicker.scss';
 import styles from './charts.module.scss';
 
 function HeartRate() {
-  const [startDate, setStartDate] = useState<string>('2022-02-26');
-  const [endDate, setEndDate] = useState<string>('2022-04-20');
-  const [avgBeat, setAvgBeat] = useState(0);
   const user = Number(useParams().userId);
+  const minDate = setAll(user, 'heart').start.crt_ymdt;
+  const maxDate = setAll(user, 'heart').end.crt_ymdt;
+
+  const [startDate, setStartDate] = useState<string>(minDate);
+  const [endDate, setEndDate] = useState<string>(maxDate);
+  const [avgBeat, setAvgBeat] = useState(0);
 
   const handleToday = () => {
     setStartDate(setToday());
@@ -57,7 +62,7 @@ function HeartRate() {
             </>
           )}
         </div>
-        <span>{`평균 ${avgBeat} bpm`}</span>
+        <p>{`평균 ${avgBeat} bpm`}</p>
       </div>
       <div className={styles.datePickerWrapper}>
         <DatePicker
@@ -65,8 +70,8 @@ function HeartRate() {
           setStartDate={setStartDate}
           endDate={endDate}
           setEndDate={setEndDate}
-          minDate={new Date(2022, 1, 26)}
-          maxDate={new Date(2022, 3, 20)}
+          minDate={new Date(minDate)}
+          maxDate={new Date(maxDate)}
         />
       </div>
       <div className={styles.buttonWrapper}>

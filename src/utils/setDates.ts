@@ -37,12 +37,12 @@ export const setAll = (userSeq: number, type: string) => {
   return { end, start };
 };
 
-// export const setUserAll = () => {
-//   const max = data.reduce((prev, current) => {
-//     return prev.seq > current.seq ? prev : current;
-//   });
-//   const min = data.reduce((prev, current) => {
-//     return prev.seq > current.seq ? current : prev;
-//   });
-//   return [max, min];
-// };
+export const setUserAll = (data: UserInfo[]) => {
+  const end = data.reduce((prev, current) => {
+    return prev.registerDate > current.registerDate ? prev : current;
+  });
+  const start = data.reduce((prev, current) => {
+    return prev.registerDate > current.registerDate ? current : prev;
+  });
+  return { end, start };
+};

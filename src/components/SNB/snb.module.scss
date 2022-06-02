@@ -55,7 +55,9 @@
       display: flex;
       align-items: center;
       padding: 10px;
+      margin-bottom: 5px;
       border-radius: 8px;
+      transition: background-color 200ms;
 
       &:hover {
         color: colors.$gray-50;
