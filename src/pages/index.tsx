@@ -3,10 +3,10 @@ import { useEffect } from 'react';
 import store from 'store';
 
 import AdminLayout from 'layouts/AdminLayout';
-import Dashboard from './Dashboard';
 import Login from './Login';
 import UserDetail from './UserDetail';
 
+import Dashboard from './Dashboard';
 import styles from './app.module.scss';
 import UserManagement from './UserManagement';
 

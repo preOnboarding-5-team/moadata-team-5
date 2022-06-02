@@ -3,12 +3,8 @@
 .button {
   color: colors.$gray-50;
   background-color: colors.$primary;
-  border-radius: 8px;
+  border-radius: .5rem;
   transition: 200ms;
-
-  + .button {
-    margin-left: 16px;
-  }
 
   &:hover {
     color: colors.$white;
@@ -16,14 +12,14 @@
   }
 
   &.short {
-    min-width: 60px;
-    padding: 8px;
-    font-size: 16px;
+    min-width: 3.75rem;
+    padding: .5rem;
+    font-size: 1rem;
   }
 
   &.long {
-    min-width: 72px;
-    padding: 8px;
-    font-size: 16px;
+    min-width: 4.5rem;
+    padding: .5rem;
+    font-size: 1rem;
   }
 }
