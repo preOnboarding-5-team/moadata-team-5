@@ -4,12 +4,23 @@ import { useState } from 'react';
 import Button from 'components/common/Button';
 import DatePicker from 'components/common/DatePicker';
 import LineChart from 'pages/UserDetail/Charts/LineChart';
+import { setAll, setToday, setWeek } from 'utils/setDates';
 import styles from './charts.module.scss';
 
 function HeartRate() {
   const [startDate, setStartDate] = useState<string>('2022-02-26');
   const [endDate, setEndDate] = useState<string>('2022-04-20');
   const [avgBeat, setAvgBeat] = useState(0);
+
+  const handleToday = () => {
+    setStartDate(setToday());
+  };
+  const handleWeek = () => {
+    const [startOfWeek, endOfWeek] = setWeek(endDate);
+    setStartDate(startOfWeek);
+    setEndDate(endOfWeek);
+  };
+  const handleAll = ()
 
   return (
     <li className={styles.chartWrapper}>
@@ -46,9 +57,15 @@ function HeartRate() {
         />
       </div>
       <div className={styles.buttonWrapper}>
-        <Button size="short">오늘</Button>
-        <Button size="short">1주일</Button>
-        <Button size="short">전체</Button>
+        <Button size="short" onClick={handleToday}>
+          오늘
+        </Button>
+        <Button size="short" onClick={handleWeek}>
+          1주일
+        </Button>
+        <Button size="short" onClick={handleAll}>
+          전체
+        </Button>
       </div>
     </li>
   );
