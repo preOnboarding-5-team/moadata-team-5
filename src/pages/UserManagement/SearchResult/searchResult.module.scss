@@ -1,0 +1,121 @@
+@use 'styles/mixins/responsive';
+@use 'styles/constants/colors';
+
+$item-height: 3.125rem;
+
+.wrapper {
+  width: 100%;
+  margin: 3.125rem auto;
+  font-size: 0.875rem; // TODO
+
+  .numResultNotf {
+    position: relative;
+
+    mark {
+      all: unset;
+      font-weight: 700;
+      color: colors.$primary;
+    }
+  }
+
+  .listWrapper {
+    width: 100%;
+    margin: 1.875rem auto 0;
+    border-radius: 0.625rem;
+    animation: show 500ms;
+
+    .id {
+      width: 10%;
+    }
+
+    .registerDate {
+      width: 30%;
+    }
+
+    .loginId {
+      width: 30%;
+    }
+
+    .headers {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: space-between;
+      height: 1.875rem;
+      padding: 0 0.9375rem;
+      line-height: 1.875rem;
+
+      .header {
+        position: relative;
+        color: colors.$gray-500;
+        text-align: center;
+        cursor: pointer;
+
+        .sortDirIcon {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          margin: auto 0;
+        }
+      }
+
+      .sortKey {
+        font-weight: 700;
+        color: colors.$gray-900;
+      }
+
+      .dummyHeader {
+        width: 2.5rem;
+      }
+    }
+
+    .items {
+      width: 100%;
+
+      .item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: $item-height;
+        padding: 0 0.9375rem;
+        margin: 0.5rem 0;
+        line-height: $item-height;
+        background-color: colors.$gray-50;
+        border-radius: 0.625rem;
+        box-shadow: 0 0.25rem 0.5rem rgb(0 0 0 / 4%);
+        animation: show 300ms;
+
+        .itemCell {
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  .detailButton {
+    width: 2.5rem;
+    padding: 0.4375rem;
+    font-size: 0.8125rem;
+    color: colors.$gray-50;
+    background-color: colors.$primary;
+    border-radius: 0.625rem;
+    transition: 200ms;
+
+    &:hover {
+      background-color: colors.$primary-hover;
+    }
+  }
+}
+
+@keyframes show {
+  from {
+    top: -0.625rem;
+    opacity: 0;
+  }
+
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}

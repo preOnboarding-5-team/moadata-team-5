@@ -1,7 +1,7 @@
 import Button from 'components/common/Button';
 import { useNavigate } from 'react-router-dom';
 import store from 'store';
-
+import { loginData } from 'pages/Login/loginData.js';
 import styles from './gnb.module.scss';
 
 function GNB() {
@@ -18,7 +18,7 @@ function GNB() {
     <div className={styles.gnb}>
       <p className={styles.title}>백오피스</p>
       <div className={styles.adminInfo}>
-        <p>moaadmin1</p>
+        <p>{loginData.id}</p>
         <Button size="short" type="button" onClick={onClick}>
           로그아웃
         </Button>

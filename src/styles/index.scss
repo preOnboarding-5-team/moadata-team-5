@@ -1,9 +1,18 @@
 @use './constants/colors';
+@use './mixins/responsive';
 
 @import './base/reset';
 @import './base/more';
 @import './base/fonts';
 
 html {
+  font-size: 12px;
   color: colors.$gray-900;
+
+  @include responsive.after('lg') {
+    font-size: 14px;
+  }
+  @include responsive.after('xlg') {
+    font-size: 16px;
+  }
 }

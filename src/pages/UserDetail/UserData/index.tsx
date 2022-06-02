@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
-import { userDataList } from 'states';
+import { userDataList } from 'states/userDataList';
 
 import styles from './userData.module.scss';
 

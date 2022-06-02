@@ -1,10 +1,12 @@
 @use 'src/styles/constants/colors';
+@use 'src/styles/constants/dimensions';
 @use 'src/styles/mixins/responsive';
 
 .gnb {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  max-width: dimensions.$max-width;
   margin-bottom: 24px;
 
   .title {

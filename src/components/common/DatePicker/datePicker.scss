@@ -6,15 +6,15 @@
   align-items: center;
 
   .tilde {
-    margin: 0 8px;
+    margin: 0 0.5rem;
   }
 
   .react-datepicker-wrapper {
     width: inherit;
     cursor: pointer;
     background: colors.$white;
-    border-radius: 8px;
-    box-shadow: 0 0 3px colors.$primary;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0.1875rem colors.$primary;
 
     .react-datepicker__input-container {
       width: inherit;
@@ -40,8 +40,8 @@
   .react-datepicker {
     color: colors.$gray-900;
     border: 0;
-    border-radius: 8px;
-    box-shadow: 0 0 3px colors.$primary;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0.1875rem colors.$primary;
 
     &__header {
       background: colors.$primary;
@@ -57,13 +57,13 @@
     }
 
     &__month {
-      padding: 0.4rem;
+      padding: 6.4px;
       margin: 0;
 
       // background: colors.$gray-100;
-      border: 1px solid colors.$primary;
+      border: 0.0625rem solid colors.$primary;
       border-top: 0;
-      border-radius: 0 0 8px 8px;
+      border-radius: 0 0 0.5rem 0.5rem;
     }
   }
 
