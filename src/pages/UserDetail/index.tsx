@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
 
-import { userDataList } from 'states';
+import { userDataList } from 'states/userDataList';
 import Charts from './Charts';
 import UserData from './UserData';
 

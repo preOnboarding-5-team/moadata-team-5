@@ -1,4 +1,4 @@
-import { allStepData } from 'data/index';
+import { allStepData } from 'data';
 import getDatesStartToLast from 'utils/getDates';
 
 function ConvertData(startDate: string, endDate: string, userSeq: number) {
