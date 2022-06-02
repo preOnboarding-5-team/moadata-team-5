@@ -45,6 +45,7 @@ function SNB() {
 
   const onLogoClick = () => {
     navigate('/');
+    onNavClick();
   };
 
   return (
