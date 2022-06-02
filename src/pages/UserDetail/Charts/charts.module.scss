@@ -1,21 +1,31 @@
 @use 'src/styles/constants/colors';
+@use 'src/styles/mixins/responsive';
 
 .wrapper {
   display: flex;
-  flex-direction: row;
+
+  // flex-direction: row;
+
+  flex-flow: wrap;
   width: 100%;
-  margin-top: 40px;
 
   .chartWrapper {
-    width: 50%;
+    width: 95%;
     padding: 20px;
+    margin-top: 40px;
     color: colors.$gray-900;
     background-color: colors.$white;
     border-radius: 20px;
     box-shadow: 0 4px 10px colors.$shadow;
 
-    + .chartWrapper {
-      margin-left: 40px;
+    @include responsive.after('hd') {
+      width: 45%;
+
+      // min-width: 28.125rem;
+
+      + .chartWrapper {
+        margin-left: 40px;
+      }
     }
 
     .chartHeader {
@@ -30,11 +40,6 @@
         font-weight: 900;
         line-height: 20px;
       }
-    }
-
-    .chart {
-      width: 100%;
-      height: 300px;
     }
 
     .label {

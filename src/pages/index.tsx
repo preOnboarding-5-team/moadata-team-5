@@ -6,9 +6,9 @@ import AdminLayout from 'layouts/AdminLayout';
 import Dashboard from './Dashboard';
 import Login from './Login';
 import UserDetail from './UserDetail';
-import UserManagement from './UserManagement';
 
 import styles from './app.module.scss';
+import UserManagement from './UserManagement';
 
 function App() {
   const navigate = useNavigate();
