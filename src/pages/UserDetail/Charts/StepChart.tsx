@@ -47,7 +47,7 @@ function StepChart({ stepData }: Props) {
           x="crt_ymdt"
           y="steps"
           labels={({ datum }) => `${datum.crt_ymdt} \n ${datum.steps}보`}
-          style={{ data: { fill: '#2DD4C0' } }}
+          style={{ data: { fill: '#2ED4C0' } }}
           labelComponent={
             <VictoryTooltip
               flyoutStyle={{ fill: 'white' }}

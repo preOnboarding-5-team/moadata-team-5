@@ -7,13 +7,16 @@ import styles from './charts.module.scss';
 import StepChart from './StepChart';
 import ConvertData from './convertData';
 
-function Step() {
+interface props {
+  userSeq: number;
+}
+
+function Step({ userSeq }: props) {
   const [startDate, setStartDate] = useState<string>('2022-02-26');
   const [endDate, setEndDate] = useState<string>('2022-04-20');
   const [totalSteps, setTotalSteps] = useState('0');
 
-
-  const stepData = ConvertData(startDate, endDate);
+  const stepData = ConvertData(startDate, endDate, userSeq);
 
   useEffect(() => {
     if (startDate === endDate) {
@@ -34,10 +37,6 @@ function Step() {
       );
     }
   }, [endDate, startDate, stepData]);
-
-  useEffect(() => {
-    console.log(startDate, endDate);
-  }, [endDate, startDate]);
 
   return (
     <li className={styles.chartWrapper}>

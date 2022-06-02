@@ -3,10 +3,14 @@ import { useState } from 'react';
 
 import Button from 'components/common/Button';
 import DatePicker from 'components/common/DatePicker';
-import LineChart from 'components/LineChart';
+import LineChart from 'pages/UserDetail/Charts/LineChart';
 import styles from './charts.module.scss';
 
-function HeartRate() {
+interface props {
+  userSeq: number;
+}
+
+function HeartRate({ userSeq }: props) {
   const [startDate, setStartDate] = useState<string>('2022-02-26');
   const [endDate, setEndDate] = useState<string>('2022-04-20');
   const [avgBeat, setAvgBeat] = useState(0);
@@ -21,6 +25,7 @@ function HeartRate() {
           startDate={startDate}
           endDate={endDate}
           setAvgBeat={setAvgBeat}
+          userSeq={userSeq}
         />
       </div>
       <div className={styles.label}>
