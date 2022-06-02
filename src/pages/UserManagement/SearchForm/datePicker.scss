@@ -1,66 +1,46 @@
 /* stylelint-disable selector-class-pattern */
 @use 'styles/constants/colors';
 
-.datePicker {
-  .react-datepicker__navigation {
-    top: 13px;
+.datepicker {
+  position: relative;
+  z-index: 999;
+  transform: scale(0.8);
+
+  .react-datepicker__input-container {
+    transform: scale(1.25);
   }
 
-  .react-datepicker-wrapper {
-    width: inherit;
-    padding: 0.5rem;
-    cursor: pointer;
-    background: colors.$white;
-    border-radius: 0.5rem;
-    box-shadow: 0 0 0.1875rem colors.$primary;
-
-    .react-datepicker__input-container {
-      width: inherit;
-
-      input {
-        width: 5.1875rem;
-        color: colors.$gray-900;
-        text-align: center;
-        cursor: pointer;
-
-        &::selection {
-          all: unset;
-        }
-
-        &:focus {
-          caret-color: transparent;
-        }
-      }
-    }
+  .react-datepicker__navigation--previous,
+  .react-datepicker__navigation--next {
+    top: 1rem;
+    width: 2rem;
   }
+}
 
-  .react-datepicker {
-    color: colors.$gray-900;
+.react-datepicker {
+  color: colors.$gray-900;
+  border: 0;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0.1875rem colors.$primary;
+
+  &__header {
+    background: colors.$primary;
     border: 0;
-    border-radius: 0.5rem;
-    box-shadow: 0 0 0.1875rem colors.$primary;
+  }
 
-    &__header {
-      background: colors.$primary;
-      border: 0;
-    }
+  &__current-month {
+    color: colors.$gray-50;
+  }
 
-    &__current-month {
-      color: colors.$gray-50;
-    }
+  &__day-name {
+    color: colors.$gray-50;
+  }
 
-    &__day-name {
-      color: colors.$gray-50;
-    }
-
-    &__month {
-      padding: 6.4px;
-      margin: 0;
-
-      // background: colors.$gray-100;
-      border: 0.0625rem solid colors.$primary;
-      border-top: 0;
-      border-radius: 0 0 0.5rem 0.5rem;
-    }
+  &__month {
+    padding: 6.4px;
+    margin: 0;
+    border: 0.0625rem solid colors.$primary;
+    border-top: 0;
+    border-radius: 0 0 0.5rem 0.5rem;
   }
 }
