@@ -4,10 +4,36 @@ import { useEffect, useState } from 'react';
 import Button from 'components/common/Button';
 import DatePicker from 'components/common/DatePicker';
 import styles from './charts.module.scss';
+import StepChart from './StepChart';
+import ConvertData from './convertData';
 
 function Step() {
   const [startDate, setStartDate] = useState<string>('2022-02-26');
   const [endDate, setEndDate] = useState<string>('2022-04-20');
+  const [totalSteps, setTotalSteps] = useState('0');
+
+
+  const stepData = ConvertData(startDate, endDate);
+
+  useEffect(() => {
+    if (startDate === endDate) {
+      setTotalSteps(
+        stepData
+          .map((item) => item.steps)
+          .reduce((prev, curr) => (prev > curr ? prev : curr))
+          .toString()
+          .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',')
+      );
+    } else {
+      setTotalSteps(
+        stepData
+          .map((item) => item.steps)
+          .reduce((prev, curr) => prev + curr, 0)
+          .toString()
+          .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',')
+      );
+    }
+  }, [endDate, startDate, stepData]);
 
   useEffect(() => {
     console.log(startDate, endDate);
@@ -18,12 +44,18 @@ function Step() {
       <header className={styles.chartHeader}>
         <h2 className={styles.chartTitle}>걸음수</h2>
       </header>
-      <div className={styles.chart} />
+      <div className={styles.chart}>
+        <StepChart stepData={stepData} />
+      </div>
       <div className={styles.label}>
         <time dateTime="2022-04-20">
-          {dayjs('2022-04-20').format('YY-MM-DD')}
+          {startDate === endDate
+            ? dayjs(startDate).format('YY-MM-DD')
+            : `${dayjs(startDate).format('YY-MM-DD')} ~ ${dayjs(endDate).format(
+                'YY-MM-DD'
+              )}`}
         </time>
-        <span>총 13,203 걸음</span>
+        <span>총 {totalSteps} 걸음</span>
       </div>
       <div className={styles.datePickerWrapper}>
         <DatePicker
