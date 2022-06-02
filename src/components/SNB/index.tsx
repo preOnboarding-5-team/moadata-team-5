@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import classNames from 'classnames';
+import { NavLink, useNavigate } from 'react-router-dom';
+import cx from 'classnames';
 
 import {
   CloseIcon,
@@ -14,36 +14,50 @@ import styles from './snb.module.scss';
 
 function SNB() {
   const [showSidebar, setShowSidebar] = useState<boolean>(false);
+
+  const navigate = useNavigate();
+
   const toggleSidebar = () => {
     setShowSidebar((prev) => !prev);
   };
 
   const menuIcon = showSidebar ? (
     <CloseIcon
-      className={classNames(styles.menuIcon, {
+      className={cx(styles.menuIcon, {
         [styles.visible]: showSidebar,
       })}
       onClick={toggleSidebar}
     />
   ) : (
     <MenuIcon
-      className={classNames(styles.menuIcon, {
+      className={cx(styles.menuIcon, {
         [styles.visible]: showSidebar,
       })}
       onClick={toggleSidebar}
     />
   );
 
+  const onNavClick = () => {
+    if (showSidebar) {
+      toggleSidebar();
+    }
+  };
+
+  const onLogoClick = () => {
+    navigate('/');
+  };
+
   return (
-    <div className={classNames(styles.snb, { [styles.visible]: showSidebar })}>
+    <div className={cx(styles.snb, { [styles.visible]: showSidebar })}>
       {menuIcon}
-      <LogoImage className={styles.logo} />
+      <LogoImage className={styles.logo} onClick={onLogoClick} />
       <nav className={styles.navigation}>
         <NavLink
           to="/"
           className={({ isActive }) =>
-            classNames(styles.navItem, { [styles.active]: isActive })
+            cx(styles.navItem, { [styles.active]: isActive })
           }
+          onClick={onNavClick}
         >
           <HomeIcon className={styles.icon} />
           <span>백오피스 홈</span>
@@ -51,8 +65,9 @@ function SNB() {
         <NavLink
           to="usermanagement"
           className={({ isActive }) =>
-            classNames(styles.navItem, { [styles.active]: isActive })
+            cx(styles.navItem, { [styles.active]: isActive })
           }
+          onClick={onNavClick}
         >
           <UserManagementIcon className={styles.icon} />
           <span>회원 관리</span>
