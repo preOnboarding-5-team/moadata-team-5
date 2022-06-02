@@ -37,7 +37,7 @@ function Step() {
   }, [startDate, endDate, stepData]);
 
   return (
-    <div className={styles.chartWrapper}>
+    <li className={styles.chartWrapper}>
       <header className={styles.chartHeader}>
         <h2 className={styles.chartTitle}>걸음수</h2>
       </header>
@@ -69,7 +69,7 @@ function Step() {
         <Button size="short">1주일</Button>
         <Button size="short">전체</Button>
       </div>
-    </div>
+    </li>
   );
 }
 

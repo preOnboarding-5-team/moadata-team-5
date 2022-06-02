@@ -19,10 +19,7 @@
     .logo {
       width: 100px;
       margin: 0 1.25rem;
-
-      g {
-        fill: colors.$primary;
-      }
+      fill: colors.$primary;
     }
 
     @keyframes float {

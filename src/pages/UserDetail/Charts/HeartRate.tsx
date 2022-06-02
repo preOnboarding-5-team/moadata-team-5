@@ -12,7 +12,7 @@ function HeartRate() {
   const [avgBeat, setAvgBeat] = useState(0);
 
   return (
-    <div className={styles.chartWrapper}>
+    <li className={styles.chartWrapper}>
       <header className={styles.chartHeader}>
         <h2 className={styles.chartTitle}>심박수</h2>
       </header>
@@ -50,7 +50,7 @@ function HeartRate() {
         <Button size="short">1주일</Button>
         <Button size="short">전체</Button>
       </div>
-    </div>
+    </li>
   );
 }
 
