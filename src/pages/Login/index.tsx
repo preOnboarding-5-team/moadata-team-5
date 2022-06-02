@@ -1,17 +1,20 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { useForm } from 'react-hook-form';
+import { useEffect, useState } from 'react';
+import cx from 'classnames';
+import { useNavigate } from 'react-router-dom';
+import store from 'store';
+
 import {
   LogoImage,
   VisibilityOnIcon,
   VisibilityOffIcon,
 } from 'assets/svgs/index';
-import { useEffect, useState } from 'react';
-import cx from 'classnames';
-import store from 'store';
-import { useNavigate } from 'react-router-dom';
+
 import Button from 'components/common/Button';
-import styles from './login.module.scss';
 import { loginData } from './loginData.js';
+
+import styles from './login.module.scss';
 
 interface FormInput {
   id: string;
