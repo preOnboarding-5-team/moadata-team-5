@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import Button from 'components/common/Button';
 import DatePicker from 'components/common/DatePicker';
-import LineChart from './LineChart';
+import LineChart from 'pages/UserDetail/Charts/LineChart';
 import styles from './charts.module.scss';
 
 function HeartRate() {

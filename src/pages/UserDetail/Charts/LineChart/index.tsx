@@ -12,11 +12,10 @@ import {
   avgHeartData,
   convertHeartData,
   getAvgBeat,
-} from 'utils/convertHeartData';
-import { data136 } from 'data/heartrate_data';
+} from 'pages/UserDetail/Charts/LineChart/convertHeartData';
 import dayjs from 'dayjs';
+import { useParams } from 'react-router-dom';
 import { axisStyle, dependentAxisStyle, options } from './lineChartOptions';
-import styles from './LineChart.module.scss';
 
 interface Props {
   startDate: string;
@@ -28,14 +27,15 @@ function LineChart({ startDate, endDate, setAvgBeat }: Props) {
   const start = dayjs(startDate).format('YYYY-MM-DD');
   const end = dayjs(endDate).format('YYYY-MM-DD');
   const [dataList, setDataList] = useState<Array<Data>>([]);
+  const userSeq = Number(useParams().userId);
 
   useEffect(() => {
     if (start === end) {
-      setDataList(convertHeartData(start, data136));
+      setDataList(convertHeartData(start, userSeq));
     } else {
-      setDataList(avgHeartData(data136, start, end));
+      setDataList(avgHeartData(start, end, userSeq));
     }
-  }, [end, start]);
+  }, [end, start, userSeq]);
 
   useEffect(() => {
     if (start !== end) {
@@ -51,7 +51,7 @@ function LineChart({ startDate, endDate, setAvgBeat }: Props) {
       containerComponent={
         <VictoryVoronoiContainer
           voronoiDimension="x"
-          labels={({ datum }) => `${datum.crt_ymdt} \n ${datum.avg_beat}bpm`}
+          labels={({ datum }) => `${datum.x} \n ${datum.y}bpm`}
           labelComponent={
             <VictoryTooltip
               cornerRadius={5}
@@ -84,11 +84,9 @@ function LineChart({ startDate, endDate, setAvgBeat }: Props) {
         style={{
           data: { stroke: '#ff443a' },
           parent: { border: '1px solid #ccc' },
-          labels: { fill: 'white', fontSize: '15px', fontWeight: 'bold' },
+          labels: { fill: 'white', fontSize: '15px', fontWeight: '500' },
         }}
         data={dataList}
-        x={(datum) => datum.crt_ymdt}
-        y={(datum) => datum.avg_beat}
       />
     </VictoryChart>
   );

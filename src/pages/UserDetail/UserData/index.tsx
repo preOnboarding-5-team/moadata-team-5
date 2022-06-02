@@ -1,30 +1,33 @@
-import dayjs from 'dayjs';
+import { useParams } from 'react-router-dom';
+import { useRecoilValue } from 'recoil';
+import { userDataList } from 'states/Atoms';
 
 import styles from './userData.module.scss';
 
 function UserData() {
+  const userData = useRecoilValue(userDataList);
+  const userSeq = Number(useParams().userId);
+  const userInfo = userData.filter((user) => user.id === userSeq);
+
   return (
     <ul className={styles.dataWrapper}>
       <li className={styles.data}>
         <dl>
           <dt>로그인ID:</dt>
-          <dd>ghdrlfehd12</dd>
+          <dd>{userInfo[0].loginId}</dd>
         </dl>
       </li>
       <li className={styles.data}>
         <dl>
           <dt>회원번호:</dt>
-          <dd>5</dd>
+          <dd>{userInfo[0].id}</dd>
         </dl>
       </li>
       <li className={styles.data}>
         <dl>
           <dt>가입 일시:</dt>
-          <dd>
-            <time dateTime="2022-04-20 12:34:56">
-              {dayjs('2022-04-20 12:34:56').format('YY-MM-DD HH:mm:ss')}
-            </time>
-          </dd>
+          {/* // TODO: 년, 월, 일로 바꾸는 것이 나은지 결정 필요 */}
+          <dd>{userInfo[0].registerDate}</dd>
         </dl>
       </li>
     </ul>

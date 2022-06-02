@@ -1,18 +1,7 @@
-import { allStepData } from 'data';
-import { useParams } from 'react-router-dom';
+import { allStepData } from 'data/index';
+import getDatesStartToLast from 'utils/getDates';
 
-function getDatesStartToLast(start: string, end: string) {
-  const result = [];
-  const curDate = new Date(start);
-  while (curDate <= new Date(end)) {
-    result.push(curDate.toISOString().split('T')[0]);
-    curDate.setDate(curDate.getDate() + 1);
-  }
-  return result;
-}
-
-function ConvertData(startDate: string, endDate: string) {
-  const userSeq = Number(useParams().userId);
+function ConvertData(startDate: string, endDate: string, userSeq: number) {
   const totalData = allStepData.filter((data) => data.member_seq === userSeq);
   if (startDate === endDate) {
     if (

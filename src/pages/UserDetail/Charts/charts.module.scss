@@ -10,9 +10,7 @@
   width: 100%;
 
   .chartWrapper {
-    width: 100%;
-
-    // min-width: 28.125rem;
+    width: 95%;
     padding: 20px;
     margin-top: 40px;
     color: colors.$gray-900;
@@ -22,7 +20,8 @@
 
     @include responsive.after('hd') {
       width: 45%;
-      min-width: 28.125rem;
+
+      // min-width: 28.125rem;
 
       + .chartWrapper {
         margin-left: 40px;
@@ -41,10 +40,6 @@
         font-weight: 900;
         line-height: 20px;
       }
-    }
-
-    .chart {
-      // height: 300px;
     }
 
     .label {
