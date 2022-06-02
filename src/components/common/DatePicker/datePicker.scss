@@ -76,10 +76,16 @@
   margin-left: 16px;
   background: colors.$gray-500;
   box-shadow: 0 0 3px colors.$primary;
-  opacity: 0.5;
+
+  &:disabled {
+    opacity: 0.5;
+
+    &:hover {
+      background-color: colors.$gray-500;
+    }
+  }
 }
 
 .indicate {
   background: colors.$primary;
-  opacity: 1;
 }
