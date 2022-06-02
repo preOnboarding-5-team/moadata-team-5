@@ -5,10 +5,10 @@ import store from 'store';
 import AdminLayout from 'layouts/AdminLayout';
 import Login from './Login';
 import UserDetail from './UserDetail';
-import UserManagement from './UserManagement';
 
 import Dashboard from './Dashboard';
 import styles from './app.module.scss';
+import UserManagement from './UserManagement';
 
 function App() {
   const navigate = useNavigate();

@@ -1,29 +1,39 @@
 import dayjs from 'dayjs';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
-import { Button } from 'components/common/Button';
+import Button from 'components/common/Button';
 import DatePicker from 'components/common/DatePicker';
+import LineChart from 'pages/UserDetail/Charts/LineChart';
 import styles from './charts.module.scss';
 
 function HeartRate() {
-  const [startDate, setStartDate] = useState<Date>(new Date(2022, 1, 26));
-  const [endDate, setEndDate] = useState<Date>(new Date(2022, 3, 20));
-
-  useEffect(() => {
-    console.log(startDate, endDate);
-  }, [endDate, startDate]);
+  const [startDate, setStartDate] = useState<string>('2022-02-26');
+  const [endDate, setEndDate] = useState<string>('2022-04-20');
+  const [avgBeat, setAvgBeat] = useState(0);
 
   return (
     <li className={styles.chartWrapper}>
       <header className={styles.chartHeader}>
         <h2 className={styles.chartTitle}>심박수</h2>
       </header>
-      <div className={styles.chart} />
+      <div className={styles.chart}>
+        <LineChart
+          startDate={startDate}
+          endDate={endDate}
+          setAvgBeat={setAvgBeat}
+        />
+      </div>
       <div className={styles.label}>
-        <time dateTime="2022-04-20">
-          {dayjs('2022-04-20').format('YY-MM-DD')}
-        </time>
-        <span>평균 82 bpm</span>
+        <div className={styles.timewrapper}>
+          <time dateTime={`${startDate}`}>
+            {dayjs(startDate).format('YY-MM-DD')}
+          </time>
+          <span>~</span>
+          <time dateTime={`${endDate}`}>
+            {dayjs(endDate).format('YY-MM-DD')}
+          </time>
+        </div>
+        <span>{`평균 ${avgBeat} bpm`}</span>
       </div>
       <div className={styles.datePickerWrapper}>
         <DatePicker

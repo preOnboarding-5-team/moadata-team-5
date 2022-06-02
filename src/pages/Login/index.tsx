@@ -1,12 +1,20 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { useForm } from 'react-hook-form';
-import { LogoIcon, OpenEyeIcon, CloseEyeIcon } from 'assets/svgs/index';
 import { useEffect, useState } from 'react';
 import cx from 'classnames';
-import store from 'store';
 import { useNavigate } from 'react-router-dom';
-import styles from './login.module.scss';
+import store from 'store';
+
+import {
+  LogoImage,
+  VisibilityOnIcon,
+  VisibilityOffIcon,
+} from 'assets/svgs/index';
+
+import Button from 'components/common/Button';
 import { loginData } from './loginData.js';
+
+import styles from './login.module.scss';
 
 interface FormInput {
   id: string;
@@ -54,7 +62,7 @@ function Login() {
   return (
     <div className={styles.wrap}>
       <div className={styles.loginWrap}>
-        <LogoIcon className={styles.logo} />
+        <LogoImage className={styles.logo} />
         <p className={cx(styles.alert, { [styles.active]: isAlertVisible })}>
           {alert}
         </p>
@@ -85,18 +93,18 @@ function Login() {
               />
               <div className={styles.icon}>
                 {isVisible ? (
-                  <OpenEyeIcon onClick={handleVisible} />
+                  <VisibilityOnIcon onClick={handleVisible} />
                 ) : (
-                  <CloseEyeIcon onClick={handleVisible} />
+                  <VisibilityOffIcon onClick={handleVisible} />
                 )}
               </div>
             </div>
           </label>
           {errors.pw?.type === 'required' && <span>필수 입력 항목입니다.</span>}
           {errors.pw?.message && <span>{errors.pw?.message}</span>}
-          <button type="submit" className={styles.loginButton}>
+          <Button size="long" type="submit" className={styles.loginButton}>
             Login
-          </button>
+          </Button>
         </form>
       </div>
     </div>

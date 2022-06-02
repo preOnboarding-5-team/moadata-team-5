@@ -6,7 +6,7 @@ import { userSearchResult } from 'states/userSearchResult';
 
 import dayjs from 'dayjs';
 
-import { Button } from 'components/common/Button';
+import Button from 'components/common/Button';
 import SearchDatePicker from './SearchDatePicker';
 import './datePicker.scss';
 import styles from './searchForm.module.scss';

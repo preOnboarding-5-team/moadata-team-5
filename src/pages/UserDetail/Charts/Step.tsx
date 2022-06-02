@@ -1,28 +1,58 @@
 import dayjs from 'dayjs';
 import { useEffect, useState } from 'react';
 
-import { Button } from 'components/common/Button';
+import Button from 'components/common/Button';
 import DatePicker from 'components/common/DatePicker';
+import { useParams } from 'react-router-dom';
 import styles from './charts.module.scss';
+import StepChart from './StepChart';
+import ConvertData from './StepChart/convertData';
 
 function Step() {
-  const [startDate, setStartDate] = useState<Date>(new Date(2022, 1, 26));
-  const [endDate, setEndDate] = useState<Date>(new Date(2022, 3, 20));
+  const [startDate, setStartDate] = useState<string>('2022-02-26');
+  const [endDate, setEndDate] = useState<string>('2022-04-20');
+  const [totalSteps, setTotalSteps] = useState('0');
+  const user = Number(useParams().userId);
+
+  const stepData = ConvertData(startDate, endDate, user);
 
   useEffect(() => {
-    console.log(startDate, endDate);
-  }, [endDate, startDate]);
+    if (startDate === endDate) {
+      setTotalSteps(
+        stepData
+          .map((item) => item.steps)
+          .reduce((prev, curr) => (prev > curr ? prev : curr))
+          .toString()
+          .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',')
+      );
+    } else {
+      setTotalSteps(
+        stepData
+          .map((item) => item.steps)
+          .reduce((prev, curr) => prev + curr, 0)
+          .toString()
+          .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',')
+      );
+    }
+  }, [startDate, endDate, stepData]);
+
   return (
     <li className={styles.chartWrapper}>
       <header className={styles.chartHeader}>
         <h2 className={styles.chartTitle}>걸음수</h2>
       </header>
-      <div className={styles.chart} />
+      <div className={styles.chart}>
+        <StepChart stepData={stepData} />
+      </div>
       <div className={styles.label}>
         <time dateTime="2022-04-20">
-          {dayjs('2022-04-20').format('YY-MM-DD')}
+          {startDate === endDate
+            ? dayjs(startDate).format('YY년 MM월 DD일')
+            : `${dayjs(startDate).format('YY년 MM월 DD일')} ~ ${dayjs(
+                endDate
+              ).format('YY년 MM월 DD일')}`}
         </time>
-        <span>총 13,203 걸음</span>
+        <span>총 {totalSteps} 걸음</span>
       </div>
       <div className={styles.datePickerWrapper}>
         <DatePicker

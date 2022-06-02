@@ -1,7 +1,7 @@
 import type { Dispatch, SetStateAction } from 'react';
 import { useRecoilValue, useSetRecoilState, useResetRecoilState } from 'recoil';
 import dayjs from 'dayjs';
-import { Button } from 'components/common/Button';
+import Button from 'components/common/Button';
 import { userDataList } from 'states/userDataList';
 import { userSearchResult } from 'states/userSearchResult';
 import { userFilterOptions } from 'states/userFilterOptions';
