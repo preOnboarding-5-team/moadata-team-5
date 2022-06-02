@@ -23,7 +23,7 @@ function StepChart({ stepData }: Props) {
           duration: 2000,
           onLoad: { duration: 1000 },
         }}
-        height={400}
+        height={500}
         width={600}
       >
         <VictoryAxis

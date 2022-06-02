@@ -12,12 +12,10 @@ function Step() {
   const [endDate, setEndDate] = useState<string>('2022-04-20');
   const [totalSteps, setTotalSteps] = useState('0');
 
-  const start = dayjs(startDate).format('YYYY-MM-DD');
-  const end = dayjs(endDate).format('YYYY-MM-DD');
-  const stepData = ConvertData(start, end);
+  const stepData = ConvertData(startDate, endDate);
 
   useEffect(() => {
-    if (start === end) {
+    if (startDate === endDate) {
       setTotalSteps(
         stepData
           .map((item) => item.steps)
@@ -34,7 +32,7 @@ function Step() {
           .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',')
       );
     }
-  }, [end, start, stepData]);
+  }, [startDate, endDate, stepData]);
 
   useEffect(() => {
     console.log(startDate, endDate);
@@ -51,10 +49,10 @@ function Step() {
       <div className={styles.label}>
         <time dateTime="2022-04-20">
           {startDate === endDate
-            ? dayjs(startDate).format('YY-MM-DD')
-            : `${dayjs(startDate).format('YY-MM-DD')} ~ ${dayjs(endDate).format(
-                'YY-MM-DD'
-              )}`}
+            ? dayjs(startDate).format('YY년 MM월 DD일')
+            : `${dayjs(startDate).format('YY년 MM월 DD일')} ~ ${dayjs(
+                endDate
+              ).format('YY년 MM월 DD일')}`}
         </time>
         <span>총 {totalSteps} 걸음</span>
       </div>
