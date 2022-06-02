@@ -11,7 +11,6 @@
 
   .react-datepicker-wrapper {
     width: inherit;
-    padding: 8px;
     cursor: pointer;
     background: colors.$white;
     border-radius: 8px;
@@ -21,7 +20,8 @@
       width: inherit;
 
       input {
-        width: 83px;
+        width: 100px;
+        padding: 8px;
         color: colors.$gray-900;
         text-align: center;
         cursor: pointer;
@@ -66,15 +66,20 @@
       border-radius: 0 0 8px 8px;
     }
   }
+
+  .react-datepicker__navigation-icon::before {
+    top: 10px;
+  }
 }
 
 .submitButton {
-  padding: 8px;
   margin-left: 16px;
-  font-size: 16px;
-  color: colors.$gray-50;
-  cursor: pointer;
-  background: colors.$primary;
-  border-radius: 8px;
+  background: colors.$gray-500;
   box-shadow: 0 0 3px colors.$primary;
+  opacity: 0.5;
+}
+
+.indicate {
+  background: colors.$primary;
+  opacity: 1;
 }
