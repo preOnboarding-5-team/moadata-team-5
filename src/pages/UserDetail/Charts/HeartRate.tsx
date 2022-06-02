@@ -1,14 +1,14 @@
 import dayjs from 'dayjs';
 import { useState } from 'react';
 
-import { Button } from 'components/common/Button';
+import Button from 'components/common/Button';
 import DatePicker from 'components/common/DatePicker';
 import LineChart from 'components/LineChart';
 import styles from './charts.module.scss';
 
 function HeartRate() {
-  const [startDate, setStartDate] = useState<Date>(new Date(2022, 1, 26));
-  const [endDate, setEndDate] = useState<Date>(new Date(2022, 3, 20));
+  const [startDate, setStartDate] = useState<string>('2022-02-26');
+  const [endDate, setEndDate] = useState<string>('2022-04-20');
   const [avgBeat, setAvgBeat] = useState(0);
 
   return (

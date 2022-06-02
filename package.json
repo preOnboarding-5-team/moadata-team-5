@@ -33,10 +33,12 @@
     "react": "^18.1.0",
     "react-datepicker": "^4.8.0",
     "react-dom": "^18.1.0",
+    "react-hook-form": "^7.31.3",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "recoil": "^0.7.3-alpha.2",
     "victory": "^36.4.1",
+    "store": "^2.0.12",
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
@@ -49,6 +51,7 @@
     "@types/react-datepicker": "^4.4.1",
     "@types/react-dom": "^18.0.5",
     "@types/redux-logger": "^3.0.9",
+    "@types/store": "^2.0.2",
     "@typescript-eslint/eslint-plugin": "^5.26.0",
     "@typescript-eslint/parser": "^5.26.0",
     "eslint": "^8.16.0",
