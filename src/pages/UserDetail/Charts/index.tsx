@@ -1,13 +1,13 @@
 import HeartRate from './HeartRate';
-import Step from './Step';
+import Step from './StepChart';
 import styles from './charts.module.scss';
 
 function Charts() {
   return (
-    <ul className={styles.wrapper}>
+    <div className={styles.wrapper}>
       <HeartRate />
       <Step />
-    </ul>
+    </div>
   );
 }
 

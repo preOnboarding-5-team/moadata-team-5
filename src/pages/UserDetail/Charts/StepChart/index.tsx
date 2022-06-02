@@ -3,9 +3,9 @@ import { useEffect, useState } from 'react';
 
 import Button from 'components/common/Button';
 import DatePicker from 'components/common/DatePicker';
-import styles from './charts.module.scss';
+import styles from '../charts.module.scss';
 import StepChart from './StepChart';
-import ConvertData from './convertData';
+import ConvertData from '../convertData';
 
 function Step() {
   const [startDate, setStartDate] = useState<string>('2022-02-26');
@@ -34,12 +34,8 @@ function Step() {
     }
   }, [startDate, endDate, stepData]);
 
-  useEffect(() => {
-    console.log(startDate, endDate);
-  }, [endDate, startDate]);
-
   return (
-    <li className={styles.chartWrapper}>
+    <div className={styles.chartWrapper}>
       <header className={styles.chartHeader}>
         <h2 className={styles.chartTitle}>걸음수</h2>
       </header>
@@ -71,7 +67,7 @@ function Step() {
         <Button size="short">1주일</Button>
         <Button size="short">전체</Button>
       </div>
-    </li>
+    </div>
   );
 }
 

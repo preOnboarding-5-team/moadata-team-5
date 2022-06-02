@@ -1,5 +1,9 @@
 @mixin after($vw) {
-  @if $vw == 'lg' {
+  @if $vw == 'hd' {
+    @media (min-width: 1400px) {
+      @content;
+    }
+  } @else if $vw == 'lg' {
     @media (min-width: 1024px) {
       @content;
     }
