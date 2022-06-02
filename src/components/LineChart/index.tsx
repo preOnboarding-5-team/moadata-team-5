@@ -19,8 +19,8 @@ import { axisStyle, dependentAxisStyle, options } from './lineChartOptions';
 import styles from './LineChart.module.scss';
 
 interface Props {
-  startDate: Date;
-  endDate: Date;
+  startDate: string;
+  endDate: string;
   setAvgBeat: Dispatch<SetStateAction<number>>;
 }
 
