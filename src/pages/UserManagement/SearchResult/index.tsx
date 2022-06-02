@@ -64,7 +64,7 @@ export default function SearchResult() {
                 </div>
                 <div className={cx(styles.itemCell, styles.detail)}>
                   <button className={styles.detailButton} type="button">
-                    <Link to={`usermanagement:${id}`}>관리</Link>
+                    <Link to={`${id}`}>관리</Link>
                   </button>
                 </div>
               </li>

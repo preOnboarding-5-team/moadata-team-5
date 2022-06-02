@@ -5,12 +5,12 @@
 .managementWrapper {
   box-sizing: border-box;
   max-width: dimensions.$max-width;
-  padding: 1.25rem 2%;
+  padding: 1.25rem 5%;
   background: colors.$main-bg;
 
-  // @include responsive.after('xlg') {
-  //   padding-right: 19%;
-  // }
+  @include responsive.after('xlg') {
+    padding: 1.25rem 2%;
+  }
 
   .managementTitle {
     padding: 1.25rem 0;

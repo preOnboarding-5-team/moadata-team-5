@@ -1,15 +1,16 @@
-@use "styles/constants/colors";
+@use 'styles/mixins/responsive';
+@use 'styles/constants/colors';
 
 $item-height: 3.125rem;
 
 .wrapper {
   width: 100%;
   margin: 3.125rem auto;
-  font-size: .875rem; // TODO
-  
+  font-size: 0.875rem; // TODO
+
   .numResultNotf {
     position: relative;
-    
+
     mark {
       all: unset;
       font-weight: 700;
@@ -20,7 +21,7 @@ $item-height: 3.125rem;
   .listWrapper {
     width: 100%;
     margin: 1.875rem auto 0;
-    border-radius: .625rem;
+    border-radius: 0.625rem;
     animation: show 500ms;
 
     .id {
@@ -41,9 +42,9 @@ $item-height: 3.125rem;
       align-items: flex-end;
       justify-content: space-between;
       height: 1.875rem;
-      padding: 0 .9375rem;
+      padding: 0 0.9375rem;
       line-height: 1.875rem;
-      
+
       .header {
         position: relative;
         color: colors.$gray-500;
@@ -57,14 +58,12 @@ $item-height: 3.125rem;
           margin: auto 0;
         }
       }
-      
+
       .sortKey {
         font-weight: 700;
         color: colors.$gray-900;
       }
 
-      
-      
       .dummyHeader {
         width: 2.5rem;
       }
@@ -79,12 +78,12 @@ $item-height: 3.125rem;
         align-items: center;
         justify-content: space-between;
         height: $item-height;
-        padding: 0 .9375rem;
-        margin: .5rem 0;
+        padding: 0 0.9375rem;
+        margin: 0.5rem 0;
         line-height: $item-height;
         background-color: colors.$gray-50;
-        border-radius: .625rem;
-        box-shadow: 0 .25rem .5rem rgb(0 0 0 / 4%);
+        border-radius: 0.625rem;
+        box-shadow: 0 0.25rem 0.5rem rgb(0 0 0 / 4%);
         animation: show 300ms;
 
         .itemCell {
@@ -96,11 +95,11 @@ $item-height: 3.125rem;
 
   .detailButton {
     width: 2.5rem;
-    padding: .4375rem;
-    font-size: .8125rem;
+    padding: 0.4375rem;
+    font-size: 0.8125rem;
     color: colors.$gray-50;
     background-color: colors.$primary;
-    border-radius: .625rem;
+    border-radius: 0.625rem;
     transition: 200ms;
 
     &:hover {

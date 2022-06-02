@@ -1,12 +1,9 @@
 /* stylelint-disable selector-class-pattern */
-@use 'src/styles/constants/colors';
+@use 'styles/constants/colors';
 
 .datePicker {
-  display: flex;
-  align-items: center;
-
-  .tilde {
-    margin: 0 0.5rem;
+  .react-datepicker__navigation {
+    top: 13px;
   }
 
   .react-datepicker-wrapper {
@@ -66,9 +63,4 @@
       border-radius: 0 0 0.5rem 0.5rem;
     }
   }
-}
-
-.submitButton {
-  margin-left: 1rem;
-  box-shadow: 0 0 0.1875rem colors.$primary;
 }

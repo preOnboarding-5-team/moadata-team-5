@@ -7,6 +7,6 @@ interface UserInfo {
 interface UserFilterOptions {
   id: string;
   loginId: string;
-  prevDate?: string;
-  nextDate?: string;
+  prevDate: string;
+  nextDate: string;
 }

@@ -1,5 +1,6 @@
 import type { Dispatch, SetStateAction } from 'react';
 import { useRecoilValue, useSetRecoilState, useResetRecoilState } from 'recoil';
+import dayjs from 'dayjs';
 import { Button } from 'components/common/Button';
 import { userDataList } from 'states/userDataList';
 import { userSearchResult } from 'states/userSearchResult';
@@ -23,15 +24,18 @@ function SearchFormButton({ setFocusState }: Props) {
 
     if (!loginId && !id && !prevDate && !nextDate) {
       setSearchResult(userData);
-    } else if (loginId || id) {
-      setSearchResult(
-        userData.filter(
-          (data) =>
-            (!loginId || data.loginId.includes(loginId)) &&
-            (!id || String(data.id).includes(id))
-        )
-      );
+      return;
     }
+
+    setSearchResult(
+      userData.filter(
+        (data) =>
+          (!loginId || data.loginId.includes(loginId)) &&
+          (!id || String(data.id).includes(id)) &&
+          (!prevDate || dayjs(prevDate) <= dayjs(data.registerDate)) &&
+          (!nextDate || dayjs(nextDate) >= dayjs(data.registerDate))
+      )
+    );
   };
 
   const onClickResetButton = () => {
