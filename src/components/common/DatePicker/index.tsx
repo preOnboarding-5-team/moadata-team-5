@@ -60,6 +60,10 @@ function DatePicker({
       startDate !== formatDate(start, 'YYYY-MM-DD') ||
       endDate !== formatDate(end, 'YYYY-MM-DD')
     ) {
+      const tmpStart = new Date(startDate);
+      const tmpEnd = new Date(endDate);
+      setStart(tmpStart);
+      setEnd(tmpEnd);
       setIndicator(true);
     } else {
       setIndicator(false);

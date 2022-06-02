@@ -5,23 +5,29 @@ import Button from 'components/common/Button';
 import DatePicker from 'components/common/DatePicker';
 import LineChart from 'pages/UserDetail/Charts/LineChart';
 import { setAll, setToday, setWeek } from 'utils/setDates';
+import { useParams } from 'react-router-dom';
 import styles from './charts.module.scss';
 
 function HeartRate() {
   const [startDate, setStartDate] = useState<string>('2022-02-26');
   const [endDate, setEndDate] = useState<string>('2022-04-20');
   const [avgBeat, setAvgBeat] = useState(0);
+  const user = Number(useParams().userId);
 
   const handleToday = () => {
     setStartDate(setToday());
+    setEndDate(setToday());
   };
   const handleWeek = () => {
     const [startOfWeek, endOfWeek] = setWeek(endDate);
     setStartDate(startOfWeek);
     setEndDate(endOfWeek);
   };
-  // TODO: 이거 만들어야함 ㅠㅠ
-  const handleAll = ()
+  const handleAll = () => {
+    const getMinMaxDate = setAll(user, 'heart');
+    setEndDate(getMinMaxDate.end.crt_ymdt);
+    setStartDate(getMinMaxDate.start.crt_ymdt);
+  };
 
   return (
     <li className={styles.chartWrapper}>
@@ -38,12 +44,18 @@ function HeartRate() {
       <div className={styles.label}>
         <div className={styles.timewrapper}>
           <time dateTime={`${startDate}`}>
-            {dayjs(startDate).format('YY-MM-DD')}
+            {dayjs(startDate).format('YY년 MM월 DD일')}
           </time>
-          <span>~</span>
-          <time dateTime={`${endDate}`}>
-            {dayjs(endDate).format('YY-MM-DD')}
-          </time>
+          {startDate === endDate ? (
+            ''
+          ) : (
+            <>
+              <span>~</span>
+              <time dateTime={`${endDate}`}>
+                {dayjs(endDate).format('YY년 MM월 DD일')}
+              </time>
+            </>
+          )}
         </div>
         <span>{`평균 ${avgBeat} bpm`}</span>
       </div>

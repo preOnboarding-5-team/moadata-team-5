@@ -10,6 +10,7 @@ function ConvertData(startDate: string, endDate: string, userSeq: number) {
     )
       return [
         {
+          seq: 0,
           steps: 0,
           crt_ymdt: startDate,
         },
@@ -19,6 +20,7 @@ function ConvertData(startDate: string, endDate: string, userSeq: number) {
       .sort((a, b) => a.seq - b.seq)
       .map((item) => {
         return {
+          seq: item.seq,
           steps: item.steps,
           crt_ymdt: item.crt_ymdt.split(' ')[1],
         };
@@ -34,8 +36,9 @@ function ConvertData(startDate: string, endDate: string, userSeq: number) {
     const tmpIdx = tmpData.findIndex(
       (obj) => obj.crt_ymdt.split(' ')[0] === date
     );
-    if (tmpIdx === -1) return { steps: 0, crt_ymdt: date };
+    if (tmpIdx === -1) return { seq: 0, steps: 0, crt_ymdt: date };
     return {
+      seq: tmpData[tmpIdx].seq,
       steps: tmpData[tmpIdx].steps,
       crt_ymdt: tmpData[tmpIdx].crt_ymdt.split(' ')[0],
     };

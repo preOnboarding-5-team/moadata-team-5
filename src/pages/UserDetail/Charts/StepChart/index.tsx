@@ -32,13 +32,14 @@ function StepChart({ stepData }: Props) {
         style={{
           ticks: { stroke: 'transparent' },
           grid: { stroke: 'transparent' },
-          // axis: { },
           tickLabels: { fontSize: 12, padding: 5, fill: '#94a2ad' },
         }}
       />
       <VictoryAxis
         dependentAxis
-        tickFormat={(t) => `${t} 보`}
+        tickFormat={(t) =>
+          `${t.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',')} 보`
+        }
         tickLabelComponent={<VictoryLabel dx={-30} dy={-10} />}
         style={{
           axis: { display: 'none' },
@@ -51,7 +52,11 @@ function StepChart({ stepData }: Props) {
         data={stepData}
         x="crt_ymdt"
         y="steps"
-        labels={({ datum }) => `${datum.crt_ymdt} \n ${datum.steps}보`}
+        labels={({ datum }) =>
+          `${datum.crt_ymdt} \n ${datum.steps
+            .toString()
+            .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',')}보`
+        }
         style={{
           data: { fill: '#2DD4C0' },
           parent: { border: '1px solid #ccc' },

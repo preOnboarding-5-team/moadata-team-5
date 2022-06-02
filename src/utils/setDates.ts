@@ -1,4 +1,5 @@
 import dayjs from 'dayjs';
+import { allStepData, allHeartData } from 'data';
 
 export const setToday = () => {
   const now = dayjs();
@@ -12,12 +13,36 @@ export const setWeek = (endDate: string) => {
   return weekSetting;
 };
 
-export const setAll = (data: HeartRate[]) => {
-  const max = data.reduce((prev, current) => {
+export const setAll = (userSeq: number, type: string) => {
+  let tmpData;
+  if (type === 'step') {
+    tmpData = allStepData
+      .filter((data) => data.member_seq === userSeq)
+      .map((item) => {
+        return { seq: item.seq, crt_ymdt: item.crt_ymdt.split(' ')[0] };
+      });
+  } else {
+    tmpData = allHeartData
+      .filter((data) => data.member_seq === userSeq)
+      .map((item) => {
+        return { seq: item.seq, crt_ymdt: item.crt_ymdt.split(' ')[0] };
+      });
+  }
+  const end = tmpData.reduce((prev, current) => {
     return prev.seq > current.seq ? prev : current;
   });
-  const min = data.reduce((prev, current) => {
+  const start = tmpData.reduce((prev, current) => {
     return prev.seq > current.seq ? current : prev;
   });
-  return [max, min];
+  return { end, start };
 };
+
+// export const setUserAll = () => {
+//   const max = data.reduce((prev, current) => {
+//     return prev.seq > current.seq ? prev : current;
+//   });
+//   const min = data.reduce((prev, current) => {
+//     return prev.seq > current.seq ? current : prev;
+//   });
+//   return [max, min];
+// };
