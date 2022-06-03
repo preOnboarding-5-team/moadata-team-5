@@ -10,7 +10,8 @@
   width: 17.75rem;
   height: 100%;
   padding: 1.5rem;
-  background-color: colors.$sidebar;
+  // background-color: colors.$sidebar;
+  background-color: transparent;
   transition-duration: 0.2s;
   transition-property: left;
   color: colors.$gray-50;
@@ -52,14 +53,15 @@
 
     .logo {
       width: 100px;
-      margin-top: 5px;
+      margin-bottom: 5px;
       cursor: pointer;
-      fill: colors.$gray-900;
+      fill: colors.$white;
     }
 
     h1 {
       margin-left: 15px;
-      font-size: 1.25rem;
+      font-size: 1.6rem;
+      font-weight: 500;
     }
   }
 
