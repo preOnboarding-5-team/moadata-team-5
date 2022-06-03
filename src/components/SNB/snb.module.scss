@@ -43,11 +43,24 @@
     }
   }
 
-  .logo {
-    width: 12.5rem;
-    margin: 0.8125rem auto;
-    cursor: pointer;
-    fill: colors.$white;
+  .logoWrapper {
+    display: flex;
+    align-items: flex-end;
+    padding: 0 10px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+
+    .logo {
+      width: 100px;
+      margin-top: 5px;
+      cursor: pointer;
+      fill: colors.$gray-900;
+    }
+
+    h1 {
+      margin-left: 15px;
+      font-size: 1.25rem;
+    }
   }
 
   .navigation {
@@ -64,13 +77,17 @@
       border-radius: 0.5rem;
       transition: background-color 200ms;
 
-      &:hover {
-        color: colors.$gray-50;
-        background: colors.$primary-hover;
-      }
-
       .icon {
         margin-right: 0.5rem;
+      }
+
+      &:hover {
+        color: colors.$primary;
+        background: colors.$main-bg;
+
+        .icon {
+          fill: colors.$primary;
+        }
       }
 
       &.active {

@@ -2,7 +2,7 @@ import { Outlet } from 'react-router-dom';
 
 import GNB from 'components/GNB';
 import SNB from 'components/SNB';
-import Breadcrumb from 'components/Breadcrumb';
+// import Breadcrumb from 'components/Breadcrumb';
 
 import styles from './adminLayout.module.scss';
 
@@ -12,7 +12,7 @@ function AdminLayout() {
       <SNB />
       <div className={styles.wrapper}>
         <GNB />
-        <Breadcrumb />
+        {/* <Breadcrumb /> */}
         <div className={styles.content}>
           <Outlet />
         </div>

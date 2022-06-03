@@ -51,7 +51,10 @@ function SNB() {
   return (
     <div className={cx(styles.snb, { [styles.visible]: showSidebar })}>
       {menuIcon}
-      <LogoImage className={styles.logo} onClick={onLogoClick} />
+      <div className={styles.logoWrapper}>
+        <LogoImage className={styles.logo} onClick={onLogoClick} />
+        <h1>백오피스</h1>
+      </div>
       <nav className={styles.navigation}>
         <NavLink
           to="/"
