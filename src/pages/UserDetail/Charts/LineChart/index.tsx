@@ -53,7 +53,7 @@ function LineChart({ startDate, endDate, setAvgBeat }: Props) {
   }, [dataList]);
 
   return (
-    <>
+    <div>
       {!isDataValidate ? (
         <NoData className={styles.noData} />
       ) : (
@@ -103,52 +103,7 @@ function LineChart({ startDate, endDate, setAvgBeat }: Props) {
           />
         </VictoryChart>
       )}
-      {/* <VictoryChart
-        theme={VictoryTheme.material}
-        // eslint-disable-next-line react/jsx-props-no-spreading
-        {...options}
-        containerComponent={
-          <VictoryVoronoiContainer
-            voronoiDimension="x"
-            labels={({ datum }) => `${datum.x} \n ${datum.y}bpm`}
-            labelComponent={
-              <VictoryTooltip
-                cornerRadius={5}
-                flyoutStyle={{ fill: '#0F172A' }}
-                flyoutWidth={95}
-                flyoutHeight={50}
-                flyoutPadding={5}
-              />
-            }
-          />
-        }
-      >
-        <VictoryAxis
-          style={axisStyle}
-          tickValues={dataList}
-          tickFormat={(datum, index) => {
-            if (dataList.length < 10) return datum;
-            if (index % 10 !== (dataList.length - 1) % 10) return '';
-            return datum;
-          }}
-          offsetY={50}
-        />
-        <VictoryAxis
-          dependentAxis
-          tickLabelComponent={<VictoryLabel dx={-30} dy={-10} />}
-          orientation="left"
-          style={dependentAxisStyle}
-        />
-        <VictoryLine
-          style={{
-            data: { stroke: '#ff443a' },
-            parent: { border: '1px solid #ccc' },
-            labels: { fill: 'white', fontSize: '15px', fontWeight: '500' },
-          }}
-          data={dataList}
-        />
-      </VictoryChart> */}
-    </>
+    </div>
   );
 }
 
