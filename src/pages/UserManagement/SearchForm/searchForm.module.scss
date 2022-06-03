@@ -3,6 +3,7 @@
 
 .searchSection {
   width: 100%;
+  padding: 20px;
   margin-top: 10px;
   border-radius: 10px;
   // border: 1px solid colors.$primary;
@@ -13,49 +14,48 @@
   .searchSectionForm {
     display: block;
     width: 100%;
-    // margin: 20px 0;
-    margin-top: 20px;
-
-    @include responsive.after('sm') {
-      display: flex;
-      justify-content: flex-start;
-    }
-
-    @include responsive.after('lg') {
-      display: block;
-    }
-
-    @include responsive.after('xlg') {
-      display: flex;
-      justify-content: space-between;
-    }
+    margin: 20px 0;
+    margin-bottom: 80px;
 
     .inputBox {
-      @include responsive.after('lg') {
+      width: 80%;
+      margin: 0 auto;
+
+      @include responsive.after('md') {
         display: flex;
         align-items: center;
         justify-content: space-between;
-      }
-
-      @include responsive.after('xlg') {
-        margin-right: 2%;
+        width: 100%;
       }
 
       .inputList {
         display: flex;
-        // padding: 0 10px;
-        // margin-bottom: 10px;
+        padding-right: 100px;
+        padding-left: 20px;
+        margin-bottom: 10px;
         font-size: 16px;
         background: colors.$white;
         border-radius: 20px;
         box-shadow: 1px 1px 5px colors.$shadow;
 
+        @include responsive.after('sm') {
+          padding: 0 20px;
+          margin-right: 0;
+        }
+
+        @include responsive.after('md') {
+          padding: 0 20px;
+          margin-right: 16px;
+          margin-bottom: 0;
+        }
+
         &.inputList:last-of-type {
+          position: relative;
           margin-right: 0;
           margin-bottom: 0;
 
           @include responsive.after('lg') {
-            // margin-bottom: 10px;
+            margin-bottom: 10px;
           }
 
           @include responsive.after('xlg') {
@@ -63,18 +63,10 @@
           }
         }
 
-        @include responsive.after('lg') {
-          margin-right: 16px;
-        }
-        @include responsive.after('xlg') {
-          margin-bottom: 0;
-        }
-
         dt {
           min-width: 60px;
-          margin-left: 15px;
           height: 40px;
-          padding-left: 4px;
+          margin-left: 15px;
           line-height: 40px;
           text-align: center;
           letter-spacing: -0.1em;
@@ -84,12 +76,14 @@
         dd {
           width: calc(100% - 60px);
           height: 40px;
+          margin-right: 15px;
           line-height: 40px;
           text-align: center;
-          margin-right: 15px;
 
           &.fromTo {
             width: 10px;
+            margin: 0 auto;
+            text-align: center;
           }
 
           input {
@@ -102,45 +96,33 @@
           }
 
           &.searchDateDesc {
-            width: 100%;
             height: 40px;
             line-height: 40px;
           }
 
-          // &.datePickerCategory {
-          //   display: flex;
-          //   align-items: center;
-          //   justify-content: space-between;
-          //   width: 160px;
+          &.datePickerCategory {
+            position: absolute;
+            right: 0;
+            bottom: -50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 132px;
 
-          //   .today,
-          //   .week,
-          //   .allday {
-          //     min-width: 32px;
-          //     height: 24px;
-          //     padding: 0;
-          //     margin-right: 2px;
-          //     margin-left: 0;
-          //     font-size: 10px;
-          //     line-height: 24px;
+            .today,
+            .week,
+            .allday {
+              min-width: 40px;
+              height: 28px;
+              padding: 0;
+              font-size: 10px;
+              line-height: 28px;
 
-          //     &.allday {
-          //       margin-right: 0;
-          //     }
-
-          //     @include responsive.after('lg') {
-          //       min-width: 26px;
-          //     }
-          //     @include responsive.after('xlg') {
-          //       min-width: 32px;
-          //     }
-
-          //     &:hover {
-          //       border-bottom: 1px solid colors.$primary-hover;
-          //       transform: scale(0.95);
-          //     }
-          //   }
-          // }
+              &:hover {
+                transform: scale(0.95);
+              }
+            }
+          }
         }
 
         &:last-child {
@@ -153,26 +135,19 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-top: 16px;
+      margin-top: 80px;
 
-      @include responsive.after('sm') {
-        margin: 0 5%;
-      }
-      @include responsive.after('lg') {
-        margin-top: 1rem;
-        margin-left: 0;
-      }
-      @include responsive.after('xlg') {
-        margin-top: 0;
+      @include responsive.after('md') {
+        margin-top: 60px;
       }
 
       .searchButton,
       .resetFilterButton {
-        min-width: 60px;
-        height: 32px;
+        min-width: 108px;
+        height: 40px;
         padding: 0 8px !important;
         font-size: 14px;
-        line-height: 32px;
+        line-height: 40px;
 
         &.searchButton {
           margin-right: 16px;
@@ -181,48 +156,3 @@
     }
   }
 }
-
-// .dateInput {
-.datePickerCategory {
-  width: 100%;
-  height: 40px;
-  line-height: 40px;
-  text-align: center;
-  margin-right: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 160px;
-
-  .today,
-  .week,
-  .allday {
-    min-width: 32px;
-    height: 24px;
-    padding: 0;
-    margin-right: 2px;
-    margin-left: 0;
-    font-size: 10px;
-    line-height: 24px;
-    background-color: transparent;
-    color: colors.$gray-50;
-    border: 1px solid colors.$gray-50;
-
-    &.allday {
-      margin-right: 0;
-    }
-
-    @include responsive.after('lg') {
-      min-width: 26px;
-    }
-    @include responsive.after('xlg') {
-      min-width: 32px;
-    }
-
-    &:hover {
-      border-bottom: 1px solid colors.$primary-hover;
-      transform: scale(0.95);
-    }
-  }
-}
-// }

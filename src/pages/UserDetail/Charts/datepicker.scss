@@ -4,34 +4,38 @@
 
 .datePicker {
   display: block;
+  width: 100%;
+  padding: 0 20px;
 
   @include responsive.after('sm') {
-    display: flex;
-    align-items: center;
-    margin: 0 20px;
+    padding: 0 100px;
+  }
+
+  @include responsive.after('md') {
+    padding: 0 150px;
+  }
+
+  @include responsive.after('hd') {
+    padding: 0 20px;
   }
 
   .tilde {
     display: inline-block;
-    width: 4%;
+    width: 8%;
     margin: 0;
     text-align: center;
-    @include responsive.after('sm') {
-      margin: 0 8px;
-    }
   }
 
   .react-datepicker-wrapper {
     display: inline-block;
-    width: 48%;
+    width: 46%;
     text-align: center;
+    cursor: pointer;
+    background: colors.$white;
+    border-radius: 8px;
+    box-shadow: 0 0 3px colors.$primary;
 
     @include responsive.after('sm') {
-      width: 120px;
-      cursor: pointer;
-      background: colors.$white;
-      border-radius: 8px;
-      box-shadow: 0 0 3px colors.$primary;
     }
 
     .react-datepicker__input-container {
@@ -93,18 +97,12 @@
 
 .submitButton {
   width: 100%;
-  min-height: 39.47px;
+  min-height: 50px;
   margin-top: 16px;
   margin-left: 0;
-
-  @include responsive.after('sm') {
-    width: 120px;
-    margin-top: 0;
-    margin-left: 16px;
-    background: colors.$gray-500;
-    box-shadow: 0 0 3px colors.$primary;
-    opacity: 0.5;
-  }
+  background: colors.$gray-500;
+  box-shadow: 0 0 3px colors.$primary;
+  opacity: 0.5;
 }
 
 .indicate {
