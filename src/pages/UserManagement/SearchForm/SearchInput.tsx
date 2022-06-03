@@ -6,21 +6,24 @@ interface Props {
   inputName: string;
   inputValue: string;
   focusRef: RefObject<HTMLInputElement>;
-  type?: string;
   onKeyDown: (event: KeyboardEvent<HTMLInputElement>) => void;
+  onKeyPress?: (event: KeyboardEvent<HTMLInputElement>) => void;
+  type?: string;
 }
 
 function SearchInput({
   inputName,
   inputValue,
   focusRef,
-  type = 'text',
   onKeyDown,
+  onKeyPress,
+  type,
 }: Props) {
   const setFilterOptions = useSetRecoilState(userFilterOptions);
 
   const onChangeInput = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
+
     setFilterOptions((prev) => ({
       ...prev,
       [name]: value,
@@ -36,6 +39,7 @@ function SearchInput({
       value={inputValue}
       ref={focusRef}
       onKeyDown={onKeyDown}
+      onKeyPress={onKeyPress}
     />
   );
 }

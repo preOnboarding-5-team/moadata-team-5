@@ -10,27 +10,21 @@ function UserData() {
   const userInfo = userData.filter((user) => user.id === userSeq);
 
   return (
-    <ul className={styles.dataWrapper}>
-      <li className={styles.data}>
-        <dl>
-          <dt>로그인ID:</dt>
-          <dd>{userInfo[0].loginId}</dd>
-        </dl>
-      </li>
-      <li className={styles.data}>
-        <dl>
-          <dt>회원번호:</dt>
-          <dd>{userInfo[0].id}</dd>
-        </dl>
-      </li>
-      <li className={styles.data}>
-        <dl>
-          <dt>가입 일시:</dt>
-          {/* // TODO: 년, 월, 일로 바꾸는 것이 나은지 결정 필요 */}
-          <dd>{userInfo[0].registerDate}</dd>
-        </dl>
-      </li>
-    </ul>
+    <dl className={styles.dataWrapper}>
+      <div className={styles.data}>
+        <dt>로그인ID</dt>
+        <dd>{userInfo[0].loginId}</dd>
+      </div>
+      <div className={styles.data}>
+        <dt>회원번호</dt>
+        <dd>{userInfo[0].id}</dd>
+      </div>
+      <div className={styles.data}>
+        <dt>가입일</dt>
+        {/* // TODO: 년, 월, 일로 바꾸는 것이 나은지 결정 필요 */}
+        <dd>{userInfo[0].registerDate}</dd>
+      </div>
+    </dl>
   );
 }
 

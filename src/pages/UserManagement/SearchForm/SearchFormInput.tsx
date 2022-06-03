@@ -48,6 +48,9 @@ function SearchFormInput({ focusState }: Props) {
     }
   }, [focusState]);
 
+  const checkNumber = (e: KeyboardEvent<HTMLInputElement>) =>
+    ['e', 'E', '+', '-'].includes(e.key) && e.preventDefault();
+
   const onSubmitByEnter = (e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key !== 'Enter') return;
     const { loginId, id, prevDate, nextDate } = filterOptions;
@@ -162,11 +165,12 @@ function SearchFormInput({ focusState }: Props) {
         <dt className={styles.loginNumberLabel}>회원번호</dt>
         <dd className={styles.loginNumberDesc}>
           <SearchInput
-            inputName="id"
             type="number"
+            inputName="id"
             inputValue={filterOptions.id}
             focusRef={inputRef}
             onKeyDown={onSubmitByEnter}
+            onKeyPress={checkNumber}
           />
         </dd>
       </div>
@@ -175,7 +179,7 @@ function SearchFormInput({ focusState }: Props) {
         <dd className={styles.searchDateDesc}>
           <SearchDatePicker
             onChange={onChangeStartCalendar}
-            onKeyDown={onSubmitByEnter}
+            onKeyDown={checkNumber}
             selected={start}
           />
         </dd>
