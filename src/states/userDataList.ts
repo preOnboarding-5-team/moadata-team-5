@@ -6,17 +6,17 @@ export const userDataList = atom<UserInfo[]>({
     {
       id: 136,
       registerDate: '2022-02-01',
-      loginId: 'asdasd',
+      loginId: 'miriya.lee',
     },
     {
       id: 328,
       registerDate: '2022-03-01',
-      loginId: 'qweqwe',
+      loginId: 'yeonji',
     },
     {
       id: 380,
       registerDate: '2022-04-01',
-      loginId: 'zxczxc',
+      loginId: 'gonji',
     },
   ],
 });

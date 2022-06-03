@@ -1,22 +1,36 @@
 /* stylelint-disable selector-class-pattern */
 @use 'src/styles/constants/colors';
 
-.datepicker {
-  position: relative;
-  z-index: 999;
-  transform: scale(0.8);
+// .datepicker {
+//   position: relative;
+//   z-index: 999;
+//   transform: scale(0.5);
 
-  .react-datepicker__input-container {
-    width: 120px;
-    transform: scale(1.25);
-  }
+.react-datepicker__input-container {
+  input {
+    width: 100px;
+    padding: 8px;
+    color: colors.$gray-900;
+    text-align: center;
+    cursor: default;
 
-  .react-datepicker__navigation--previous,
-  .react-datepicker__navigation--next {
-    top: 1rem;
-    width: 2rem;
+    &::selection {
+      all: unset;
+    }
+
+    &:focus {
+      caret-color: transparent;
+    }
   }
 }
+
+.react-datepicker__navigation--previous,
+.react-datepicker__navigation--next {
+  top: 1rem;
+  width: 2rem;
+}
+
+// }
 
 .react-datepicker {
   color: colors.$gray-900;

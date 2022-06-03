@@ -21,7 +21,6 @@ function UserData() {
       </div>
       <div className={styles.data}>
         <dt>가입일</dt>
-        {/* // TODO: 년, 월, 일로 바꾸는 것이 나은지 결정 필요 */}
         <dd>{userInfo[0].registerDate}</dd>
       </div>
     </dl>

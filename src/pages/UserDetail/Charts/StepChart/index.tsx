@@ -74,7 +74,7 @@ function StepChart({ stepData }: Props) {
             }
             style={{
               data: {
-                fill: '#747EC5',
+                fill: '#003e57',
                 stroke: 'transparent',
                 strokeWidth: 3,
               },
@@ -85,7 +85,7 @@ function StepChart({ stepData }: Props) {
             labelComponent={
               <VictoryTooltip
                 cornerRadius={5}
-                flyoutStyle={{ fill: '#0F172A' }}
+                flyoutStyle={{ fill: '#003e57' }}
                 flyoutWidth={95}
                 flyoutHeight={50}
                 flyoutPadding={5}

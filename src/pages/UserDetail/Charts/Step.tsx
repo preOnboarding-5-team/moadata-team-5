@@ -81,7 +81,7 @@ function Step() {
             </>
           )}
         </div>
-        <p>총 {totalSteps} 걸음</p>
+        <p>총 {totalSteps} 보</p>
       </div>
       <div className={styles.buttonWrapper}>
         <Button size="short" onClick={handleToday}>
