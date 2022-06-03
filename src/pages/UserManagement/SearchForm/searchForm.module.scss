@@ -94,7 +94,7 @@
           &.datePickerCategory {
             position: absolute;
             right: 0;
-            bottom: -40px;
+            bottom: -50px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -110,7 +110,6 @@
               line-height: 28px;
 
               &:hover {
-                border-bottom: 1px solid colors.$primary-hover;
                 transform: scale(0.95);
               }
             }
@@ -130,7 +129,7 @@
       margin-top: 80px;
 
       @include responsive.after('md') {
-        margin-top: 40px;
+        margin-top: 60px;
       }
 
       .searchButton,

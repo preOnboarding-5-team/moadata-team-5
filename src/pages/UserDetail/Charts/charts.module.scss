@@ -81,7 +81,6 @@
     }
 
     .datePickerWrapper {
-      margin-top: 40px;
       margin-left: 0;
       line-height: 20px;
       color: colors.$gray-800;
@@ -91,18 +90,22 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 40px 0 20px;
+      margin: 20px 0;
 
       button {
         min-width: 48px;
         height: 32px;
         padding: 0 6px;
-        margin-right: 4px;
+        margin-right: 8px;
         font-size: 14px;
         line-height: 32px;
 
         &:last-of-type {
           margin-right: 0;
+        }
+
+        &:hover {
+          transform: scale(0.95);
         }
       }
     }
