@@ -6,29 +6,29 @@
 //   z-index: 999;
 //   transform: scale(0.5);
 
-  .react-datepicker__input-container {
-    input {
-      width: 100px;
-      padding: 8px;
-      color: colors.$gray-900;
-      text-align: center;
-      cursor: default;
+.react-datepicker__input-container {
+  input {
+    width: 100px;
+    padding: 8px;
+    color: colors.$gray-900;
+    text-align: center;
+    cursor: default;
 
-      &::selection {
-        all: unset;
-      }
+    &::selection {
+      all: unset;
+    }
 
-      &:focus {
-        caret-color: transparent;
-      }
+    &:focus {
+      caret-color: transparent;
     }
   }
+}
 
-  .react-datepicker__navigation--previous,
-  .react-datepicker__navigation--next {
-    top: 1rem;
-    width: 2rem;
-  }
+.react-datepicker__navigation--previous,
+.react-datepicker__navigation--next {
+  top: 1rem;
+  width: 2rem;
+}
 
 // }
 

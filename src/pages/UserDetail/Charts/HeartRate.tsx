@@ -64,16 +64,6 @@ function HeartRate() {
         </div>
         <p>{`평균 ${avgBeat} bpm`}</p>
       </div>
-      <div className={styles.datePickerWrapper}>
-        <DatePicker
-          startDate={startDate}
-          setStartDate={setStartDate}
-          endDate={endDate}
-          setEndDate={setEndDate}
-          minDate={new Date(minDate)}
-          maxDate={new Date(maxDate)}
-        />
-      </div>
       <div className={styles.buttonWrapper}>
         <Button size="short" onClick={handleToday}>
           오늘
@@ -84,6 +74,16 @@ function HeartRate() {
         <Button size="short" onClick={handleAll}>
           전체
         </Button>
+      </div>
+      <div className={styles.datePickerWrapper}>
+        <DatePicker
+          startDate={startDate}
+          setStartDate={setStartDate}
+          endDate={endDate}
+          setEndDate={setEndDate}
+          minDate={new Date(minDate)}
+          maxDate={new Date(maxDate)}
+        />
       </div>
     </li>
   );
