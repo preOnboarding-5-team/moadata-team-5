@@ -39,13 +39,11 @@ function HeartRate() {
       <header className={styles.chartHeader}>
         <h2 className={styles.chartTitle}>심박수</h2>
       </header>
-      <div className={styles.chart}>
-        <LineChart
-          startDate={startDate}
-          endDate={endDate}
-          setAvgBeat={setAvgBeat}
-        />
-      </div>
+      <LineChart
+        startDate={startDate}
+        endDate={endDate}
+        setAvgBeat={setAvgBeat}
+      />
       <div className={styles.label}>
         <div className={styles.timewrapper}>
           <time dateTime={`${startDate}`}>

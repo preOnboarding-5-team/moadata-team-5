@@ -1,3 +1,5 @@
+import { KeyboardEvent } from 'react';
+
 import type { Dispatch, SetStateAction } from 'react';
 import ReactDatePicker from 'react-datepicker';
 import { ko } from 'date-fns/locale';
@@ -37,6 +39,10 @@ function SearchDatePicker({
     else setEnd(selectedDate);
   };
 
+  const onKeyDown = (e: KeyboardEvent) => {
+    e.preventDefault();
+  };
+
   return (
     <>
       <dd className={styles.searchDateDesc}>
@@ -51,6 +57,7 @@ function SearchDatePicker({
           maxDate={maxDate}
           locale={ko}
           placeholderText="전체"
+          onKeyDown={onKeyDown}
         />
       </dd>
       <dd className={styles.fromTo}>~</dd>
@@ -66,6 +73,7 @@ function SearchDatePicker({
           maxDate={maxDate}
           locale={ko}
           placeholderText="전체"
+          onKeyDown={onKeyDown}
         />
       </dd>
     </>
