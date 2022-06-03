@@ -3,19 +3,16 @@
 @use 'src/styles/mixins/responsive';
 
 .managementWrapper {
-  box-sizing: border-box;
-  max-width: dimensions.$max-width;
-  padding: 0 20px;
   background: colors.$main-bg;
   
   .managementTitle {
-    padding: 1.25rem 0;
-    font-size: 1.5rem;
+    padding: 20px 0;
+    font-size: 24px;
     font-weight: bold;
   }
 
   .nothing {
-    margin-top: 9.375rem;
+    margin-top: 150px;
     color: colors.$gray-500;
     text-align: center;
   }

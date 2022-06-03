@@ -13,26 +13,25 @@
 
   .tilde {
     display: inline-block;
-    width: 10%;
+    width: 4%;
     margin: 0;
     text-align: center;
     @include responsive.after('sm') {
-      width: 40px;
-      margin: 0 0.5rem;
+      margin: 0 8px;
     }
   }
 
   .react-datepicker-wrapper {
     display: inline-block;
-    width: 45%;
+    width: 48%;
     text-align: center;
 
     @include responsive.after('sm') {
       width: 120px;
       cursor: pointer;
       background: colors.$white;
-      border-radius: 0.5rem;
-      box-shadow: 0 0 0.1875rem colors.$primary;
+      border-radius: 8px;
+      box-shadow: 0 0 3px colors.$primary;
     }
 
     .react-datepicker__input-container {
@@ -42,7 +41,9 @@
       input {
         width: 100px;
         padding: 8px;
+        font-size: 16px;
         color: colors.$gray-900;
+        color: colors.$gray-850;
         text-align: center;
         cursor: pointer;
 
@@ -60,8 +61,8 @@
   .react-datepicker {
     color: colors.$gray-900;
     border: 0;
-    border-radius: 0.5rem;
-    box-shadow: 0 0 0.1875rem colors.$primary;
+    border-radius: 8px;
+    box-shadow: 0 0 3px colors.$primary;
 
     &__header {
       background: colors.$primary;
@@ -79,9 +80,9 @@
     &__month {
       padding: 6.4px;
       margin: 0;
-      border: 0.0625rem solid colors.$primary;
+      border: 1px solid colors.$primary;
       border-top: 0;
-      border-radius: 0 0 0.5rem 0.5rem;
+      border-radius: 0 0 8px 8px;
     }
   }
 

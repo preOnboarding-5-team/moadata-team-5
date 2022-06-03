@@ -38,7 +38,10 @@ function SearchFormInput({ focusState }: Props) {
     }
   }, [focusState]);
 
-  const handleSubmitByEnter = (e: KeyboardEvent<HTMLInputElement>) => {
+  const checkNumber = (e: KeyboardEvent<HTMLInputElement>) =>
+    ['e', 'E', '+', '-'].includes(e.key) && e.preventDefault();
+
+  const onSubmitByEnter = (e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key !== 'Enter') return;
 
     submitFilter();
@@ -76,16 +79,22 @@ function SearchFormInput({ focusState }: Props) {
         <dt className={styles.loginNumberLabel}>회원번호</dt>
         <dd className={styles.loginNumberDesc}>
           <SearchInput
-            inputName="id"
             type="number"
+            inputName="id"
             inputValue={filterOptions.id}
             focusRef={inputRef}
+<<<<<<< HEAD
             onKeyDown={handleSubmitByEnter}
+=======
+            onKeyDown={onSubmitByEnter}
+            onKeyPress={checkNumber}
+>>>>>>> 33e005cde22775af47e2423a7f08da1e77234ed3
           />
         </dd>
       </div>
       <div className={styles.inputList}>
         <dt className={styles.searchDateLabel}>조회기간</dt>
+<<<<<<< HEAD
         <SearchDatePicker
           start={start}
           end={end}
@@ -94,6 +103,23 @@ function SearchFormInput({ focusState }: Props) {
           maxDate={MAX_DATE}
           minDate={MIN_DATE}
         />
+=======
+        <dd className={styles.searchDateDesc}>
+          <SearchDatePicker
+            onChange={onChangeStartCalendar}
+            onKeyDown={checkNumber}
+            selected={start}
+          />
+        </dd>
+        <dd className={styles.fromTo}>~</dd>
+        <dd className={styles.searchDateDesc}>
+          <SearchDatePicker
+            onChange={onChangeEndCalendar}
+            onKeyDown={onSubmitByEnter}
+            selected={end}
+          />
+        </dd>
+>>>>>>> 33e005cde22775af47e2423a7f08da1e77234ed3
         <dd className={styles.datePickerCategory}>
           <Button className={styles.today} size="short" onClick={handleToday}>
             오늘

@@ -8,21 +8,17 @@
   margin-left: 20px;
 
   .crumbs {
-    // margin: 10px 0;
     color: colors.$gray-700;
+    border-radius: 10px;
 
-    &:not(:last-child)::after {
-      margin-left: 16px;
-      content: '>';
+      &::after {
+        margin-left: 16px;
+        content: '>';
+      }
     }
   }
 
-  // padding: 0 0 1rem;
-  // padding: 0 20px;
-  // background-color: colors.$white;
-  border-radius: 10px;
-
   .currentPage {
-    font-weight: 700;
+    color: colors.$primary;
   }
 }

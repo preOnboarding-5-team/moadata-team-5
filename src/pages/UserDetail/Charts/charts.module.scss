@@ -3,32 +3,25 @@
 
 .wrapper {
   display: flex;
-
-  // flex-direction: row;
   flex-flow: wrap;
+  justify-content: space-between;
   width: 100%;
 
   .chartWrapper {
     width: 100%;
-    padding: 1.25rem;
-    margin: 1.5rem 0;
-    color: colors.$gray-900;
+    padding: 20px;
+    margin: 24px 0;
+    color: colors.$gray-850;
     background-color: colors.$white;
-    border-radius: 1.25rem;
-    box-shadow: 0 0.25rem 0.625rem colors.$shadow;
-
-    // @include responsive.after('sm') {
-    //   margin: 0;
-    // }
+    border-radius: 20px;
+    box-shadow: 0 4px 10px colors.$shadow;
 
     @include responsive.after('hd') {
       width: 45%;
     }
 
-    // min-width: 28.125rem;
-
     + .chartWrapper {
-      margin-top: 1.5rem;
+      margin-top: 24px;
       margin-left: 0;
 
       @include responsive.after('hd') {
@@ -40,13 +33,14 @@
       display: flex;
       align-items: center;
       width: 100%;
-      height: 2.5rem;
-      padding-left: 1.25rem;
+      height: 40px;
+      padding: 20px 0 0 20px;
 
       .chartTitle {
-        font-size: 1.25rem;
+        font-size: 20px;
         font-weight: 900;
-        line-height: 1.25rem;
+        line-height: 20px;
+        color: colors.$gray-800;
       }
     }
 
@@ -54,33 +48,47 @@
       display: flex;
       justify-content: space-between;
       width: 100%;
-      padding: 0 2rem;
-      margin: 1.25rem 0 0;
-      font-size: 1rem;
+      padding: 0 20px;
+      margin: 20px 0 0;
+      font-size: 14px;
       font-weight: 500;
-      line-height: 2rem;
+      line-height: 32px;
+
+      time,
+      span {
+        color: colors.$gray-800;
+      }
+    }
+
+    p {
+      color: colors.$gray-800;
     }
 
     .datePickerWrapper {
       margin-top: 40px;
       margin-left: 0;
-      font-size: 14px;
       line-height: 20px;
+      color: colors.$gray-800;
     }
 
     .buttonWrapper {
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 40px 0 0;
+      margin: 20px 0 0 20px;
 
       @include responsive.after('sm') {
         justify-content: flex-start;
-        margin: 40px 0 0 20px;
+        margin: 16px 0 20px 20px;
       }
 
       button {
+        min-width: 48px;
+        height: 32px;
+        padding: 0 6px;
         margin-right: 4px;
+        font-size: 14px;
+        line-height: 32px;
 
         &:last-of-type {
           margin-right: 0;

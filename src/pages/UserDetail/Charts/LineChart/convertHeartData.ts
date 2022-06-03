@@ -66,7 +66,10 @@ export const convertHeartData = (
 };
 
 export const getAvgBeat = (data: Data[]) => {
-  const totalBeat = data.reduce((prv, cur) => prv + cur.y, 0);
-  const avgBeat = Math.round(totalBeat / data.length);
-  return avgBeat;
+  const noZero = data.filter((datum) => datum.y > 0);
+  const totalBeat = noZero.reduce((prv, cur) => prv + cur.y, 0);
+  if (noZero.length > 0) {
+    return Math.round(totalBeat / noZero.length);
+  }
+  return 0;
 };
