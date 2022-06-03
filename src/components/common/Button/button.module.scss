@@ -2,13 +2,23 @@
 
 .button {
   color: colors.$gray-50;
-  background-color: colors.$primary;
+  background-color: colors.$gray-300;
   border-radius: 0.5rem;
   transition: 200ms;
 
   &:hover {
-    color: colors.$white;
+    color: colors.$gray-50;
     background-color: colors.$primary-hover;
+  }
+
+  &.primary {
+    color: colors.$gray-50;
+    background-color: colors.$primary;
+
+    &:hover {
+      color: colors.$white;
+      background-color: colors.$primary-hover;
+    }
   }
 
   &.short {
