@@ -3,19 +3,23 @@
 .breadcrumb {
   display: flex;
   gap: 1rem;
-  align-items: center;
-  justify-content: center;
-  margin-left: 20px;
 
   .crumbs {
-    color: colors.$gray-700;
-    border-radius: 10px;
+    color: colors.$gray-500;
 
-    &::after {
-      margin-left: 16px;
-      content: '>';
+    &:not(:last-child) {
+      &:hover {
+        color: colors.$primary-hover;
+      }
+
+      &::after {
+        margin-left: 16px;
+        content: '>';
+      }
     }
   }
+
+  border-radius: 10px;
 
   .currentPage {
     color: colors.$primary;
