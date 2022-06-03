@@ -59,7 +59,6 @@ function LineChart({ startDate, endDate, setAvgBeat }: Props) {
       ) : (
         <VictoryChart
           theme={VictoryTheme.material}
-          // eslint-disable-next-line react/jsx-props-no-spreading
           {...options}
           containerComponent={
             <VictoryVoronoiContainer
@@ -68,7 +67,7 @@ function LineChart({ startDate, endDate, setAvgBeat }: Props) {
               labelComponent={
                 <VictoryTooltip
                   cornerRadius={5}
-                  flyoutStyle={{ fill: '#0F172A' }}
+                  flyoutStyle={{ fill: '#003e57' }}
                   flyoutWidth={95}
                   flyoutHeight={50}
                   flyoutPadding={5}

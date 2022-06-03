@@ -8,6 +8,10 @@
   width: 100%;
 
   .chartWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     padding: 20px;
     margin: 24px 0;
@@ -18,6 +22,11 @@
 
     @include responsive.after('hd') {
       width: 45%;
+    }
+
+    .noData {
+      width: 200px;
+      height: 200px;
     }
 
     + .chartWrapper {
@@ -40,7 +49,7 @@
         font-size: 20px;
         font-weight: 900;
         line-height: 20px;
-        color: colors.$gray-800;
+        color: colors.$gray-900;
       }
     }
 
@@ -56,12 +65,12 @@
 
       time,
       span {
-        color: colors.$gray-800;
+        color: colors.$gray-900;
       }
     }
 
     p {
-      color: colors.$gray-800;
+      color: colors.$gray-900;
     }
 
     .datePickerWrapper {

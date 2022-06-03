@@ -1,7 +1,7 @@
 @use 'src/styles/mixins/responsive';
 @use 'src/styles/constants/colors';
 
-$item-height: 3.125rem;
+$item-height: 3.5rem;
 
 .wrapper {
   width: 100%;
@@ -13,7 +13,6 @@ $item-height: 3.125rem;
 
     mark {
       all: unset;
-      font-weight: 700;
       color: colors.$primary;
     }
   }
@@ -41,9 +40,9 @@ $item-height: 3.125rem;
       flex-direction: row;
       align-items: flex-end;
       justify-content: space-between;
-      height: 30px;
+      height: 40px;
       padding: 0 15px;
-      line-height: 30px;
+      line-height: 40px;
 
       .header {
         position: relative;
@@ -69,7 +68,9 @@ $item-height: 3.125rem;
       }
 
       .dummyHeader {
-        width: 40px;
+        width: 60px;
+        height: 30px;
+        margin-right: 5px;
       }
     }
 
@@ -85,13 +86,12 @@ $item-height: 3.125rem;
         padding: 0 15px;
         margin: 8px 0;
         line-height: $item-height;
-        background-color: colors.$gray-50;
-        border-radius: 0.625rem;
+        border-radius: 30px;
         box-shadow: 0 0.25rem 0.5rem colors.$shadow;
         animation: show 300ms;
+        background-color: colors.$white;
 
         .itemCell {
-          color: colors.$gray-800;
           text-align: center;
 
           &:first-of-type {
@@ -103,17 +103,13 @@ $item-height: 3.125rem;
   }
 
   .detailButton {
-    width: 40px;
-    padding: 7px;
-    font-size: 13px;
-    color: colors.$gray-50;
-    background-color: colors.$primary;
-    border-radius: 10px;
-    transition: 200ms;
-
-    &:hover {
-      background-color: colors.$primary-hover;
-    }
+    // width: 40px;
+    // padding: 7px;
+    // font-size: 13px;
+    padding: 0.5rem;
+    margin-right: 5px;
+    color: colors.$white;
+    border-radius: 0.5rem;
   }
 }
 

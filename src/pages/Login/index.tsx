@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-props-no-spreading */
 import { useForm } from 'react-hook-form';
 import { useEffect, useState } from 'react';
 import cx from 'classnames';
@@ -67,39 +66,39 @@ function Login() {
           {alert}
         </p>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <label htmlFor="id">
-            ID
-            <input
-              id="id"
-              placeholder="ID"
-              {...register('id', {
-                required: true,
-              })}
-            />
-          </label>
+          <input
+            id="id"
+            placeholder="ID"
+            {...register('id', {
+              required: true,
+            })}
+          />
+
           {errors.id?.type === 'required' && <span>필수 입력 항목입니다.</span>}
 
-          <label htmlFor="pw">
-            PW
-            <div className="inputWrap">
-              <input
-                id="pw"
-                type={isVisible ? 'text' : 'password'}
-                placeholder="PASSWORD"
-                {...register('pw', {
-                  required: true,
-                  minLength: { value: 5, message: '최소 5글자 입력해주세요' },
-                })}
+          <div className={styles.inputWrap}>
+            <input
+              id="pw"
+              type={isVisible ? 'text' : 'password'}
+              placeholder="PASSWORD"
+              {...register('pw', {
+                required: true,
+                minLength: { value: 5, message: '최소 5글자 입력해주세요' },
+              })}
+            />
+            {isVisible ? (
+              <VisibilityOnIcon
+                className={styles.icon}
+                onClick={handleVisible}
               />
-              <div className={styles.icon}>
-                {isVisible ? (
-                  <VisibilityOnIcon onClick={handleVisible} />
-                ) : (
-                  <VisibilityOffIcon onClick={handleVisible} />
-                )}
-              </div>
-            </div>
-          </label>
+            ) : (
+              <VisibilityOffIcon
+                className={styles.icon}
+                onClick={handleVisible}
+              />
+            )}
+          </div>
+
           {errors.pw?.type === 'required' && <span>필수 입력 항목입니다.</span>}
           {errors.pw?.message && <span>{errors.pw?.message}</span>}
           <Button size="long" type="submit" className={styles.loginButton}>

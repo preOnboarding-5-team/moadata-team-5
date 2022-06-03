@@ -4,16 +4,17 @@
   display: flex;
   flex: 1;
   height: 100%;
-  background: colors.$main-bg;
 
   .wrapper {
     display: flex;
     flex: 1;
     flex-direction: column;
-    padding: 2rem;
+    background-color: colors.$white;
+    background-color: colors.$gray-50;
 
     .content {
       flex-grow: 1;
+      padding: 2rem;
     }
   }
 }

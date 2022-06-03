@@ -2,6 +2,8 @@ import type { MouseEvent } from 'react';
 import { Link } from 'react-router-dom';
 import cx from 'classnames';
 
+import Button from 'components/common/Button';
+
 import { useTableHeader } from '../_hooks/useTableHeader';
 import Header from './Header';
 import styles from './searchResult.module.scss';
@@ -63,9 +65,9 @@ export default function SearchResult() {
                   {loginId}
                 </div>
                 <div className={cx(styles.itemCell, styles.detail)}>
-                  <button className={styles.detailButton} type="button">
+                  <Button className={styles.detailButton} size="short" primary>
                     <Link to={`${id}`}>관리</Link>
-                  </button>
+                  </Button>
                 </div>
               </li>
             );

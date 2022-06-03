@@ -2,25 +2,38 @@
 
 .button {
   color: colors.$gray-50;
-  background-color: colors.$gray-300;
+  background-color: colors.$white;
+  color: colors.$primary;
+  border: 1px solid colors.$primary;
   border-radius: 0.5rem;
-  transition: 200ms;
+  transition: 100ms;
+  padding: 5px;
 
   &:hover {
     color: colors.$gray-50;
-    background-color: colors.$primary-hover;
+    background-color: colors.$primary;
   }
 
   &.primary {
     color: colors.$gray-50;
     background-color: colors.$primary;
+    border: none;
 
     &:hover {
       color: colors.$white;
       background-color: colors.$primary-hover;
     }
   }
+  &.important {
+    color: colors.$gray-50;
+    background-color: colors.$important;
+    border: none;
 
+    &:hover {
+      color: colors.$white;
+      background-color: colors.$primary-hover;
+    }
+  }
   &.short {
     min-width: 3.75rem;
     padding: 0.5rem;

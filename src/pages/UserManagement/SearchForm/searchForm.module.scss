@@ -4,11 +4,15 @@
 .searchSection {
   width: 100%;
   margin-top: 10px;
+  border-radius: 10px;
+  border: 1px solid colors.$primary;
+  padding: 20px;
 
   .searchSectionForm {
     display: block;
     width: 100%;
-    margin: 20px 0;
+    // margin: 20px 0;
+    margin-top: 20px;
 
     @include responsive.after('sm') {
       display: flex;
@@ -37,11 +41,11 @@
 
       .inputList {
         display: flex;
-        padding: 0 10px;
-        margin-bottom: 10px;
+        // padding: 0 10px;
+        // margin-bottom: 10px;
         font-size: 16px;
         background: colors.$white;
-        border-radius: 10px;
+        border-radius: 20px;
         box-shadow: 1px 1px 5px colors.$shadow;
 
         &.inputList:last-of-type {
@@ -49,7 +53,7 @@
           margin-bottom: 0;
 
           @include responsive.after('lg') {
-            margin-bottom: 10px;
+            // margin-bottom: 10px;
           }
 
           @include responsive.after('xlg') {
@@ -66,6 +70,7 @@
 
         dt {
           min-width: 60px;
+          margin-left: 15px;
           height: 40px;
           padding-left: 4px;
           line-height: 40px;
@@ -78,6 +83,7 @@
           height: 40px;
           line-height: 40px;
           text-align: center;
+          margin-right: 15px;
 
           &.fromTo {
             width: 10px;
@@ -98,40 +104,40 @@
             line-height: 40px;
           }
 
-          &.datePickerCategory {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 160px;
+          // &.datePickerCategory {
+          //   display: flex;
+          //   align-items: center;
+          //   justify-content: space-between;
+          //   width: 160px;
 
-            .today,
-            .week,
-            .allday {
-              min-width: 32px;
-              height: 24px;
-              padding: 0;
-              margin-right: 2px;
-              margin-left: 0;
-              font-size: 10px;
-              line-height: 24px;
+          //   .today,
+          //   .week,
+          //   .allday {
+          //     min-width: 32px;
+          //     height: 24px;
+          //     padding: 0;
+          //     margin-right: 2px;
+          //     margin-left: 0;
+          //     font-size: 10px;
+          //     line-height: 24px;
 
-              &.allday {
-                margin-right: 0;
-              }
+          //     &.allday {
+          //       margin-right: 0;
+          //     }
 
-              @include responsive.after('lg') {
-                min-width: 26px;
-              }
-              @include responsive.after('xlg') {
-                min-width: 32px;
-              }
+          //     @include responsive.after('lg') {
+          //       min-width: 26px;
+          //     }
+          //     @include responsive.after('xlg') {
+          //       min-width: 32px;
+          //     }
 
-              &:hover {
-                border-bottom: 1px solid colors.$primary-hover;
-                transform: scale(0.95);
-              }
-            }
-          }
+          //     &:hover {
+          //       border-bottom: 1px solid colors.$primary-hover;
+          //       transform: scale(0.95);
+          //     }
+          //   }
+          // }
         }
 
         &:last-child {
@@ -172,3 +178,45 @@
     }
   }
 }
+
+// .dateInput {
+.datePickerCategory {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 160px;
+
+  .today,
+  .week,
+  .allday {
+    min-width: 32px;
+    height: 24px;
+    padding: 0;
+    margin-right: 2px;
+    margin-left: 0;
+    font-size: 10px;
+    line-height: 24px;
+
+    &.allday {
+      margin-right: 0;
+    }
+
+    @include responsive.after('lg') {
+      min-width: 26px;
+    }
+    @include responsive.after('xlg') {
+      min-width: 32px;
+    }
+
+    &:hover {
+      border-bottom: 1px solid colors.$primary-hover;
+      transform: scale(0.95);
+    }
+  }
+}
+// }
