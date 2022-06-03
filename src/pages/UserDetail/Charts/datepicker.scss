@@ -1,0 +1,112 @@
+/* stylelint-disable selector-class-pattern */
+@use 'src/styles/constants/colors';
+@use 'src/styles/mixins/responsive';
+
+.datePicker {
+  display: block;
+
+  @include responsive.after('sm') {
+    display: flex;
+    align-items: center;
+    margin: 0 20px;
+  }
+
+  .tilde {
+    display: inline-block;
+    width: 10%;
+    margin: 0;
+    text-align: center;
+    @include responsive.after('sm') {
+      width: 40px;
+      margin: 0 0.5rem;
+    }
+  }
+
+  .react-datepicker-wrapper {
+    display: inline-block;
+    width: 45%;
+    text-align: center;
+
+    @include responsive.after('sm') {
+      width: 120px;
+      cursor: pointer;
+      background: colors.$white;
+      border-radius: 0.5rem;
+      box-shadow: 0 0 0.1875rem colors.$primary;
+    }
+
+    .react-datepicker__input-container {
+      width: 100%;
+      text-align: center;
+
+      input {
+        width: 100px;
+        padding: 8px;
+        color: colors.$gray-900;
+        text-align: center;
+        cursor: pointer;
+
+        &::selection {
+          all: unset;
+        }
+
+        &:focus {
+          caret-color: transparent;
+        }
+      }
+    }
+  }
+
+  .react-datepicker {
+    color: colors.$gray-900;
+    border: 0;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0.1875rem colors.$primary;
+
+    &__header {
+      background: colors.$primary;
+      border: 0;
+    }
+
+    &__current-month {
+      color: colors.$gray-50;
+    }
+
+    &__day-name {
+      color: colors.$gray-50;
+    }
+
+    &__month {
+      padding: 6.4px;
+      margin: 0;
+      border: 0.0625rem solid colors.$primary;
+      border-top: 0;
+      border-radius: 0 0 0.5rem 0.5rem;
+    }
+  }
+
+  .react-datepicker__navigation-icon::before {
+    top: 10px;
+  }
+}
+
+.submitButton {
+  width: 100%;
+  min-height: 39.47px;
+  margin-top: 16px;
+  margin-left: 0;
+
+  @include responsive.after('sm') {
+    width: 120px;
+    margin-top: 0;
+    margin-left: 16px;
+    background: colors.$gray-500;
+    box-shadow: 0 0 3px colors.$primary;
+    opacity: 0.5;
+  }
+}
+
+.indicate {
+  background: colors.$primary;
+  opacity: 1;
+}

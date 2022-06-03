@@ -4,12 +4,35 @@ import { useState } from 'react';
 import Button from 'components/common/Button';
 import DatePicker from 'components/common/DatePicker';
 import LineChart from 'pages/UserDetail/Charts/LineChart';
+import { setAll, setToday, setWeek } from 'utils/setDates';
+import { useParams } from 'react-router-dom';
+
+import './datepicker.scss';
 import styles from './charts.module.scss';
 
 function HeartRate() {
-  const [startDate, setStartDate] = useState<string>('2022-02-26');
-  const [endDate, setEndDate] = useState<string>('2022-04-20');
+  const user = Number(useParams().userId);
+  const minDate = setAll(user, 'heart').start.crt_ymdt;
+  const maxDate = setAll(user, 'heart').end.crt_ymdt;
+
+  const [startDate, setStartDate] = useState<string>(minDate);
+  const [endDate, setEndDate] = useState<string>(maxDate);
   const [avgBeat, setAvgBeat] = useState(0);
+
+  const handleToday = () => {
+    setStartDate(setToday());
+    setEndDate(setToday());
+  };
+  const handleWeek = () => {
+    const [startOfWeek, endOfWeek] = setWeek(endDate);
+    setStartDate(startOfWeek);
+    setEndDate(endOfWeek);
+  };
+  const handleAll = () => {
+    const getMinMaxDate = setAll(user, 'heart');
+    setEndDate(getMinMaxDate.end.crt_ymdt);
+    setStartDate(getMinMaxDate.start.crt_ymdt);
+  };
 
   return (
     <li className={styles.chartWrapper}>
@@ -26,14 +49,20 @@ function HeartRate() {
       <div className={styles.label}>
         <div className={styles.timewrapper}>
           <time dateTime={`${startDate}`}>
-            {dayjs(startDate).format('YY-MM-DD')}
+            {dayjs(startDate).format('YY년 MM월 DD일')}
           </time>
-          <span>~</span>
-          <time dateTime={`${endDate}`}>
-            {dayjs(endDate).format('YY-MM-DD')}
-          </time>
+          {startDate === endDate ? (
+            ''
+          ) : (
+            <>
+              <span>~</span>
+              <time dateTime={`${endDate}`}>
+                {dayjs(endDate).format('YY년 MM월 DD일')}
+              </time>
+            </>
+          )}
         </div>
-        <span>{`평균 ${avgBeat} bpm`}</span>
+        <p>{`평균 ${avgBeat} bpm`}</p>
       </div>
       <div className={styles.datePickerWrapper}>
         <DatePicker
@@ -41,14 +70,20 @@ function HeartRate() {
           setStartDate={setStartDate}
           endDate={endDate}
           setEndDate={setEndDate}
-          minDate={new Date(2022, 1, 26)}
-          maxDate={new Date(2022, 3, 20)}
+          minDate={new Date(minDate)}
+          maxDate={new Date(maxDate)}
         />
       </div>
       <div className={styles.buttonWrapper}>
-        <Button size="short">오늘</Button>
-        <Button size="short">1주일</Button>
-        <Button size="short">전체</Button>
+        <Button size="short" onClick={handleToday}>
+          오늘
+        </Button>
+        <Button size="short" onClick={handleWeek}>
+          1주일
+        </Button>
+        <Button size="short" onClick={handleAll}>
+          전체
+        </Button>
       </div>
     </li>
   );

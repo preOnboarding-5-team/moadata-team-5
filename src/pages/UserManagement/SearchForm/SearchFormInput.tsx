@@ -1,8 +1,9 @@
-import { KeyboardEvent, useEffect, useRef } from 'react';
+import { KeyboardEvent, useEffect, useRef, useState } from 'react';
 import { useRecoilValue, useRecoilState, useSetRecoilState } from 'recoil';
 import { userFilterOptions } from 'states/userFilterOptions';
 import { userDataList } from 'states/userDataList';
 import { userSearchResult } from 'states/userSearchResult';
+import { setUserAll, setToday, setWeek } from 'utils/setDates';
 
 import dayjs from 'dayjs';
 
@@ -25,12 +26,19 @@ function SearchFormInput({ focusState }: Props) {
   const [filterOptions, setFilterOptions] = useRecoilState(userFilterOptions);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const start = filterOptions.prevDate
-    ? new Date(filterOptions.prevDate)
-    : MIN_DATE;
-  const end = filterOptions.nextDate
-    ? new Date(filterOptions.nextDate)
-    : MAX_DATE;
+  const [start, setStart] = useState<Date>(new Date());
+  const [end, setEnd] = useState<Date>(new Date());
+
+  useEffect(() => {
+    setStart(
+      filterOptions.prevDate ? new Date(filterOptions.prevDate) : MIN_DATE
+    );
+  }, [filterOptions.prevDate]);
+  useEffect(() => {
+    setEnd(
+      filterOptions.nextDate ? new Date(filterOptions.nextDate) : MAX_DATE
+    );
+  }, [filterOptions.nextDate]);
 
   useEffect(() => {
     if (focusState) {
@@ -86,6 +94,57 @@ function SearchFormInput({ focusState }: Props) {
       }));
     }
   };
+  const handleToday = () => {
+    setStart(new Date(setToday()));
+    setEnd(new Date(setToday()));
+    setFilterOptions((prev) => ({
+      ...prev,
+      prevDate: dayjs(setToday()).format('YYYY-MM-DD'),
+      nextDate: dayjs(setToday()).format('YYYY-MM-DD'),
+    }));
+  };
+
+  const handleWeek = () => {
+    const [startOfWeek, endOfWeek] = setWeek(dayjs(end).format('YYYY-MM-DD'));
+    setStart(new Date(startOfWeek));
+    setEnd(new Date(endOfWeek));
+    setFilterOptions((prev) => ({
+      ...prev,
+      prevDate: dayjs(startOfWeek).format('YYYY-MM-DD'),
+      nextDate: dayjs(endOfWeek).format('YYYY-MM-DD'),
+    }));
+  };
+
+  useEffect(() => {
+    const onSubmitSearchButton = () => {
+      const { loginId, id, prevDate, nextDate } = filterOptions;
+      if (!loginId && !id && !prevDate && !nextDate) {
+        setSearchResult(userData);
+        return;
+      }
+      setSearchResult(
+        userData.filter(
+          (data) =>
+            (!loginId || data.loginId.includes(loginId)) &&
+            (!id || String(data.id).includes(id)) &&
+            (!prevDate || dayjs(prevDate) <= dayjs(data.registerDate)) &&
+            (!nextDate || dayjs(nextDate) >= dayjs(data.registerDate))
+        )
+      );
+    };
+    onSubmitSearchButton();
+  }, [filterOptions, setSearchResult, userData]);
+
+  const handleAll = () => {
+    const getMinMaxDate = setUserAll(userData);
+    setEnd(new Date(getMinMaxDate.end.registerDate));
+    setStart(new Date(getMinMaxDate.start.registerDate));
+    setFilterOptions((prev) => ({
+      ...prev,
+      prevDate: getMinMaxDate.start.registerDate,
+      nextDate: getMinMaxDate.end.registerDate,
+    }));
+  };
   return (
     <dl className={styles.inputBox}>
       <div className={styles.inputList}>
@@ -129,13 +188,13 @@ function SearchFormInput({ focusState }: Props) {
           />
         </dd>
         <dd className={styles.datePickerCategory}>
-          <Button className={styles.today} size="short">
+          <Button className={styles.today} size="short" onClick={handleToday}>
             오늘
           </Button>
-          <Button className={styles.week} size="short">
+          <Button className={styles.week} size="short" onClick={handleWeek}>
             1주일
           </Button>
-          <Button className={styles.allday} size="short">
+          <Button className={styles.allday} size="short" onClick={handleAll}>
             전체
           </Button>
         </dd>

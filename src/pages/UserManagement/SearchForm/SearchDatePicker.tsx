@@ -9,12 +9,14 @@ interface Props {
   onChange: (selectedDate: Date) => void;
   onKeyDown?: (event: KeyboardEvent<HTMLInputElement>) => void;
   selected: Date;
+  // date: string;
 }
 
 const MIN_DATE = new Date(2022, 0, 1);
 const MAX_DATE = new Date(2022, 11, 31);
 
 function SearchDatePicker({ onChange, onKeyDown, selected }: Props) {
+  // const convertedDate = new Date(date);
   const filterOptions = useRecoilValue(userFilterOptions);
   const start = filterOptions.prevDate
     ? new Date(filterOptions.prevDate)

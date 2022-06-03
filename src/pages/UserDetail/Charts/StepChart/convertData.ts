@@ -10,8 +10,9 @@ function ConvertData(startDate: string, endDate: string, userSeq: number) {
     )
       return [
         {
-          steps: 0,
-          crt_ymdt: startDate,
+          seq: 0,
+          y: 0,
+          x: startDate,
         },
       ];
     return totalData
@@ -19,8 +20,9 @@ function ConvertData(startDate: string, endDate: string, userSeq: number) {
       .sort((a, b) => a.seq - b.seq)
       .map((item) => {
         return {
-          steps: item.steps,
-          crt_ymdt: item.crt_ymdt.split(' ')[1],
+          seq: item.seq,
+          y: item.steps,
+          x: item.crt_ymdt.split(' ')[1],
         };
       });
   }
@@ -34,10 +36,11 @@ function ConvertData(startDate: string, endDate: string, userSeq: number) {
     const tmpIdx = tmpData.findIndex(
       (obj) => obj.crt_ymdt.split(' ')[0] === date
     );
-    if (tmpIdx === -1) return { steps: 0, crt_ymdt: date };
+    if (tmpIdx === -1) return { seq: 0, y: 0, x: date };
     return {
-      steps: tmpData[tmpIdx].steps,
-      crt_ymdt: tmpData[tmpIdx].crt_ymdt.split(' ')[0],
+      seq: tmpData[tmpIdx].seq,
+      y: tmpData[tmpIdx].steps,
+      x: tmpData[tmpIdx].crt_ymdt.split(' ')[0],
     };
   });
 }

@@ -21,12 +21,10 @@ function SearchFormButton({ setFocusState }: Props) {
 
   const onSubmitSearchButton = () => {
     const { loginId, id, prevDate, nextDate } = filterOptions;
-
     if (!loginId && !id && !prevDate && !nextDate) {
       setSearchResult(userData);
       return;
     }
-
     setSearchResult(
       userData.filter(
         (data) =>

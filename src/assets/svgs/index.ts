@@ -10,3 +10,5 @@ export { ReactComponent as ArrowDropUpIcon } from './arrow_drop_up.svg';
 export { ReactComponent as LogoImage } from './logo.svg';
 export { ReactComponent as VisibilityOnIcon } from './visibility-on-icon.svg';
 export { ReactComponent as VisibilityOffIcon } from './visibility-off-icon.svg';
+
+export { ReactComponent as NoData } from './no-data.svg';
