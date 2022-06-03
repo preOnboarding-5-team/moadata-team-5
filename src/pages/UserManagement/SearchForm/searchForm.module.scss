@@ -3,12 +3,12 @@
 
 .searchSection {
   width: 100%;
-  margin-top: 0.625rem;
+  margin-top: 10px;
 
   .searchSectionForm {
     display: block;
     width: 100%;
-    margin: 1.25rem 0;
+    margin: 20px 0;
 
     @include responsive.after('sm') {
       display: flex;
@@ -37,52 +37,47 @@
 
       .inputList {
         display: flex;
-        padding: 0 0.625rem;
-        margin-bottom: 0.625rem;
-        font-size: 0.75rem;
+        padding: 0 10px;
+        margin-bottom: 10px;
+        font-size: 16px;
         background: colors.$white;
-        border-radius: 1.5rem;
-        box-shadow: 0.0625rem 0.0625rem 0.3125rem colors.$shadow;
+        border-radius: 24px;
+        box-shadow: 1px 1px 5px colors.$shadow;
 
         &.inputList:last-of-type {
           margin-right: 0;
           margin-bottom: 0;
 
           @include responsive.after('lg') {
-            margin-bottom: 0.625rem;
+            margin-bottom: 10px;
           }
+
           @include responsive.after('xlg') {
             margin-bottom: 0;
           }
         }
 
         @include responsive.after('lg') {
-          margin-right: 1rem;
+          margin-right: 16px;
         }
         @include responsive.after('xlg') {
           margin-bottom: 0;
         }
 
         dt {
-          min-width: 3.75rem;
-          height: 2.5rem;
-          padding: 0 0.25rem;
-          line-height: 2.5rem;
+          min-width: 60px;
+          height: 40px;
+          padding-left: 4px;
+          line-height: 40px;
           text-align: center;
-
-          &:last-of-type {
-            min-width: 3.75rem;
-            height: 2.5rem;
-            padding: 0 0.25rem;
-            line-height: 2.5rem;
-            text-align: center;
-          }
+          letter-spacing: -0.1em;
         }
 
         dd {
-          width: 100%;
-          height: 2.5rem;
-          line-height: 2.5rem;
+          width: calc(100% - 60px);
+          height: 40px;
+          line-height: 40px;
+          text-align: center;
 
           &.fromTo {
             width: 10px;
@@ -90,47 +85,49 @@
 
           input {
             width: 100%;
-            height: 2.5rem;
-            padding: 0 0.5rem;
-            font-size: 0.75rem;
-            line-height: 2.5rem;
+            height: 40px;
+            font-size: 16px;
+            line-height: 40px;
             text-align: center;
             text-overflow: ellipsis;
           }
 
           &.searchDateDesc {
             width: 100%;
-            height: 2.5rem;
-            line-height: 2.5rem;
+            height: 40px;
+            line-height: 40px;
           }
 
           &.datePickerCategory {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            width: 10rem;
-            margin: 0 auto;
-            margin-top: 0;
+            width: 160px;
 
             .today,
             .week,
             .allday {
-              min-width: 2rem;
-              height: 1.5rem;
+              min-width: 32px;
+              height: 24px;
               padding: 0;
+              margin-right: 2px;
               margin-left: 0;
-              font-size: 0.625rem;
-              line-height: 1.5rem;
+              font-size: 10px;
+              line-height: 24px;
+
+              &.allday {
+                margin-right: 0;
+              }
 
               @include responsive.after('lg') {
-                min-width: 1.8rem;
+                min-width: 26px;
               }
               @include responsive.after('xlg') {
-                min-width: 2rem;
+                min-width: 32px;
               }
 
               &:hover {
-                border-bottom: 0.0625rem solid colors.$primary-hover;
+                border-bottom: 1px solid colors.$primary-hover;
                 transform: scale(0.95);
               }
             }
@@ -138,7 +135,7 @@
         }
 
         &:last-child {
-          margin-right: 1.25rem;
+          margin-right: 20px;
         }
       }
     }
@@ -147,11 +144,10 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-top: 1rem;
+      margin-top: 16px;
 
       @include responsive.after('sm') {
-        margin-top: 0;
-        margin-left: 5%;
+        margin: 0 5%;
       }
       @include responsive.after('lg') {
         margin-top: 1rem;
@@ -163,19 +159,16 @@
 
       .searchButton,
       .resetFilterButton {
-        height: 2rem;
-        padding: 0 0.5rem !important;
-        font-size: 0.875rem;
-        line-height: 2rem;
+        min-width: 60px;
+        height: 32px;
+        padding: 0 8px !important;
+        font-size: 14px;
+        line-height: 32px;
 
         &.searchButton {
-          margin-right: 1rem;
+          margin-right: 16px;
         }
       }
     }
   }
 }
-
-// .calendar {
-//   f
-// }
