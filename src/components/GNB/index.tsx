@@ -12,12 +12,11 @@ function GNB() {
     const obj = { isLogin: false };
 
     store.set('loginData', obj);
-    navigate('login', { replace: true });
+    navigate('/', { replace: true });
   };
 
   return (
     <div className={styles.gnb}>
-      {/* <p className={styles.title}>백오피스</p> */}
       <div className={styles.breadcrumbWrapper}>
         <Breadcrumb />
       </div>

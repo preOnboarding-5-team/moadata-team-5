@@ -11,6 +11,7 @@ interface Props {
   onClick?: () => void;
   disabled?: boolean;
   primary?: boolean;
+  important?: boolean;
 }
 
 export default function Button({
@@ -21,6 +22,7 @@ export default function Button({
   className,
   disabled,
   primary,
+  important,
 }: Props) {
   return (
     <button
@@ -28,6 +30,7 @@ export default function Button({
       onClick={onClick}
       className={cx(styles.button, styles[size], className, {
         [styles.primary]: primary,
+        [styles.important]: important,
       })}
       disabled={disabled}
     >

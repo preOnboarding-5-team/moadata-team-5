@@ -68,8 +68,8 @@ function LineChart({ startDate, endDate, setAvgBeat }: Props) {
                 <VictoryTooltip
                   cornerRadius={5}
                   flyoutStyle={{ fill: '#003e57' }}
-                  flyoutWidth={95}
-                  flyoutHeight={50}
+                  flyoutWidth={150}
+                  flyoutHeight={70}
                   flyoutPadding={5}
                 />
               }
@@ -96,7 +96,7 @@ function LineChart({ startDate, endDate, setAvgBeat }: Props) {
             style={{
               data: { stroke: '#ff443a' },
               parent: { border: '1px solid #ccc' },
-              labels: { fill: 'white', fontSize: '15px', fontWeight: '500' },
+              labels: { fill: 'white', fontSize: '22px', fontWeight: '500' },
             }}
             data={dataList}
           />

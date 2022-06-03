@@ -90,7 +90,7 @@ function SearchFormInput({ focusState }: Props) {
           />
         </dd>
       </div>
-      <div className={cx(styles.inputList, styles.dateInput)}>
+      <div className={styles.inputList}>
         <dt className={styles.searchDateLabel}>조회기간</dt>
         <SearchDatePicker
           start={start}
@@ -100,17 +100,17 @@ function SearchFormInput({ focusState }: Props) {
           maxDate={MAX_DATE}
           minDate={MIN_DATE}
         />
-      </div>
-      <div className={styles.datePickerCategory}>
-        <Button className={styles.today} size="short" onClick={handleToday}>
-          오늘
-        </Button>
-        <Button className={styles.week} size="short" onClick={handleWeek}>
-          1주일
-        </Button>
-        <Button className={styles.allday} size="short" onClick={handleAll}>
-          전체
-        </Button>
+        <div className={styles.datePickerCategory}>
+          <Button className={styles.today} size="short" onClick={handleToday}>
+            오늘
+          </Button>
+          <Button className={styles.week} size="short" onClick={handleWeek}>
+            1주일
+          </Button>
+          <Button className={styles.allday} size="short" onClick={handleAll}>
+            전체
+          </Button>
+        </div>
       </div>
     </dl>
   );

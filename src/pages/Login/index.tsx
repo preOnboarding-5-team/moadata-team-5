@@ -98,7 +98,6 @@ function Login() {
               />
             )}
           </div>
-
           {errors.pw?.type === 'required' && <span>필수 입력 항목입니다.</span>}
           {errors.pw?.message && <span>{errors.pw?.message}</span>}
           <Button size="long" type="submit" className={styles.loginButton}>
