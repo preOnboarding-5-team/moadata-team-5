@@ -100,6 +100,7 @@ function DatePicker({
         locale={ko}
       />
       <Button
+        primary
         size="short"
         type="button"
         onClick={onSetDateClick}

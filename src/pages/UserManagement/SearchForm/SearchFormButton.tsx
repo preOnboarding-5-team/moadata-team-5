@@ -45,6 +45,7 @@ function SearchFormButton({ setFocusState }: Props) {
   return (
     <div className={styles.buttonBox}>
       <Button
+        primary
         size="short"
         className={styles.searchButton}
         onClick={onSubmitSearchButton}
