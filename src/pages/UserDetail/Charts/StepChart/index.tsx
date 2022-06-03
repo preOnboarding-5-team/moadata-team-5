@@ -73,7 +73,11 @@ function StepChart({ stepData }: Props) {
                 .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',')}보`
             }
             style={{
-              data: { fill: '#2DD4C0' },
+              data: {
+                fill: '#747EC5',
+                stroke: 'transparent',
+                strokeWidth: 3,
+              },
               parent: { border: '1px solid #ccc' },
               labels: { fill: 'white', fontSize: '15px', fontWeight: 'bold' },
             }}
