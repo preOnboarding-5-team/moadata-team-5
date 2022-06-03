@@ -3,8 +3,9 @@
 .button {
   color: colors.$gray-50;
   background-color: colors.$primary;
-  border-radius: 0.5rem;
+  border-radius: 1.5rem;
   transition: 200ms;
+  padding: 5px;
 
   &:hover {
     color: colors.$white;

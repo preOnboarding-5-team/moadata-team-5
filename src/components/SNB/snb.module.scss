@@ -10,9 +10,10 @@
   width: 17.75rem;
   height: 100%;
   padding: 1.5rem;
-  background-color: colors.$white;
+  background-color: colors.$sidebar;
   transition-duration: 0.2s;
   transition-property: left;
+  color: colors.$gray-50;
 
   @include responsive.after('lg') {
     position: static;
@@ -46,7 +47,7 @@
     width: 12.5rem;
     margin: 0.8125rem auto;
     cursor: pointer;
-    fill: colors.$primary;
+    fill: colors.$white;
   }
 
   .navigation {
@@ -74,7 +75,7 @@
 
       &.active {
         color: colors.$gray-50;
-        background: colors.$primary;
+        background: colors.$important;
 
         .icon {
           fill: colors.$gray-50;
