@@ -4,6 +4,7 @@
 .dataWrapper {
   display: block;
   padding: 0 10%;
+  margin-top: 46px;
 
   @include responsive.after('xs') {
     padding: 0 20%;

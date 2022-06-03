@@ -3,8 +3,6 @@
 @use 'src/styles/mixins/responsive';
 
 .managementWrapper {
-  box-sizing: border-box;
-  max-width: dimensions.$max-width;
   background: colors.$main-bg;
 
   .managementTitle {

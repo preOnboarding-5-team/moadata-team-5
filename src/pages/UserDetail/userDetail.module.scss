@@ -2,29 +2,11 @@
 
 .userDetailWrapper {
   width: 100%;
-  padding: 20px 40px;
-  background-color: colors.$main-bg;
 
-  .pageHeader {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    height: 80px;
-    padding-left: 20px;
-    line-height: 80px;
-
-    .pageTitle {
-      font-size: 24px;
-      font-weight: 900;
-      color: colors.$gray-850;
-    }
-  }
-
-  .userDetail {
-    box-sizing: border-box;
-    width: 100%;
-    padding: 20px;
+  .pageTitle {
+    padding: 20px 0;
+    font-size: 24px;
+    font-weight: 900;
+    color: colors.$gray-850;
   }
 }
