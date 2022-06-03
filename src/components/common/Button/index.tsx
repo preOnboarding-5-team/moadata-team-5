@@ -10,6 +10,7 @@ interface Props {
   className?: string;
   onClick?: () => void;
   disabled?: boolean;
+  primary?: boolean;
 }
 
 export default function Button({
@@ -19,12 +20,15 @@ export default function Button({
   onClick,
   className,
   disabled,
+  primary,
 }: Props) {
   return (
     <button
       type={type === 'submit' ? 'submit' : 'button'}
       onClick={onClick}
-      className={cx(styles.button, styles[size], className)}
+      className={cx(styles.button, styles[size], className, {
+        [styles.primary]: primary,
+      })}
       disabled={disabled}
     >
       {children}

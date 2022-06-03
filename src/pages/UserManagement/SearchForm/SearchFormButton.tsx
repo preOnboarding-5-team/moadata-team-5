@@ -48,6 +48,7 @@ function SearchFormButton({ setFocusState }: Props) {
         size="short"
         className={styles.searchButton}
         onClick={onSubmitSearchButton}
+        primary
       >
         검색
       </Button>

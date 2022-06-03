@@ -77,8 +77,8 @@
   background: colors.$gray-500;
   box-shadow: 0 0 3px colors.$primary;
 
-  &:disabled {
-    opacity: 0.5;
+  &[disabled] {
+    background-color: colors.$gray-500;
 
     &:hover {
       background-color: colors.$gray-500;
