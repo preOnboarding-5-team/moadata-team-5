@@ -53,7 +53,7 @@ function LineChart({ startDate, endDate, setAvgBeat }: Props) {
   }, [dataList]);
 
   return (
-    <div>
+    <div className={styles.chart}>
       {!isDataValidate ? (
         <NoData className={styles.noData} />
       ) : (

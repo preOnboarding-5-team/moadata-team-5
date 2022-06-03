@@ -62,9 +62,7 @@ function Step() {
       <header className={styles.chartHeader}>
         <h2 className={styles.chartTitle}>걸음수</h2>
       </header>
-      <div className={styles.chart}>
-        <StepChart stepData={stepData} />
-      </div>
+      <StepChart stepData={stepData} />
       <div className={styles.label}>
         <div className={styles.timewrapper}>
           <time dateTime={`${startDate}`}>

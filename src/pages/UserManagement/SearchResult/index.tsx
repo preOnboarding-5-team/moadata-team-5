@@ -66,7 +66,12 @@ export default function SearchResult() {
                 </div>
                 <div className={cx(styles.itemCell, styles.detail)}>
                   <Button className={styles.detailButton} size="short" primary>
-                    <Link to={`${id}`}>관리</Link>
+                    <Link
+                      style={{ display: 'block', width: '100%' }}
+                      to={`${id}`}
+                    >
+                      관리
+                    </Link>
                   </Button>
                 </div>
               </li>

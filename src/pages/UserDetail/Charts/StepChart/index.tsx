@@ -22,7 +22,7 @@ function StepChart({ stepData }: Props) {
     setIsDataValidate(hasData(stepData));
   }, [stepData]);
   return (
-    <div>
+    <div className={styles.chart}>
       {!isDataValidate ? (
         <NoData className={styles.noData} />
       ) : (
