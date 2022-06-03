@@ -41,7 +41,7 @@ function SearchFormInput({ focusState }: Props) {
   const checkNumber = (e: KeyboardEvent<HTMLInputElement>) =>
     ['e', 'E', '+', '-'].includes(e.key) && e.preventDefault();
 
-  const onSubmitByEnter = (e: KeyboardEvent<HTMLInputElement>) => {
+  const handleSubmitByEnter = (e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key !== 'Enter') return;
 
     submitFilter();
@@ -72,6 +72,7 @@ function SearchFormInput({ focusState }: Props) {
             inputValue={filterOptions.loginId}
             focusRef={inputRef}
             onKeyDown={handleSubmitByEnter}
+            onKeyPress={checkNumber}
           />
         </dd>
       </div>
@@ -83,18 +84,13 @@ function SearchFormInput({ focusState }: Props) {
             inputName="id"
             inputValue={filterOptions.id}
             focusRef={inputRef}
-<<<<<<< HEAD
             onKeyDown={handleSubmitByEnter}
-=======
-            onKeyDown={onSubmitByEnter}
             onKeyPress={checkNumber}
->>>>>>> 33e005cde22775af47e2423a7f08da1e77234ed3
           />
         </dd>
       </div>
       <div className={styles.inputList}>
         <dt className={styles.searchDateLabel}>조회기간</dt>
-<<<<<<< HEAD
         <SearchDatePicker
           start={start}
           end={end}
@@ -103,23 +99,6 @@ function SearchFormInput({ focusState }: Props) {
           maxDate={MAX_DATE}
           minDate={MIN_DATE}
         />
-=======
-        <dd className={styles.searchDateDesc}>
-          <SearchDatePicker
-            onChange={onChangeStartCalendar}
-            onKeyDown={checkNumber}
-            selected={start}
-          />
-        </dd>
-        <dd className={styles.fromTo}>~</dd>
-        <dd className={styles.searchDateDesc}>
-          <SearchDatePicker
-            onChange={onChangeEndCalendar}
-            onKeyDown={onSubmitByEnter}
-            selected={end}
-          />
-        </dd>
->>>>>>> 33e005cde22775af47e2423a7f08da1e77234ed3
         <dd className={styles.datePickerCategory}>
           <Button className={styles.today} size="short" onClick={handleToday}>
             오늘

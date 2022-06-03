@@ -76,6 +76,10 @@
       border-radius: 0.5rem;
       transition: background-color 200ms;
 
+      .icon {
+        margin-right: 0.5rem;
+      }
+
       &:hover {
         color: colors.$primary;
         background: colors.$main-bg;
@@ -83,10 +87,6 @@
         .icon {
           fill: colors.$primary;
         }
-      }
-
-      .icon {
-        margin-right: 0.5rem;
       }
 
       &.active {

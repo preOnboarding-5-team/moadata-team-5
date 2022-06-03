@@ -11,10 +11,9 @@
     color: colors.$gray-700;
     border-radius: 10px;
 
-      &::after {
-        margin-left: 16px;
-        content: '>';
-      }
+    &::after {
+      margin-left: 16px;
+      content: '>';
     }
   }
 
