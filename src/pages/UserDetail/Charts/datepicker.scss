@@ -6,14 +6,6 @@
   display: block;
   width: 100%;
 
-  @include responsive.after('sm') {
-    padding: 0 100px;
-  }
-
-  @include responsive.after('md') {
-    padding: 0 150px;
-  }
-
   @include responsive.after('lg') {
     padding: 0 20px;
   }
