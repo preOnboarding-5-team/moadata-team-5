@@ -3,18 +3,23 @@
 .breadcrumb {
   display: flex;
   gap: 1rem;
-  padding: 0 0 1rem;
 
   .crumbs {
-    color: colors.$primary;
+    color: colors.$gray-500;
 
-    &:not(:last-child)::after {
-      margin-left: 16px;
-      content: '>';
+    &:not(:last-child) {
+      &:hover {
+        color: colors.$primary-hover;
+      }
+
+      &::after {
+        margin-left: 16px;
+        content: '>';
+      }
     }
   }
 
   .currentPage {
-    font-weight: 700;
+    color: colors.$primary;
   }
 }

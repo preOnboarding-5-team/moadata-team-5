@@ -26,9 +26,7 @@ function UserDetail() {
 
   return (
     <section className={styles.userDetailWrapper}>
-      <header className={styles.pageHeader}>
-        <h1 className={styles.pageTitle}>회원 상세 정보</h1>
-      </header>
+      <h1 className={styles.pageTitle}>회원 상세 정보</h1>
       <div className={styles.userDetail}>
         <UserData />
         <Charts />

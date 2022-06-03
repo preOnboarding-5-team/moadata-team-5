@@ -29,23 +29,27 @@ function App() {
 
   if (!store.get('loginData')?.isLogin) {
     return (
-      <div className={styles.app}>
-        <Routes>
-          <Route path="/" element={<Login />} />;
-        </Routes>
+      <div className={styles.appWrapper}>
+        <div className={styles.app}>
+          <Routes>
+            <Route path="/" element={<Login />} />;
+          </Routes>
+        </div>
       </div>
     );
   }
   return (
-    <div className={styles.app}>
-      <Routes>
-        <Route element={<AdminLayout />}>
-          <Route index element={<Dashboard />} />
-          <Route path="usermanagement" element={<UserManagement />} />
-          <Route path="usermanagement/:userId" element={<UserDetail />} />
-        </Route>
-        <Route path="*" element={<div>Not Found</div>} />
-      </Routes>
+    <div className={styles.appWrapper}>
+      <div className={styles.app}>
+        <Routes>
+          <Route element={<AdminLayout />}>
+            <Route index element={<Dashboard />} />
+            <Route path="usermanagement" element={<UserManagement />} />
+            <Route path="usermanagement/:userId" element={<UserDetail />} />
+          </Route>
+          <Route path="*" element={<div>Not Found</div>} />
+        </Routes>
+      </div>
     </div>
   );
 }
