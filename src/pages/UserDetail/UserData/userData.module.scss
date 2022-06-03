@@ -18,11 +18,11 @@
 
   .data {
     display: flex;
-    padding: 0 10px;
+    padding: 0 20px;
     margin-bottom: 10px;
     font-size: 16px;
     background: colors.$white;
-    border-radius: 24px;
+    border-radius: 10px;
     box-shadow: 1px 1px 5px colors.$shadow;
 
     &.data:last-of-type {
@@ -38,7 +38,6 @@
     dt {
       min-width: 60px;
       height: 40px;
-      padding-left: 4px;
       line-height: 40px;
       text-align: center;
       letter-spacing: -0.1em;

@@ -9,12 +9,16 @@
 
   .chartWrapper {
     width: 100%;
-    padding: 20px;
+    padding: 60px;
     margin: 24px 0;
     color: colors.$gray-850;
     background-color: colors.$white;
     border-radius: 20px;
     box-shadow: 0 4px 10px colors.$shadow;
+
+    @include responsive.after('sm') {
+      padding: 40px;
+    }
 
     @include responsive.after('hd') {
       width: 45%;
@@ -54,6 +58,18 @@
       font-weight: 500;
       line-height: 32px;
 
+      @include responsive.after('sm') {
+        padding: 0 40px;
+      }
+
+      @include responsive.after('md') {
+        padding: 0 60px;
+      }
+
+      @include responsive.after('hd') {
+        padding: 0 20px;
+      }
+
       time,
       span {
         color: colors.$gray-800;
@@ -75,12 +91,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 20px 0 0 20px;
-
-      @include responsive.after('sm') {
-        justify-content: flex-start;
-        margin: 16px 0 20px 20px;
-      }
+      margin: 40px 0 20px;
 
       button {
         min-width: 48px;
