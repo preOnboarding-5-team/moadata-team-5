@@ -40,11 +40,25 @@
     }
   }
 
-  .logo {
-    width: 200px;
-    cursor: pointer;
-    fill: colors.$primary;
+  .logoWrapper {
+    display: flex;
+    align-items: flex-end;
+    padding: 0 10px;
+    margin-bottom: 42px;
+    
+    .logo {
+      width: 100px;
+      margin-top: 5px;
+      cursor: pointer;
+      fill: colors.$gray-900;
+    }
+
+    h1 {
+      margin-left: 15px;
+      font-size: 1.25rem;
+    }
   }
+
 
   .navigation {
     display: flex;
@@ -60,8 +74,12 @@
       transition: background-color 200ms;
 
       &:hover {
-        color: colors.$gray-50;
-        background: colors.$primary-hover;
+        color: colors.$primary;
+        background: colors.$main-bg;
+
+        .icon {
+          fill: colors.$primary;
+        }
       }
 
       .icon {
