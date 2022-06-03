@@ -18,10 +18,17 @@ function GNB() {
   return (
     <div className={styles.gnb}>
       {/* <p className={styles.title}>백오피스</p> */}
-      <Breadcrumb />
+      <div className={styles.breadcrumbWrapper}>
+        <Breadcrumb />
+      </div>
       <div className={styles.adminInfo}>
         <p>{loginData.id}</p>
-        <Button size="short" type="button" onClick={onClick}>
+        <Button
+          className={styles.logout}
+          size="short"
+          type="button"
+          onClick={onClick}
+        >
           로그아웃
         </Button>
       </div>

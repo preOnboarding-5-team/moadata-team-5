@@ -18,6 +18,14 @@
     }
   }
 
+  .breadcrumbWrapper {
+    padding-left: 4rem;
+
+    @include responsive.after('lg') {
+      padding: 0;
+    }
+  }
+
   .adminInfo {
     display: flex;
     align-items: center;
@@ -26,6 +34,10 @@
       display: flex;
       align-items: center;
       margin-right: 16px;
+    }
+
+    .logout {
+      padding: 0.5rem 1rem;
     }
   }
 }

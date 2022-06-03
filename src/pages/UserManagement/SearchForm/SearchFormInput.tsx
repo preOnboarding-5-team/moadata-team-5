@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import type { KeyboardEvent } from 'react';
 import { useRecoilValue } from 'recoil';
+import cx from 'classnames';
 import dayjs from 'dayjs';
 
 import { userFilterOptions } from 'states/userFilterOptions';
@@ -89,7 +90,7 @@ function SearchFormInput({ focusState }: Props) {
           />
         </dd>
       </div>
-      <div className={styles.inputList}>
+      <div className={cx(styles.inputList, styles.date)}>
         <dt className={styles.searchDateLabel}>조회기간</dt>
         <SearchDatePicker
           start={start}
@@ -99,7 +100,7 @@ function SearchFormInput({ focusState }: Props) {
           maxDate={MAX_DATE}
           minDate={MIN_DATE}
         />
-        <dd className={styles.datePickerCategory}>
+        <div className={styles.datePickerCategory}>
           <Button className={styles.today} size="short" onClick={handleToday}>
             오늘
           </Button>
@@ -109,7 +110,7 @@ function SearchFormInput({ focusState }: Props) {
           <Button className={styles.allday} size="short" onClick={handleAll}>
             전체
           </Button>
-        </dd>
+        </div>
       </div>
     </dl>
   );

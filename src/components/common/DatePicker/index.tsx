@@ -74,7 +74,7 @@ function DatePicker({
   return (
     <div className="datePicker">
       <ReactDatePicker
-        dateFormat="yyyy/MM/dd"
+        dateFormat="yyyy-MM-dd"
         dateFormatCalendar="yyyy LLLL"
         selected={start}
         onChange={onStartChange}
@@ -88,7 +88,7 @@ function DatePicker({
       />
       <span className="tilde">~</span>
       <ReactDatePicker
-        dateFormat="yyyy/MM/dd"
+        dateFormat="yyyy-MM-dd"
         dateFormatCalendar="yyyy LLLL"
         selected={end}
         onChange={onEndChange}
