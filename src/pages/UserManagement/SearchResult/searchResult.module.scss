@@ -6,7 +6,7 @@ $item-height: 3.125rem;
 .wrapper {
   width: 100%;
   margin: 3.125rem auto;
-  font-size: 16px; // TODO
+  font-size: 16px;
 
   .numResultNotf {
     position: relative;
@@ -86,8 +86,8 @@ $item-height: 3.125rem;
         margin: 8px 0;
         line-height: $item-height;
         background-color: colors.$gray-50;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgb(0 0 0 / 4%);
+        border-radius: 0.625rem;
+        box-shadow: 0 0.25rem 0.5rem colors.$shadow;
         animation: show 300ms;
 
         .itemCell {
