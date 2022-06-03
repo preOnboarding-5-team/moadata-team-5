@@ -8,9 +8,10 @@
   width: 100%;
 
   .chartWrapper {
+    position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     width: 100%;
     padding: 60px;
@@ -24,20 +25,21 @@
       padding: 40px;
     }
 
-    @include responsive.after('hd') {
-      width: 45%;
+    @include responsive.after('lg') {
+      width: 47%;
     }
 
     .noData {
       width: 200px;
       height: 200px;
+      padding: 20px;
     }
 
     + .chartWrapper {
       margin-top: 24px;
       margin-left: 0;
 
-      @include responsive.after('hd') {
+      @include responsive.after('lg') {
         margin-left: 40px;
       }
     }
@@ -50,6 +52,9 @@
       padding: 20px 0 0 20px;
 
       .chartTitle {
+        position: absolute;
+        top: 40px;
+        left: 40px;
         font-size: 20px;
         font-weight: 900;
         line-height: 20px;
@@ -59,7 +64,8 @@
 
     .label {
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
+      align-items: center;
       width: 100%;
       padding: 0 20px;
       margin: 20px 0 0;
@@ -75,7 +81,7 @@
         padding: 0 60px;
       }
 
-      @include responsive.after('hd') {
+      @include responsive.after('lg') {
         padding: 0 20px;
       }
 
@@ -86,6 +92,7 @@
     }
 
     p {
+      font-size: 20px;
       color: colors.$gray-900;
     }
 
@@ -99,7 +106,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 20px 0;
+      margin: 15px 0 20px;
 
       button {
         min-width: 48px;

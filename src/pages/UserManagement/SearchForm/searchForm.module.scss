@@ -6,10 +6,10 @@
   padding: 20px;
   margin-top: 10px;
   border-radius: 10px;
-  // border: 1px solid colors.$primary;
   padding: 20px;
   background-color: colors.$primary;
   color: colors.$gray-50;
+  position: relative;
 
   .searchSectionForm {
     display: block;
@@ -20,6 +20,8 @@
     .inputBox {
       width: 80%;
       margin: 0 auto;
+      display: flex;
+      align-items: center;
 
       @include responsive.after('md') {
         display: flex;
@@ -35,11 +37,12 @@
         margin-bottom: 10px;
         font-size: 16px;
         background: colors.$white;
-        border-radius: 20px;
+        border-radius: 10px;
         box-shadow: 1px 1px 5px colors.$shadow;
 
         @include responsive.after('sm') {
           padding: 0 20px;
+          margin-bottom: 10px;
           margin-right: 0;
         }
 
@@ -66,7 +69,6 @@
         dt {
           min-width: 60px;
           height: 40px;
-          margin-left: 15px;
           line-height: 40px;
           text-align: center;
           letter-spacing: -0.1em;
@@ -76,13 +78,13 @@
         dd {
           width: calc(100% - 60px);
           height: 40px;
-          margin-right: 15px;
           line-height: 40px;
           text-align: center;
 
           &.fromTo {
             width: 10px;
             margin: 0 auto;
+            color: colors.$gray-900;
             text-align: center;
           }
 
@@ -99,34 +101,37 @@
             height: 40px;
             line-height: 40px;
           }
-
-          &.datePickerCategory {
-            position: absolute;
-            right: 0;
-            bottom: -50px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 132px;
-
-            .today,
-            .week,
-            .allday {
-              min-width: 40px;
-              height: 28px;
-              padding: 0;
-              font-size: 10px;
-              line-height: 28px;
-
-              &:hover {
-                transform: scale(0.95);
-              }
-            }
-          }
         }
 
         &:last-child {
           margin-right: 20px;
+        }
+      }
+
+      .datePickerCategory {
+        position: absolute;
+        right: 0;
+        bottom: -40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 132px;
+
+        .today,
+        .week,
+        .allday {
+          min-width: 40px;
+          height: 28px;
+          padding: 0;
+          font-size: 10px;
+          line-height: 28px;
+          background-color: transparent;
+          color: colors.$gray-50;
+          border: 1px solid colors.$gray-50;
+
+          &:hover {
+            transform: scale(0.95);
+          }
         }
       }
     }

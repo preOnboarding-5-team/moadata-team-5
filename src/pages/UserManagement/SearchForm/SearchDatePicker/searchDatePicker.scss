@@ -1,11 +1,6 @@
 /* stylelint-disable selector-class-pattern */
 @use 'src/styles/constants/colors';
 
-// .datepicker {
-//   position: relative;
-//   z-index: 999;
-//   transform: scale(0.5);
-
 .react-datepicker__input-container {
   input {
     width: 100px;
@@ -30,8 +25,6 @@
   width: 2rem;
 }
 
-// }
-
 .react-datepicker {
   color: colors.$gray-900;
   border: 0;
@@ -39,16 +32,16 @@
   box-shadow: 0 0 0.1875rem colors.$primary;
 
   &__header {
-    background: colors.$primary;
+    background: colors.$white;
     border: 0;
   }
 
   &__current-month {
-    color: colors.$gray-50;
+    color: colors.$gray-900;
   }
 
   &__day-name {
-    color: colors.$gray-50;
+    color: colors.$gray-900;
   }
 
   &__month {
