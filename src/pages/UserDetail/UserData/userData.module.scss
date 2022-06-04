@@ -1,0 +1,54 @@
+@use 'src/styles/constants/colors';
+@use 'src/styles/mixins/responsive';
+
+.dataWrapper {
+  display: block;
+  padding: 0 10%;
+  margin-top: 46px;
+
+  @include responsive.after('xs') {
+    padding: 0 20%;
+  }
+
+  @include responsive.after('md') {
+    display: flex;
+    padding: 0;
+    margin-bottom: 16px;
+  }
+
+  .data {
+    display: flex;
+    padding: 0 20px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    background: colors.$white;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px colors.$shadow;
+
+    &.data:last-of-type {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+
+    @include responsive.after('md') {
+      display: flex;
+      margin-right: 16px;
+    }
+
+    dt {
+      min-width: 60px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      letter-spacing: -0.1em;
+    }
+
+    dd {
+      width: calc(100% - 60px);
+      height: 40px;
+      padding: 0 20px;
+      line-height: 40px;
+      text-align: center;
+    }
+  }
+}

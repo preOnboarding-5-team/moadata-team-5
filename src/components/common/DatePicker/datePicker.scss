@@ -1,0 +1,98 @@
+/* stylelint-disable selector-class-pattern */
+@use 'src/styles/constants/colors';
+
+.datePicker {
+  display: flex;
+  align-items: center;
+
+  .tilde {
+    margin: 0 0.5rem;
+  }
+
+  .react-datepicker-wrapper {
+    width: inherit;
+    cursor: pointer;
+    background: colors.$white;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0.1875rem colors.$primary;
+
+    .react-datepicker__input-container {
+      width: inherit;
+
+      input {
+        width: 100px;
+        padding: 8px;
+        color: colors.$gray-900;
+        text-align: center;
+        cursor: pointer;
+
+        &::selection {
+          all: unset;
+        }
+
+        &:focus {
+          caret-color: transparent;
+        }
+      }
+    }
+  }
+
+  .react-datepicker__tab-loop {
+    position: absolute;
+    top: 0;
+  }
+
+  .react-datepicker {
+    color: colors.$gray-900;
+    border: 0;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0.1875rem colors.$primary;
+
+    &__header {
+      background: colors.$primary;
+      border: 0;
+    }
+
+    &__current-month {
+      color: colors.$gray-50;
+    }
+
+    &__day-name {
+      color: colors.$gray-50;
+    }
+
+    &__month {
+      padding: 6.4px;
+      margin: 0;
+      border: 0.0625rem solid colors.$primary;
+      border-top: 0;
+      border-radius: 0 0 0.5rem 0.5rem;
+    }
+  }
+
+  .react-datepicker__navigation {
+    top: 0;
+
+    .react-datepicker__navigation-icon::before {
+      top: 10px;
+    }
+  }
+}
+
+.submitButton {
+  margin-left: 16px;
+  background: colors.$gray-500;
+  box-shadow: 0 0 3px colors.$primary;
+
+  &[disabled] {
+    background-color: colors.$gray-500;
+
+    &:hover {
+      background-color: colors.$gray-500;
+    }
+  }
+}
+
+.indicate {
+  background: colors.$primary;
+}

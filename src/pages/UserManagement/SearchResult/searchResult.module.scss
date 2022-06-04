@@ -1,0 +1,130 @@
+@use 'src/styles/mixins/responsive';
+@use 'src/styles/constants/colors';
+
+$item-height: 3.5rem;
+
+.wrapper {
+  width: 100%;
+  margin: 3.125rem auto;
+  font-size: 16px;
+
+  .numResultNotf {
+    position: relative;
+
+    mark {
+      all: unset;
+      color: colors.$primary;
+    }
+  }
+
+  .listWrapper {
+    width: 100%;
+    margin: 30px auto 0;
+    border-radius: 10px;
+    animation: show 500ms;
+
+    .id {
+      width: 10%;
+    }
+
+    .registerDate {
+      width: 30%;
+    }
+
+    .loginId {
+      width: 30%;
+    }
+
+    .headers {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: space-between;
+      height: 40px;
+      padding: 0 15px;
+      line-height: 40px;
+
+      .header {
+        position: relative;
+        color: colors.$gray-500;
+        text-align: center;
+        cursor: pointer;
+
+        &:first-of-type {
+          min-width: 60px;
+        }
+
+        .sortDirIcon {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          margin: auto 0;
+        }
+      }
+
+      .sortKey {
+        font-weight: 700;
+        color: colors.$gray-800;
+      }
+
+      .dummyHeader {
+        width: 60px;
+        height: 30px;
+        margin-right: 5px;
+      }
+    }
+
+    .items {
+      width: 100%;
+
+      .item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: $item-height;
+        padding: 0 15px;
+        margin: 8px 0;
+        line-height: $item-height;
+        background-color: colors.$white;
+        border-radius: 10px;
+        box-shadow: 0 0.25rem 0.5rem colors.$shadow;
+        animation: show 300ms;
+
+        .itemCell {
+          text-align: center;
+
+          &:first-of-type {
+            min-width: 60px;
+          }
+        }
+      }
+    }
+  }
+
+  .detailButton {
+    width: 60px;
+    padding: 7px;
+    font-size: 13px;
+    color: colors.$gray-50;
+    background-color: colors.$primary;
+    border-radius: 10px;
+    transition: 200ms;
+
+    &:hover {
+      background-color: colors.$primary-hover;
+    }
+  }
+}
+
+@keyframes show {
+  from {
+    top: -10px;
+    opacity: 0;
+  }
+
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}

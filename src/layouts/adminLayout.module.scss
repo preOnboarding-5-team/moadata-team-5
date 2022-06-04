@@ -1,0 +1,20 @@
+@use 'src/styles/constants/colors';
+
+.adminLayout {
+  display: flex;
+  flex: 1;
+  height: 100%;
+
+  .wrapper {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    background-color: colors.$white;
+    background-color: colors.$gray-50;
+
+    .content {
+      flex-grow: 1;
+      padding: 32px;
+    }
+  }
+}

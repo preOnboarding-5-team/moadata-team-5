@@ -1,0 +1,43 @@
+@use 'src/styles/constants/colors';
+@use 'src/styles/constants/dimensions';
+@use 'src/styles/mixins/responsive';
+
+.gnb {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: colors.$white;
+  border-bottom: 1px solid colors.$important;
+
+  .title {
+    margin-left: 48px;
+    font-size: 1.5rem;
+    @include responsive.after('lg') {
+      margin: 0;
+    }
+  }
+
+  .breadcrumbWrapper {
+    padding-left: 4rem;
+
+    @include responsive.after('lg') {
+      padding: 0;
+    }
+  }
+
+  .adminInfo {
+    display: flex;
+    align-items: center;
+
+    p {
+      display: flex;
+      align-items: center;
+      margin-right: 16px;
+    }
+
+    .logout {
+      padding: 0.5rem 1rem;
+    }
+  }
+}

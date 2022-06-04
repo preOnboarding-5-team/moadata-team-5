@@ -1,0 +1,27 @@
+@use 'src/styles/constants/colors';
+
+.breadcrumb {
+  display: flex;
+  gap: 1rem;
+
+  .crumbs {
+    color: colors.$gray-500;
+
+    &:not(:last-child) {
+      &:hover {
+        color: colors.$primary-hover;
+      }
+
+      &::after {
+        margin-left: 16px;
+        content: '>';
+      }
+    }
+  }
+
+  border-radius: 10px;
+
+  .currentPage {
+    color: colors.$primary;
+  }
+}

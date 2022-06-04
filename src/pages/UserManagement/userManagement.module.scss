@@ -1,0 +1,19 @@
+@use 'src/styles/constants/colors';
+@use 'src/styles/constants/dimensions';
+@use 'src/styles/mixins/responsive';
+
+.managementWrapper {
+  // background: colors.$main-bg;
+
+  .managementTitle {
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .nothing {
+    margin-top: 150px;
+    color: colors.$gray-500;
+    text-align: center;
+  }
+}

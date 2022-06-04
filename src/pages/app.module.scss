@@ -1,2 +1,16 @@
-.app {
+@use 'src/styles/constants/colors';
+
+.appWrapper {
+  display: flex;
+  justify-content: center;
+
+  .app {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 1315px;
+    min-height: 100vh;
+    background-image: url('../assets/images/main.webp');
+    box-shadow: 0 0 5px rgb(0 0 0 / 10%);
+  }
 }

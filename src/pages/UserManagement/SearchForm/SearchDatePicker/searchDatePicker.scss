@@ -1,0 +1,54 @@
+/* stylelint-disable selector-class-pattern */
+@use 'src/styles/constants/colors';
+
+.react-datepicker__input-container {
+  input {
+    width: 100px;
+    padding: 8px;
+    color: colors.$gray-900;
+    text-align: center;
+    cursor: default;
+
+    &::selection {
+      all: unset;
+    }
+
+    &:focus {
+      caret-color: transparent;
+    }
+  }
+}
+
+.react-datepicker__navigation--previous,
+.react-datepicker__navigation--next {
+  top: 1rem;
+  width: 2rem;
+}
+
+.react-datepicker {
+  color: colors.$gray-900;
+  border: 0;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0.1875rem colors.$primary;
+
+  &__header {
+    background: colors.$white;
+    border: 0;
+  }
+
+  &__current-month {
+    color: colors.$gray-900;
+  }
+
+  &__day-name {
+    color: colors.$gray-900;
+  }
+
+  &__month {
+    padding: 6.4px;
+    margin: 0;
+    border: 0.0625rem solid colors.$primary;
+    border-top: 0;
+    border-radius: 0 0 0.5rem 0.5rem;
+  }
+}

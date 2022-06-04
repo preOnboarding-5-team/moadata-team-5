@@ -1,0 +1,10 @@
+@use 'src/styles/constants/colors.scss';
+
+.dashboardWrapper {
+  width: 100%;
+
+  .dashboardTitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+}
