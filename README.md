@@ -13,9 +13,19 @@
 
 ## 과제 수행 보고서
 
-개인 노션 링크
+곽태훈 : 
 
-장재혁 https://elemental-sole-787.notion.site/ecd80cace1d64365a17f6d6789c3a255
+민지원 :
+
+박휘건 :
+
+이지정 : https://charm-epoch-54f.notion.site/5-2b0dd10d833346b08fff9eb99faf8d90
+
+장재혁 : https://elemental-sole-787.notion.site/ecd80cace1d64365a17f6d6789c3a255
+
+문재석 :
+
+이선아 :
 
 ## Dependencies
 
