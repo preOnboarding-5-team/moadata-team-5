@@ -13,7 +13,7 @@
 
 ## 과제 수행 보고서
 
-곽태훈 : 
+곽태훈 : https://lumpy-bug-20c.notion.site/Data-search-app-a94c34990ccf48519a65059ec8062907
 
 민지원 :
 
