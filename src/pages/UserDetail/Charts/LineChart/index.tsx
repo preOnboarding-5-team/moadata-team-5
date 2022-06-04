@@ -43,9 +43,7 @@ function LineChart({ startDate, endDate, setAvgBeat }: Props) {
   }, [end, start, userSeq]);
 
   useEffect(() => {
-    if (start !== end) {
-      setAvgBeat(getAvgBeat(dataList));
-    }
+    setAvgBeat(getAvgBeat(dataList));
   }, [dataList, end, setAvgBeat, start]);
 
   useEffect(() => {
