@@ -15,7 +15,7 @@
 
 곽태훈 : [링크](https://lumpy-bug-20c.notion.site/Data-search-app-a94c34990ccf48519a65059ec8062907)
 
-민지원 : 
+민지원 : [링크](https://accurate-friction-5c8.notion.site/cf39d431f911452c941bbc8fea8fd24f)
 
 박휘건 : [링크](https://held-face-3ad.notion.site/c86341acb4584f5981f68917e59ffaae)
 
