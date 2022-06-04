@@ -34,6 +34,7 @@
 예) 로그인 ID moadata = 380 / moadata ID로 검색시, 380(member_seq) 에 해당하는 데이터 노출 
 
 ![ezgif-2-832329774b](https://user-images.githubusercontent.com/64529155/171983985-55b758cd-fbe7-4404-9236-55374e539788.gif)
+![ezgif-2-fab7dfd2f9](https://user-images.githubusercontent.com/64529155/171985676-41831732-9a82-49c1-b584-0a9b8fb2cac3.gif)
 
 #### 조회 기간 구현
 
