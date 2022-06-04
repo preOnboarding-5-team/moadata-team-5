@@ -1,15 +1,93 @@
 # moadata-team-5
 
 ## 개발자
-### 곽태훈, 민지원, 박휘건, 이지정, 장재혁, 문재석, 이선아
+
+곽태훈, 민지원, 박휘건, 이지정, 장재혁, 문재석, 이선아
 
 ## 개발기간
 
+2022년 5월 30일 ~ 2022년 6월 5일 (총 7일)
+
+## 배포 링크
+* [Vercel](https://moadata-team-5.vercel.app/)
+
 ## 과제 수행 보고서
+
+곽태훈 : [링크](https://lumpy-bug-20c.notion.site/Data-search-app-a94c34990ccf48519a65059ec8062907)
+
+민지원 : [링크](https://accurate-friction-5c8.notion.site/cf39d431f911452c941bbc8fea8fd24f)
+
+박휘건 : [링크](https://held-face-3ad.notion.site/c86341acb4584f5981f68917e59ffaae)
+
+이지정 : [링크](https://charm-epoch-54f.notion.site/5-2b0dd10d833346b08fff9eb99faf8d90)
+
+장재혁 : [링크](https://elemental-sole-787.notion.site/ecd80cace1d64365a17f6d6789c3a255)
+
+문재석 : [링크](https://harsh-reason-163.notion.site/ea78d97200504690becfde2792bc4a51)
+
+이선아 : [링크](https://enchanting-seashore-20d.notion.site/2156345a9d8b4f2b8b359f717bfabb6f)
+
+## Dependencies
+
+<span><img src="https://img.shields.io/badge/Typescript-3178C6?style=flat-square&logo=TypeScript&logoColor=white"/></span>
+<span><img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=white"/></span>
+<span><img src="https://img.shields.io/badge/ESLint-4B32C3?style=flat-square&logo=ESLint&logoColor=white"/></span>
+<span><img src="https://img.shields.io/badge/Prettier-F7B93E?style=flat-square&logo=Prettier&logoColor=white"/></span>
+<span><img src="https://img.shields.io/badge/Sass-CC6699?style=flat-square&logo=Sass&logoColor=white"/></span>
+<span><img src="https://img.shields.io/badge/stylelint-263238?style=flat-square&logo=stylelint&logoColor=white"/></span>
+<span><img src="https://img.shields.io/badge/ReactRouter-CA4245?style=flat-square&logo=ReactRouter&logoColor=white"/></span>
+
+<span><img src="https://img.shields.io/badge/datefns-FF0000?style=flat-square&logo=datefns&logoColor=white"/></span>
+<span><img src="https://img.shields.io/badge/dayjs-FFA500?style=flat-square&logo=dayjs&logoColor=white"/></span>
+<span><img src="https://img.shields.io/badge/recoil-FFFF00?style=flat-square&logo=recoil&logoColor=white"/></span>
+<span><img src="https://img.shields.io/badge/store-00FF00?style=flat-square&logo=store&logoColor=white"/></span>
+<span><img src="https://img.shields.io/badge/victory-0000FF?style=flat-square&logo=victory&logoColor=white"/></span>
+<span><img src="https://img.shields.io/badge/classnames-000000?style=flat-square&logoColor=white"/></span>
+
 
 ## 폴더 구조
 
-## 배포 링크
+<details>
+<summary>폴더 구조</summary>
+<div markdown="1">
+  
+- 📁 assets
+  - 아이콘 및 이미지 등을 모아둔 폴더입니다.
+
+- 📁 components
+  - 특정 페이지에 귀속되지 않는 컴포넌트들을 모아둔 폴더입니다.
+  - 다른 컴포넌트들에 공통적으로 사용될 수 있는 Button과 DatePicker는 common에 넣어뒀습니다.
+  - 그 외에 SNB, GNB, Breadcrumb은 공통적으로 사용되기 보단 페이지에 따라 사용될 수 있는 컴포넌트이기 때문에 common 밖에 두었습니다.
+
+- 📁 data
+  - 프로젝트 구현에 사용될 데이터인 json 파일들이 들어가 있는 폴더입니다.
+
+- 📁 hooks
+  - Custom hooks를 모아둔 폴더입니다.
+  - 이번 프로젝트에선 Recoil을 위한 `useRecoil`만 존재합니다.
+
+- 📁 layouts
+  - 페이지 전반에 적용할 레이아웃을 모아둔 폴더입니다.
+
+- 📁 pages
+  - 라우터를 기준으로 각각의 페이지를 모아둔 폴더입니다.
+  - 해당 페이지에서만 사용되는 컴포넌트들은 components 폴더가 아닌 각 페이지 폴더 안에 있습니다.
+
+- 📁 states
+  - Recoil과 관련된 파일들을 모아둔 폴더입니다.
+  - 각 Atom 별로 파일을 따로 작성하였습니다.
+
+- 📁 styles
+  - 전역 스타일링, 변수, mixins 등 전역에서 사용되는 스타일링 관련 파일들을 모아둔 폴더입니다.
+
+- 📁 types
+  - 전역적으로 사용되는 타입을 모아둔 폴더입니다.
+
+- 📁 utils
+  - 앱 전반적으로 사용되는 변수, 함수, 서비스 등을 담아둔 폴더입니다.
+
+</div>
+</details>
 
 ## 실행 화면과 기능
 
@@ -25,26 +103,54 @@
 * ID 불일치일 경우 input 상단에 페이드인 애니메이션을 적용한 '존재하지 않는 아이디입니다.' 문구가 나타났다 사라집니다. 
 * PW 불일치일 경우 input 상단에 페이드인 애니메이션을 적용한 '일치하지 않는 패스워드입니다.' 문구가 나타났다 사라집니다. 
 
-2. 백오피스 홈 (예시와 동일하게 페이지만 구현)
+### 백오피스 홈
+![image](https://user-images.githubusercontent.com/47405655/171992558-a6dd4409-9fb7-4cd4-94cf-981e7168b4b5.png)
+
+* 예시와 동일하게 페이지만 구현했습니다.
 
 ### 회원 관리 메뉴
-4. 회원 관리 메뉴 (유령회원 DB 3개 생성 – 가입일, 로그인 아이디는 임의로 더미데이터 삽입해주세요)
-     - 회원 조회 및 검색용 텍스트 박스 적용
-     - 회원 조회를 위한 필터 적용
+#### 상태 관리
+* Recoil atom을 통해 사용자 목록, 필더링 옵션, 검색 결과를 전역에서 관리했습니다.
+* `userDataList`: 주어진 사용자 정보에 임의의 아이디를 추가하였습니다.
+* `userFilterOptions`: 로그인 ID, 회원 번호, 시작일, 종료일을 포함합니다. 각각은 모두 string이며 default로 빈 값을 가집니다. 
+* `userSearchResult`: 전체 리스트인 `userDataList`를 default로 하며, 옵션에 따라 필터링이 일어난 결과입니다.
 
-5) 로그인 ID – 과제수행자 임의 생성
-6) 회원가입일시 – 과제수행자 임의 생성
-7) 회원번호 – 과제수행자 임의 생성
+#### 데이터 객체 타입
+```ts
+interface UserInfo {
+  id: number;
+  loginId: string;
+  registerDate: string;
+}
 
+interface UserFilterOptions {
+  id: string;
+  loginId: string;
+  prevDate: string;
+  nextDate: string;
+}
+```
 
-*제공한 json 데이터 안에 member_seq를 과제수행자가 임의로 만든 아이디의 회원번호와 동일하게 적용해주세요.
-그래서 해당 로그인ID로 검색할 때 회원번호(member_seq)의 데이터가 연동되도록 작업해주세요.
-예) 로그인 ID moadata = 380 / moadata ID로 검색시, 380(member_seq) 에 해당하는 데이터 노출 
+#### 검색 조건
+* 로그인 ID: text 형식의 input value를 받아 로그인 ID를 입력받습니다.
+* 회원번호: number 형식의 input value 받습니다. 키보드 입력이 일어날 때마다 key를 검사해서 e, E, +, - 등 네 가지 수학 기호를 입력할 수 없게 했습니다.
+* 조회기간: 시작일, 종료일 각각의 input을 누르면 date picker가 나타납니다. 날짜 하나를 클릭하면 date picker 창이 닫히고, 날짜를 나타내는 state가 업데이트 되며, 이어서 `userFilterOptions`이 업데이트됩니다.
 
-![ezgif-2-832329774b](https://user-images.githubusercontent.com/64529155/171983985-55b758cd-fbe7-4404-9236-55374e539788.gif)
-![ezgif-2-fab7dfd2f9](https://user-images.githubusercontent.com/64529155/171985676-41831732-9a82-49c1-b584-0a9b8fb2cac3.gif)
+#### 검색 결과
+* 리스트 형태로 검색 결과가 나타나도록 했습니다.
+* ‘관리’ 버튼을 제외한 각 항목의 너비를 % 단위로 지정하여 헤더와 아이템의 가로 위치를 맞췄습니다.
+* 헤더를 한 번 누르면 오름차순 정렬이, 한 번 더 누르면 내림차순 정렬이 되도록 했습니다. 정렬 기준이 되는 헤더는 굵은 글씨로 나타나고, 오른쪽 화살표를 통해 정렬 방향을 알 수 있습니다. 
+
+#### 반응형 페이지
+* 다른 페이지와 같은 정책으로 반응형 페이지를 구현했습니다.
+* 창 너비가 768px 미만인 경우 세 개의 검색 조건 입력창이 세로 배열로 바뀝니다.
+
+### 회원 상세 페이지
 
 #### 조회 기간 구현
+
+<span><img src="https://user-images.githubusercontent.com/64529155/171983985-55b758cd-fbe7-4404-9236-55374e539788.gif"  width="46%" height="46%"/></span>
+<span><img src="https://user-images.githubusercontent.com/64529155/171985676-41831732-9a82-49c1-b584-0a9b8fb2cac3.gif"  width="40%" height="40%"/></span>
 
 * 데이터 피커를 통해 조회 기간을 설정할 수 있습니다.
 * 데이터 피커에서 날짜는 유저 데이터에서 가장 빠른 날짜와 가장 최근 날짜 사이에 값들만 선택이 가능합니다. 
@@ -53,26 +159,20 @@
 * 해당 기간 데이터가 없을 경우 데이터가 없다는 것을 알리기 위한 이미지가 차트 대신 화면에 띄워집니다.
 
 #### 차트 구현
+
+<img width="1006" alt="스크린샷 2022-06-04 오후 8 37 02" src="https://user-images.githubusercontent.com/88325253/171997320-80cc9447-7e78-46ab-9b93-d6fc5a687859.png">
+
 * 특정 유저 데이터를 가져오기 위해 모든 유저의 데이터 중 해당하는 유저의 데이터를 쿼리로 받아와 일치하는 유저의 데이터를 찾아 filter하는 과정을 거칩니다.
-* 특정 기간 데이터를 가져오기 위해 유저 데이터 중 crt_ymdt의 앞 부분인 년원일만 쪼개서 일치하는 날짜의 데이터들을 전부 가져온 후 각 날짜의 심박수 값의 평균을 구해 날짜당 평균값의 데이터 하나씩만 화면에 구현되도록 하였습니다.
+* 특정 기간 데이터를 가져오기 위해 유저 데이터 중 crt_ymdt의 앞 부분인 년, 월, 일만 분리하여 일치하는 날짜의 데이터들을 전부 가져온 후, 각 날짜의 심박수와 걸음수 값의 평균을 구해 날짜당 평균값의 데이터 하나씩만 화면에 구현되도록 하였습니다.
 * 데이터가 바뀔 때 차트가 애니메이션과 함께 새로 구현됩니다.
 * 해당 기간 중 데이터가 없는 날은 0으로 표기됩니다.
-* 툴팁에는 날짜와 심박수가 표현됩니다.
-
-
-
-
-
-[우대 사항] - 가산점
-
-3. 꼭 예시 화면과 똑같이 개발할 필요는 없습니다. 더 정돈된 레이아웃이라 생각되면 임의로 변경하여도 무방합니다. 단, 변경한 의도를 간단히 알려주세요. 위의 조건들에만 부합한다면 예시 화면과 전혀 다른 구조로 개발하여도 감점되거나 문제되지 않습니다.
-
+* 툴팁에는 날짜와 심박수/날짜와 걸음수가 표현됩니다.
 
 ## 추가 기능 
 
 
 ## 테스트 케이스 정의서
-
+- [TESTCASE.md](TESTCASE.md)
 
 ## 어려웠던 점, 배운 점, 그리고 느낀 점
 
@@ -97,6 +197,24 @@
 
 팀플을 진행하면서 더 나은 로직과 디자인을 위해 팀원들과 계속해서 소통을 통해 더 좋은 방향으로 나아갔습니다. 그 과정에서 코드 리뷰를 통해 코드를 좀 더 가독성있고 간결하게 짜는 방법에 대해서 많이 배웠습니다. 
 
-혼자 개발했으면 중간에 지치거나 발전할 기회가 없었을텐데, 팀원들과 함께 새벽까지 작업을 하여 끝까지 재미있게 할 수 있었다고 생각합니다.
+혼자 개발했으면 중간에 지치거나 발전할 기회가 없었을텐데, 팀원들과 함께 새벽까지 작업을 하여 끝까지 재미있게 할 수 있었다고 생각합니다. VS Code의 라이브쉐어를 처음으로 사용해보았는데 실시간으로 팀원들과 같이 작업할 수 있어 의사소통도 원할하게 작업할 수 있었습니다.
 
+### 이지정
 
+코드를 작성하기 전에 데이터들이 어떻게 사용될 것인지 먼저 생각한 후 작성해야 한다는 것을 알 수 있었습니다.
+제가 작성한 걸음수 차트 부분을 구현할 때, 하단의 오늘, 일주일, 전체 버튼과 user가 바뀐다는 것을 고려하지 않고 차트 그리기에만 집중해서 코드를 작성했었습니다. 그러다보니 후반 작업에서 전체 버튼 기능을 구현할 때, user에 대한 데이터를 불러오는 부분을 고려하지 않았기 때문에 다시 데이터를 불러올 수 밖에 없었습니다. 이 부분을 리팩토링 하지 못해 아쉬웠지만 이러한 경험 덕분에 코드를 작성하기 전에 어떤 점을 정하고 넘어가야 하는지 알 수 있었던 좋은 기회였습니다.
+
+### 민지원
+
+UI 디자인에 특히 공을 들인 프로젝트였습니다. 여러 레퍼런스를 참고하며 많은 시도를 하면서 점차 페이지를 개선할 수 있어 좋았습니다. 지난 번 프로젝트의 교훈을 바탕으로 사전에 데이터 형식을 합의하여 개발 시간을 단축할 수 있었습니다. 검색 목록 컴포넌트를 개발하면서 테이블과 리스트 모두의 형태로 각각 개발하면서 비교해 볼 수 있었습니다. 또 지난번과는 달리 라이브러리를 활용해 date picker를 개발한 것도 새로운 경험이었습니다.
+
+### 문재석
+
+인원이 많은 것은 물론 페이지들을 세분화하여 작업하다 보니 코드를 합치는 것이 가장 어려웠으며 이 어려움을 해결하는 과정에서 효율적인 협업 방향에 대한 고민을 깊게 해볼 수 있었던 프로젝트였습니다.  
+아무리 역할 분담을 하여 그 부분에 대한 구현만 하려 해도 앱은 전체적으로 연결 되어 있기에 같은 파일을 수정하게 되는 경우도 빈번했고, 그로부터 발생하는 컨플릭트들 또한 불가피했습니다. 또한 각자의 코드 스타일도 다르고 선호하는 디자인도 다르다 보니 페이지 별로 코드 스타일 및 컨벤션과 CSS가 다른 상황이 발생하였습니다. 이를 최소화하기 위해 팀원들과 VS Code의 라이브쉐어와 화면 공유를 통해 함께 작업하는 과정에서 많은 의논을 할 수 있었고, 서로의 코드에 대해 설명하고 이해하며 다양한 코드를 공부할 수 있었던 좋은 기회였습니다.
+
+### 곽태훈
+
+로직들을 컴포넌트화 하는 방식이 아직 익숙지 않아, 효율적인 로직을 만드는 것이 어려웠습니다. 이부분에 있어서 개인적으로 학습하기도 했지만, 팀원들에게 질의하고 소통하며 배워나갈 수 있었던 것이 가장 큰 성과였던 것 같습니다. 덕분에 이미 컴포넌트화 된 컨텐츠에 Props를 추가하여 추가 커스터마이징 하는 작업도 해볼 수 있었습니다.
+
+또한, 반응형을 포함한 css작업에 대해서도 어려움을 겪었습니다. 협업시 지속적인 수정작업에 의해 코드가 수시로 바뀌기 때문에, 개인 화면에서는 잘 자리잡혀 있던 컨텐츠들도 merge를 한 후에는 다르게 렌더링, 페인팅되곤 했습니다. 작업 후반부에는 화면 공유를 통해 팀원들과 소통하며 styilng 작업을 하게 됐는데, 이 방식이 팀원들과 의견을 공유하며 가장 효율적으로 작업할 수 있는 방법이었던 것 같습니다. 개인 프로젝트였다면 고려해보지 못했을 협업이나 소통에 대한 방식과 문제들을 함께 해결해나가며, 이런 것들을 고민해볼 수 있었던 좋은 경험이었습니다.

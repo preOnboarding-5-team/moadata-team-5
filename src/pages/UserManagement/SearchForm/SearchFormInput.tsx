@@ -1,7 +1,6 @@
 import { useEffect, useRef } from 'react';
 import type { KeyboardEvent } from 'react';
 import { useRecoilValue } from 'recoil';
-import cx from 'classnames';
 import dayjs from 'dayjs';
 
 import { userFilterOptions } from 'states/userFilterOptions';
