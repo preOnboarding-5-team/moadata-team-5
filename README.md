@@ -15,6 +15,8 @@
 
 개인 노션 링크
 
+장재혁 https://elemental-sole-787.notion.site/ecd80cace1d64365a17f6d6789c3a255
+
 ## Dependencies
 
 <span><img src="https://img.shields.io/badge/Typescript-3178C6?style=flat-square&logo=TypeScript&logoColor=white"/></span>
