@@ -25,7 +25,7 @@
 
 문재석 :
 
-이선아 :
+이선아 : https://enchanting-seashore-20d.notion.site/2156345a9d8b4f2b8b359f717bfabb6f
 
 ## Dependencies
 
