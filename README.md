@@ -17,18 +17,21 @@
 
 ## Dependencies
 
-- classnames
-- date-fns
-- dayjs
-- react-router-dom
-- recoil
-- store
-- victory
-- eslint
-- prettier
-- sass
-- stylelint
-- typescript
+<span><img src="https://img.shields.io/badge/Typescript-3178C6?style=flat-square&logo=TypeScript&logoColor=white"/></span>
+<span><img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=white"/></span>
+<span><img src="https://img.shields.io/badge/ESLint-4B32C3?style=flat-square&logo=ESLint&logoColor=white"/></span>
+<span><img src="https://img.shields.io/badge/Prettier-F7B93E?style=flat-square&logo=Prettier&logoColor=white"/></span>
+<span><img src="https://img.shields.io/badge/Sass-CC6699?style=flat-square&logo=Sass&logoColor=white"/></span>
+<span><img src="https://img.shields.io/badge/stylelint-263238?style=flat-square&logo=stylelint&logoColor=white"/></span>
+<span><img src="https://img.shields.io/badge/ReactRouter-CA4245?style=flat-square&logo=ReactRouter&logoColor=white"/></span>
+
+<span><img src="https://img.shields.io/badge/datefns-FF0000?style=flat-square&logo=datefns&logoColor=white"/></span>
+<span><img src="https://img.shields.io/badge/dayjs-FFA500?style=flat-square&logo=dayjs&logoColor=white"/></span>
+<span><img src="https://img.shields.io/badge/recoil-FFFF00?style=flat-square&logo=recoil&logoColor=white"/></span>
+<span><img src="https://img.shields.io/badge/store-00FF00?style=flat-square&logo=store&logoColor=white"/></span>
+<span><img src="https://img.shields.io/badge/victory-0000FF?style=flat-square&logo=victory&logoColor=white"/></span>
+<span><img src="https://img.shields.io/badge/classnames-000000?style=flat-square&logoColor=white"/></span>
+
 
 ## 폴더 구조
 
