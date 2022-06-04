@@ -15,6 +15,21 @@
 
 개인 노션 링크
 
+## Dependencies
+
+- classnames
+- date-fns
+- dayjs
+- react-router-dom
+- recoil
+- store
+- victory
+- eslint
+- prettier
+- sass
+- stylelint
+- typescript
+
 ## 폴더 구조
 
 <details>
