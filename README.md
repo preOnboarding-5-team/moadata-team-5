@@ -17,7 +17,7 @@
 
 민지원 :
 
-박휘건 :
+박휘건 : https://held-face-3ad.notion.site/c86341acb4584f5981f68917e59ffaae
 
 이지정 : https://charm-epoch-54f.notion.site/5-2b0dd10d833346b08fff9eb99faf8d90
 
