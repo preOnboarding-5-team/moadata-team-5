@@ -72,7 +72,6 @@ function SearchFormInput({ focusState }: Props) {
             inputValue={filterOptions.loginId}
             focusRef={inputRef}
             onKeyDown={handleSubmitByEnter}
-            onKeyPress={checkNumber}
           />
         </dd>
       </div>
